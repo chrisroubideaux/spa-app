@@ -1,0 +1,189 @@
+body,
+html {
+ 
+  background: rgb(245, 252, 243);
+  background: radial-gradient(circle, rgba(227,252,220,1) 0%, rgb(234, 250, 230) 0%, rgb(231, 252, 225) 0%, rgba(255,255,255,1) 100%);
+}
+
+/* layout */
+
+.layout {
+  height: 100vh;
+  width: 100%;
+  background: rgb(245, 252, 243);
+  background: radial-gradient(circle, rgba(227,252,220,1) 0%, rgb(234, 250, 230) 0%, rgb(231, 252, 225) 0%, rgba(255,255,255,1) 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+}
+
+/* navbar */
+
+.navbar {
+  background: rgb(245, 252, 243);
+  background: radial-gradient(circle, rgba(227,252,220,1) 0%, rgb(234, 250, 230) 0%, rgb(231, 252, 225) 0%, rgba(255,255,255,1) 100%);
+  border-radius: 30px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  color: #000;
+}
+
+.nav-link {
+  color:#65c4a4;
+}
+   
+.nav-link :hover {
+  color: #c1ffea; 
+}
+         
+li a {
+  color: #c1ffea; 
+  text-decoration: none;
+}
+         
+li a:hover {
+  color: #c1ffea; 
+}
+         
+li :hover {
+  color: #c1ffea; 
+}
+           
+/*dropdown*/
+  
+.dropdown-menu {
+  background-color: rgb(231, 252, 225);
+  border-style: solid 0px;
+  margin: 4rem auto;
+  width: 100%;
+  border-radius: 15px;
+}
+  
+.dropdown-item {
+  color:#65c4a4;
+}
+  
+.dropdown-item :hover {
+  color:#65c4a4;
+}
+
+.btn-hover {
+  background-color:#65c4a4;
+}
+.btn-hover-light:hover,
+.btn-hover-light:focus {
+  color:#65c4a4;
+  background-color:#65c4a4;
+}
+  
+/* headers */
+  
+h1 {
+  font-family: 'Raleway', sans-serif;
+  color:#65c4a4;
+}
+
+h2 {
+  font-family: 'Raleway', sans-serif;
+  color: #1c1c1c;
+}
+
+h3 {
+  font-family: 'Raleway', sans-serif;
+  color: #1c1c1c; 
+}
+
+h4 {
+  font-family: 'Raleway', sans-serif;
+  color: #1c1c1c;
+}
+
+h5 {
+  font-family: 'Raleway', sans-serif;
+  color:#65c4a4;
+}
+
+h6 {
+  font-family: 'Raleway', sans-serif;
+  color: #6a6a6a; 
+}
+
+/* hr */
+
+.hr {
+  width: 100%;
+  color:#65c4a4;
+  align-items: center;
+}
+
+/* paragraphs */
+
+p {
+  color:#65c4a4;
+}
+
+/* buttons */
+  
+.btn {
+  background-color:#85E6C5; 
+  color: #e6fff7; 
+  border-radius: 30px;
+}
+  
+.btn:hover {
+  transform: scale(1.07);
+  background-color: #c1ffea; 
+}
+/* icons */
+.social-icons {
+  color: #85E6C5; 
+  font-size: 20px;
+}
+  
+.social-icon {
+  color: #85E6C5; 
+  font-size: 20px;
+}
+  
+.button-icon {
+  font-size: 20px;
+}
+  
+.icon {
+  font-size: 10px;
+}
+  
+.card-icon {
+  color: #02dabd; 
+  font-size: 20px;
+}
+    
+.social-icon:hover {
+  color:#85E6C5; 
+}  
+      
+.social-icons:hover {
+  color: #c1ffea; 
+}
+  
+.input-icons i {
+  position: absolute;
+}
+
+/* animations */
+
+  /* Add animation properties here 
+  .animation {
+    animation: waveAnimation 6s linear infinite;
+  }
+  
+  @keyframes waveAnimation {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  */
+
+

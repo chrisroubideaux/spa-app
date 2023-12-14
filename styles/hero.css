@@ -1,0 +1,84 @@
+
+/* hero */
+.cover {
+  background-image: linear-gradient(#2d3245b3, #04091eb3),
+  url('../images/hero/hero1.jpg');
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+  
+/* services cover */
+.services {
+  background-image: linear-gradient(#2d3245b3, #04091eb3),
+  url('../public/properties/home1.jpg');
+  height: 32rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 30px;
+}
+  
+/* wellness cover */
+.wellness {
+  background-image: linear-gradient(#2d3245b3, #04091eb3),
+    url('../public/covers/aptcover.jpg');
+  height: 32rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 30px;
+}
+/* cafe cover */
+.cafe {
+background-image: linear-gradient(#2d3245b3, #04091eb3),
+   url('../public/covers/home.jpg');
+  height: 32rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 30px;
+}
+  
+/* staff cover */
+.staff {
+  background-image: linear-gradient(#2d3245b3, #04091eb3),
+    url('../public/covers/commercial.jpg');
+  height: 32rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 30px;
+}
+/* about cover */
+.about {
+  background-image: linear-gradient(#313030b3, #202121b3),
+    url('../public/covers/about.jpg');
+  height: 32rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 30px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* swiper */
+.swiper {
+  height: 32rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 30px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* slider */
+.slider {
+  height: 32rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 30px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
