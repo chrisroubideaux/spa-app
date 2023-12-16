@@ -1,8 +1,10 @@
 body,
 html {
- 
-  background: rgb(245, 252, 243);
-  background: radial-gradient(circle, rgba(227,252,220,1) 0%, rgb(234, 250, 230) 0%, rgb(231, 252, 225) 0%, rgba(255,255,255,1) 100%);
+  background: rgb(227,252,220);
+  background: radial-gradient(circle, rgba(227,252,220,1) 0%, rgba(231,253,226,1) 0%, rgba(234,253,229,1) 0%, rgba(248,254,246,1) 15%, rgba(255,255,255,1) 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* layout */
@@ -10,11 +12,11 @@ html {
 .layout {
   height: 100vh;
   width: 100%;
-  background: rgb(245, 252, 243);
-  background: radial-gradient(circle, rgba(227,252,220,1) 0%, rgb(234, 250, 230) 0%, rgb(231, 252, 225) 0%, rgba(255,255,255,1) 100%);
+  background: rgb(227,252,220);
+  background: radial-gradient(circle, rgba(227,252,220,1) 0%, rgba(231,253,226,1) 0%, rgba(234,253,229,1) 0%, rgba(248,254,246,1) 15%, rgba(255,255,255,1) 100%);
   background-position: center;
   background-repeat: no-repeat;
-  border-radius: 10px;
+  
 }
 
 /* navbar */
@@ -80,11 +82,12 @@ li :hover {
 h1 {
   font-family: 'Raleway', sans-serif;
   color:#65c4a4;
+  
 }
 
 h2 {
   font-family: 'Raleway', sans-serif;
-  color: #1c1c1c;
+  color:#65c4a4;
 }
 
 h3 {
@@ -94,7 +97,7 @@ h3 {
 
 h4 {
   font-family: 'Raleway', sans-serif;
-  color: #1c1c1c;
+  color:#65c4a4;
 }
 
 h5 {
@@ -104,7 +107,7 @@ h5 {
 
 h6 {
   font-family: 'Raleway', sans-serif;
-  color: #6a6a6a; 
+  color:#65c4a4;
 }
 
 /* hr */
@@ -118,7 +121,7 @@ h6 {
 /* paragraphs */
 
 p {
-  color:#65c4a4;
+  color:#959796;
 }
 
 /* buttons */
@@ -141,7 +144,7 @@ p {
   
 .social-icon {
   color: #85E6C5; 
-  font-size: 20px;
+  
 }
   
 .button-icon {

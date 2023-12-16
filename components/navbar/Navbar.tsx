@@ -2,17 +2,15 @@
 import Link from 'next/link';
 import { FaAngleDown, FaSearch } from 'react-icons/fa';
 
+
 export default function Navbar() {
   return (
     <>      
-      <nav className="navbar navbar-expand-lg w-100 mt-4 bg-transparaent">
+      <nav className="navbar navbar-expand-lg w-100 mt-2 bg-transparaent">
         <div className="container-fluid">
           <Link
             className="navbar-brand nav-link font-weight-bolder ms-3"
-            href="/"
-            rel="tooltip"
-            data-placement="bottom"
-            target="_blank"
+            href="/"          
           >
             Club Ivy
           </Link>

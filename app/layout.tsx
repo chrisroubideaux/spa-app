@@ -2,13 +2,16 @@
 import { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { Raleway } from 'next/font/google';
+import {  Raleway, Montserrat } from 'next/font/google';
 import '@/styles/globals.css';
+import '@/styles/hero.css';
 import '@/styles/cards.css';
 import '@/styles/form.css';
 
 
+
 const inter = Raleway({ subsets: ['latin'] })
+
 
 export default function RootLayout({
   children,

@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 export default function Cover() {
   // s
   const [currentStringIndex, setCurrentStringIndex] = useState(0);
-  const textStrings = ['web development', 'mobile development', 'web design'];
+  const textStrings = ['Welcome to club ivy', 'spa and relaxation', 'we specialize in giving the ultimate luxurious spa experience '];
   const typedText = textStrings[currentStringIndex];
 
   useEffect(() => {
@@ -24,42 +24,30 @@ export default function Cover() {
     <>
       <header className="position-relative">        
         <div
-          className=" "
+          className=" opacity-dark "
           style={{
-            backgroundImage: ' url(../images/hero/hero.png)',
+            backgroundImage: ' linear-gradient(#2d3245b3, #04091eb3), url(../images/hero/hero3.png)',
             height: '32rem',
             backgroundSize: 'cover',
             borderRadius: '30px',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            borderRight: '1px solid #636fac',
-            borderLeft: '1px solid #636fac',
+           
           }}
         >
           <span className="mask bg-gradient-primary"></span>
           <div className="container">
             <div className="row">
-              <div className="col-lg-8 text-start">
-                <h1 className="text-dark">
-                  Our company mission is to lead the{' '}
+              <div className="col-lg-8 text-start mt-4">
+                <h1 className="mt-4">
+                  Welcome to <span className="text-white">To the best spa experiance</span>
                   <span className="text-white">{typedText}</span>
                 </h1>
                 <p className="lead text-dark text-start pe-5 mt-4">
-                  The time is now for it to be okay to be great. People in this
-                  world shun people for being great. For being a bright color.{' '}
+                 Now you can enjoy the best spa experiance. We offer a wide range of services to suit your needs.
                 </p>
                 <br />
-                <div className="buttons">
-                  <button type="button" className="btn btn-lg btn-white">
-                    Contact Us
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-lg btn-link text-white"
-                  >
-                    Read More
-                  </button>
-                </div>
+                
               </div>
             </div>
           </div>

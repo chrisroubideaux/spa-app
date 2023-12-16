@@ -6,7 +6,7 @@ export default function Footer() {
 
   return (
     <div>
-      <footer className=" ">
+      <footer className=" h-80">
         <div className="container-fluid mt-7">
           <div className="row">
             <div className="col-xxl-5 col-lg-5 col-md-7">
@@ -219,11 +219,7 @@ export default function Footer() {
                           Community
                         </Link>
                       </li>
-                      <li className="mb-2">
-                        <Link href="/" className="nav-link">
-                          Webinars
-                        </Link>
-                      </li>
+                      
                     </ul>
                   </div>
                 </div>

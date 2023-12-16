@@ -90,10 +90,10 @@ const Login = () => {
           </div>
         </div>
         <div
-          className=" mt-3 position-absolute top-0 end-0 w-50 h-100  d-none d-xl-block"
+          className=" mt-3 position-absolute top-0 end-0 w-50 d-none d-xl-block"
           style={{
-            backgroundImage: ' url(../images/hero/hero1.png)',
-            height: '100vh',
+            backgroundImage: ' url(../images/hero/login.png)',
+            height: '90vh',
             backgroundSize: 'cover',
             borderRadius: '10px',
             backgroundPosition: 'center',
