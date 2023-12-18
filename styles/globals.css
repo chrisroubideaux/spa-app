@@ -1,5 +1,6 @@
 body,
 html {
+ 
   background: rgb(227,252,220);
   background: radial-gradient(circle, rgba(227,252,220,1) 0%, rgba(231,253,226,1) 0%, rgba(234,253,229,1) 0%, rgba(248,254,246,1) 15%, rgba(255,255,255,1) 100%);
   background-size: cover;
@@ -143,8 +144,7 @@ p {
 }
   
 .social-icon {
-  color: #85E6C5; 
-  
+  color: #85E6C5;  
 }
   
 .button-icon {

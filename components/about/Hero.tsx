@@ -30,8 +30,8 @@ export default function Heror() {
         <div
           className=" "
           style={{
-            backgroundImage: ' url(../images/hero/about.png)',
-            height: '25rem',
+            backgroundImage: ' linear-gradient(#2d3245b3, #04091eb3), url(../hero/about.png)',
+            height: '32rem',
             backgroundSize: 'cover',
             borderRadius: '30px',
             backgroundPosition: 'center',

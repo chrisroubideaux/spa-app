@@ -11,7 +11,7 @@ export default function Details() {
             <FaBoxTissue width="1.75em" height="1.75em" className="social-icons m-2" />
 
             <div>
-              <h4 className="fw-bold mb-0 fs-4"> Relaxation</h4>
+              <h4 className="fw-bold mb-0 fs-4">Relaxation</h4>
               <p className="">
               At Club Ivy, we center our services around your well-being, specializing in spa and skincare treatments with ourtailored approach.
               </p>
@@ -28,7 +28,7 @@ export default function Details() {
             </div>
           </div>
           <div className="col d-flex align-items-start">
-            <FaHandshake width="1.75em" height="1.75em" className="social-icons m-2" />
+            <FaHandshake className="social-icon m-2 fs-1" />
             <div>
               <h4 className="fw-bold mb-0 fs-4">Meet our staff</h4>
               <p className="">

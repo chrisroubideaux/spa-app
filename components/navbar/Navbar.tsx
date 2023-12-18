@@ -58,11 +58,7 @@ export default function Navbar() {
                       Waxing
                     </Link>
                   </li>
-                  <li>
-                    <Link className="dropdown-item" href="/sauna/">
-                      Sauna
-                    </Link>
-                  </li>
+                  
                 </ul>
               </li>
               <li className="nav-item px-3">

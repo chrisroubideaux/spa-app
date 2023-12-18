@@ -1,16 +1,13 @@
 
 
-/* contact */
 .contact {
   background-image: linear-gradient(#2d3245b3, #04091eb3),
-  url('../public/images/misc/misc3.png');
+  url('../public/misc/misc3.png');
   height: 100vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
- 
 }
-
 
 /* swiper */
 .swiper {

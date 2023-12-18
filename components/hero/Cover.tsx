@@ -26,7 +26,7 @@ export default function Cover() {
         <div
           className=" opacity-dark "
           style={{
-            backgroundImage: ' linear-gradient(#2d3245b3, #04091eb3), url(../images/hero/hero3.png)',
+            backgroundImage: ' linear-gradient(#2d3245b3, #04091eb3), url(../hero/hero3.png)',
             height: '32rem',
             backgroundSize: 'cover',
             borderRadius: '30px',
