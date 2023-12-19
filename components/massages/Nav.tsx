@@ -14,16 +14,14 @@ export default function Navbar() {
                   <Link href="/">home</Link>
                 </li>
                 <li className="breadcrumb-item">
-                  <Link href="/servcies">Services</Link>
+                  <Link href="/servcies">Massages</Link>
                 </li>
                 <li className="breadcrumb-item active" aria-current="page">
-                  <Link href="/servcies">Contact Details</Link>
+                  <Link href="/servcies">Details</Link>
                 </li>
               </ol>
             </nav>
-            <div className="order-lg-1 pe-lg-4 text-center text-lg-start">
-              <h3 className=" fs-1">Contact Details</h3>
-            </div>
+            <h4>Massage details</h4>
           </div>
         </div>
       </div>
