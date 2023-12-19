@@ -1,4 +1,3 @@
-// detail page for massage page
 'use client';
 import Navbar from '@/components/navbar/Navbar';
 import Nav from '@/components/massages/Nav';
@@ -25,7 +24,7 @@ export default function page({ params }: { params: { id: string } }) {
                 <h1 className="fw-normal">
                   {massage && massage.name}
                 </h1>
-            
+              {/*  <Iconbar massages={massage} /> */}
               
               </div>
               <div className="col-md-4">

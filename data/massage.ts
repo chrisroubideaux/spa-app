@@ -1,6 +1,6 @@
 // types.ts
 
-export interface Massage {
+export type  Massage = {
     id: number;
     service: string;
     name: string;
@@ -25,6 +25,7 @@ export interface Massage {
     slot7: string;
     days: string;
   }
+
 
 
   

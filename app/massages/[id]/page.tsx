@@ -3,13 +3,19 @@
 import Navbar from '@/components/navbar/Navbar';
 import Nav from '@/components/massages/Nav';
 import Bio from '@/components/massages/Bio';
+import Iconbar from '@/components/massages/Iconbar';
 import Footer from '@/components/misc/Footer';
 import massages from '@/data/massages';
-import Iconbar from '@/components/massages/Iconbar';
 
 
-export default function page({ params }: { params: { id: string } }) {
+
+export default function Page({ params }: { params: { id: string } }) {
   const massage = massages.find((massage) => massage.id === Number(params.id));
+
+  if (!massage) {
+    // return message not found
+    return <div>Massage not found</div>;
+  }
 
   return (
     <>

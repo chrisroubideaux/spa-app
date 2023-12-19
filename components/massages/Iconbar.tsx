@@ -11,7 +11,7 @@ type Massages = {
 }
 
 
-export default function Iconbar ({massages}: {massages: any})  {
+export default function Iconbar ({massages}: Massages )  {
   return (
     <ul className="nav list-inline hstack gap-4 flex-wrap  mt-4">
       <li className="nav-item">
