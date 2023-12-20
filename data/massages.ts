@@ -1,4 +1,5 @@
 // data for massage page
+
 type Massages = {
   id: number;
   service: string;
@@ -41,7 +42,7 @@ const massages: Massages[] = [
     price3: "60 min couple - $300",
     image: "/massages/card.png",
     image2: "",
-    photo: "/massages/massage1.png",
+    photo: "/massages/bio.png",
     slot: '11:00am 12:00pm',
     slot2: '12:00pm 1:00pm',
     slot3: '1:00pm 2:00pm',
@@ -66,7 +67,7 @@ const massages: Massages[] = [
     price3: "60 min couple - $300",
     image: "/massages/card2.png",
     image2: "",
-    photo: "/massages/massage2.png",
+    photo: "/massages/bio2.png",
     slot: '11:00am 12:00pm',
     slot2: '12:00pm 1:00pm',
     slot3: '1:00pm 2:00pm',
@@ -91,7 +92,7 @@ const massages: Massages[] = [
     price3: "60 min couple - $300",
     image: "/massages/card4.png",
     image2: "",
-    photo: "/massages/massage3.png",
+    photo: "/massages/bio4.png",
     slot: '11:00am 12:00pm',
     slot2: '12:00pm 1:00pm',
     slot3: '1:00pm 2:00pm',
@@ -116,7 +117,7 @@ const massages: Massages[] = [
     price3: "60 min couple - $300",
     image: "/massages/card5.png",
     image2: "",
-    photo: "/massages/massage4.png",
+    photo: "/massages/bio3.png",
     slot: '11:00am 12:00pm',
     slot2: '12:00pm 1:00pm',
     slot3: '1:00pm 2:00pm',

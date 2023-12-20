@@ -6,6 +6,7 @@ import {  Raleway, Montserrat } from 'next/font/google';
 import '@/styles/globals.css';
 import '@/styles/hero.css';
 import '@/styles/cards.css';
+import '@/styles/modal.css';
 import '@/styles/form.css';
 
 
