@@ -1,0 +1,1 @@
+// nails [id] page

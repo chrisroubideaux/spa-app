@@ -18,11 +18,11 @@ type Facials = {
   slot5: string;
   slot6: string;
   slot7: string;
-
+  
   };
 };
 
-export default function Bookings({facials}: Facials ) {
+export default function Bookings({ facials }: Facials ) {
  
   const handleDayClick = (date: Date) => {
     // Handle the selected date
