@@ -1,7 +1,6 @@
 // express app
 import express, { Request, Response, NextFunction } from 'express';
 
-// Create an Express app
 const app = express();
 const port = 3001;
 
@@ -11,10 +10,11 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   next();
 });
 
-// Define a route
+// Routes
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello, Express with TypeScript!');
 });
+
 
 // Start the server
 app.listen(port, () => {

@@ -2,7 +2,6 @@
 import Link from 'next/link';
 import { FaAngleDown, FaSearch } from 'react-icons/fa';
 
-
 export default function Navbar() {
   return (
     <>      
@@ -23,7 +22,7 @@ export default function Navbar() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navigation">
             <ul className="navbar-nav navbar-nav-hover mx-auto">
@@ -44,21 +43,20 @@ export default function Navbar() {
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" href="/facials/">
-                      Facials
+                    <Link className="dropdown-item" href="/body-treatments/">
+                      Body
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" href="/nails/">
-                      Nails
+                    <Link className="dropdown-item" href="/facials/">
+                      facials
                     </Link>
                   </li>
                   <li>
                     <Link className="dropdown-item" href="/waxing/">
                       Waxing
                     </Link>
-                  </li>
-                  
+                  </li>                  
                 </ul>
               </li>
               <li className="nav-item px-3">
@@ -81,12 +79,11 @@ export default function Navbar() {
                   Login
                 </Link>
               </li>
-            </ul>
-            
+            </ul>            
           </div>
         </div>
-      </nav>   
-        
+      </nav>           
     </>
   );
 }
+

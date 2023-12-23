@@ -15,7 +15,7 @@ export default function Navbar() {
                   <Link href="/">home</Link>
                 </li>
                 <li className="breadcrumb-item">
-                  <Link href="/servcies">Massages</Link>
+                  <Link href="/body-treatments">Body Treatments</Link>
                 </li>
                 <li className="breadcrumb-item active" aria-current="page">
                   <Link href="/servcies">Details</Link>
