@@ -1,147 +1,147 @@
 // waxing data
 
 type Waxings = {
-    id: number;
-    service: string;
-    name: string;
-    bio: string;
-    experience: string; 
-    phone: string;
-    email: string;
-    title: string;
-    description: string;
-    price: string;
-    addOn1: string;
-    addOn2: string;
-    addOn3: string;
-    addOn4: string;
-    addOn5: string;
-    image: string;
-    image2: string;
-    photo: string;
-    slot: string;
-    slot2: string;
-    slot3: string;
-    slot4: string;
-    slot5: string;
-    slot6: string;
-    slot7: string;
-    days: string;
-  };
+  id: number;
+  service: string;
+  name: string;
+  bio: string;
+  experience: string; 
+  phone: string;
+  email: string;
+  title: string;
+  description: string;
+  price: string;
+  addOn1: string;
+  addOn2: string;
+  addOn3: string;
+  addOn4: string;
+  addOn5: string;
+  image: string;
+  image2: string;
+  photo: string;
+  slot: string;
+  slot2: string;
+  slot3: string;
+  slot4: string;
+  slot5: string;
+  slot6: string;
+  slot7: string;
+  days: string;
+};
       
-  const waxings: Waxings [] = [ 
-    {
-      id: 1,
-      service: "waxing",
-      name: "Renene Nelson",
-      bio: "With over a decade of experience, Kayla is an expert in body wrap treatments, providing personalized services tailored to meet individual needs and ensure a rejuvenating experience.",
-      email: "renenenelson@gmail.com",
-      phone: "555-555-5555",
-      experience: "14 years experience",
-      title: " basic waxing",
-      description: "Experience the indulgence of our body wrap treatments, meticulously designed to offer detoxification, relaxation, and rejuvenation. Our treatments utilize high-quality products and techniques to provide a deeply nourishing experience.",
-      price: "$ 75",
-      addOn1: "", 
-      addOn2: "",
-      addOn3: "",
-      addOn4: "",
-      addOn5: "",
-      image: "/waxing/card.png",
-      image2: "",
-      photo: "/waxing/bio.png",
-      slot: ' 11:00am 12:00pm',
-      slot2: '12:00pm 1:00pm',
-      slot3: '1:00pm 2:00pm',
-      slot4: '2:00pm 3:00pm',
-      slot5: '3:00pm 4:00pm',
-      slot6: '4:00pm 5:00pm',
-      slot7: '5:00pm 6:00pm',
-      days: 'Monday-Friday',
-    },
-    {
-      id: 2,
-      service: "waxing",
-      name: "Annie Parker",
-      bio: "With five years of expertise, Chelsea excels in providing rejuvenating back peel treatments tailored to your skin's needs, ensuring a relaxing and revitalizing experience.",
-      email:"annieparker@gmail.com",
-      phone: "555-555-5555",
-      experience: "5 years experience",
-      title: "upper body waxing",
-      description: "Experience the indulgence of our back peel treatments, expertly designed to exfoliate and rejuvenate your skin. Our treatment utilizes premium products and techniques to provide a refreshed and glowing complexion.",
-      price: "$ 50",
-      addOn1: "", 
-      addOn2: "",
-      addOn3: "",
-      addOn4: "",
-      addOn5: "",
-      image: "/body/card2.png",
-      image2: "",
-      photo: "/massages/bio2.png",
-      slot:  '11:00am 12:00pm',
-      slot2: '12:00pm 1:00pm',
-      slot3: '1:00pm 2:00pm',
-      slot4: '2:00pm 3:00pm',
-      slot5: '3:00pm 4:00pm',
-      slot6: '4:00pm 5:00pm',
-      slot7: '5:00pm 6:00pm',
-      days: 'Monday-Friday',
-  },
+const waxings: Waxings [] = [ 
   {
-      id: 3,
-      service: "waxing",
-      name: " Ari Swift",
-      bio: "With three years of dedicated practice, Becky excels in offering nourishing and invigorating seaweed wrap treatments, aiming to revitalize your body and restore its natural balance.",
-      email: "swiftari@gmail.com",
-      phone: "555-555-5555",
-      experience: "7 years experience",
-      title: "lower body waxing",
-      description: "Indulge in our seaweed wrap, a detoxifying and hydrating treatment utilizing premium seaweed extracts to nourish your skin and promote relaxation. Experience a renewed sense of vitality and smooth, supple skin.",
-      price: " $100",
-      addOn1: "", 
-      addOn2: "",
-      addOn3: "",
-      addOn4: "",
-      addOn5: "",
-      image: "/body/card3.png",
-      image2: "",
-      photo: "/body/bio3.png",
-      slot: '11:00am 12:00pm',
-      slot2: '12:00pm 1:00pm',
-      slot3: '1:00pm 2:00pm',
-      slot4: '2:00pm 3:00pm',
-      slot5: '3:00pm 4:00pm',
-      slot6: '4:00pm 5:00pm',
-      slot7: '5:00pm 6:00pm',
-      days: 'Monday-Friday',
-   }, 
-  {
-      id: 4,
-      service: "waxing",
-      name: "Alison Mckinney",
-      bio: "Jessica, with four years of hands-on experience, specializes in rejuvenating body scrub treatments designed to exfoliate and revitalize your skin.",
-      experience: "4 years experience",
-      phone: "555-555-5555",
-      title: "braziian waxing",
-      email:"mckinneyalison@gmail.com",
-      description: "Indulge in our invigorating body scrub treatment, meticulously crafted to exfoliate and renew your skin, leaving it smooth, radiant, and revitalized.",
-      price: "30 min -",
-      addOn1: "deluxe - $50", 
-      addOn2: "gold - $80",
-      addOn3: "",
-      addOn4: "",
-      addOn5: "",
-      image: "/body/card4.png",
-      image2: "",
-      photo: "/body/bio4.png",
-      slot: '11:00am 12:00pm',
-      slot2: '12:00pm 1:00pm',
-      slot3: '1:00pm 2:00pm',
-      slot4: '2:00pm 3:00pm',
-      slot5: '3:00pm 4:00pm',
-      slot6: '4:00pm 5:00pm',
-      slot7: '5:00pm 6:00pm',
-      days: 'Monday-Friday',
-    },  
-  ];
+    id: 1,
+    service: "waxing",
+    name: "Renene Nelson",
+    bio: "With over a decade of experience, Renene specializes in various waxing treatments, providing exceptional services tailored to individual preferences for a comfortable and rejuvenating experience.",
+    email: "renenenelson@gmail.com",
+    phone: "555-555-5555",
+    experience: "14 years experience",
+    title: "basic waxing",
+    description: "Indulge in our basic waxing package offering precise hair removal for lip, chin, nose, and eyebrows. Elevate your experience by upgrading to a comprehensive face waxing for an additional $50, ensuring a flawless and polished look.",
+    price: "$30",
+    addOn1: "eyebrow - $30 add on ", 
+    addOn2: "nose - $30 add on",
+    addOn3: "lip - $30 add on",
+    addOn4: "chin- 30 add on",
+    addOn5: "face waxing - $50 includes (lip, chin, nose, eyebrows)",
+    image: " /waxing/card.png",
+    image2: "",
+    photo: "/waxing/bio.png",
+    slot:  '11:00am 12:00pm',
+    slot2: '12:00pm 1:00pm',
+    slot3: '1:00pm 2:00pm',
+    slot4: '2:00pm 3:00pm',
+    slot5: '3:00pm 4:00pm',
+    slot6: '4:00pm 5:00pm',
+    slot7: '5:00pm 6:00pm',
+    days: 'Monday-Friday',
+},
+ {
+    id: 2,
+    service: "waxing",
+    name: "Annie Parker",
+    bio: "Annie Parker brings five years of expertise in providing top-notch upper body waxing treatments designed to enhance your skin's radiance and smoothness, ensuring a revitalizing and comforting experience.",
+    email:"annieparker@gmail.com",
+    phone: "555-555-5555",
+    experience: "5 years experience",
+    title: "upper body waxing",
+    description: "Indulge in our upper body waxing treatments, focusing on enhancing your skin's tone and texture. Experience our specialized back peel treatments, meticulously crafted to exfoliate and rejuvenate your skin, leaving you with a refreshed and radiant complexion. You can also opt for additional add-ons like full chest, half arm, full arm, and underarm treatments for personalized waxing care.",
+    price: "  $40 ",
+    addOn1: " full chest - $40", 
+    addOn2: " half arm - $40",
+    addOn3: " full arm - $50",
+    addOn4: " under arm - $40",
+    addOn5: "back - $80 add on",
+    image:  "/body/card2.png",
+    image2: "",
+    photo: "/body/bio2.png",
+    slot: '11:00am 12:00pm',
+    slot2: '12:00pm 1:00pm',
+    slot3: '1:00pm 2:00pm',
+    slot4: '2:00pm 3:00pm',
+    slot5: '3:00pm 4:00pm',
+    slot6: '4:00pm 5:00pm',
+    slot7: '5:00pm 6:00pm',
+    days: 'Monday-Friday',
+},
+ {
+    id: 3,
+    service: "waxing",
+    name: " Ari Swift",
+    bio: "Ari Swift brings seven years of experience in providing enriching and revitalizing lower body waxing treatments designed to pamper your skin and restore its natural beauty.",
+    email: "swiftari@gmail.com",
+    phone: "555-555-5555",
+    experience: "7 years experience",
+    title: "lower body waxing",
+    description: "Experience our lower body waxing treatments that include nourishing seaweed wrap elements, meticulously crafted to detoxify and hydrate your skin. Our premium seaweed extracts ensure skin rejuvenation and relaxation, leaving you feeling revitalized and with smooth, supple skin. Choose from our range of add-ons, including half leg, full leg, feet treatment, both legs bundle, or a combined legs and feet bundle for complete pampering.",
+    price: " $40",
+    addOn1: "half leg - $40 ", 
+    addOn2: "full leg - $80 ",
+    addOn3: "feet - $20 per foot ",
+    addOn4: "both legs - $130",
+    addOn5: "bikini - $50 add on",
+    image: "/body/card3.png",
+    image2: "",
+    photo: "/body/bio3.png",
+    slot: '11:00am 12:00pm',
+    slot2: '12:00pm 1:00pm',
+    slot3: '1:00pm 2:00pm',
+    slot4: '2:00pm 3:00pm',
+    slot5: '3:00pm 4:00pm',
+    slot6: '4:00pm 5:00pm',
+    slot7: '5:00pm 6:00pm',
+    days: 'Monday-Friday',
+ }, 
+ {
+    id: 4,
+    service: "waxing",
+    name: "Alison Mckinney",
+    bio: "Alison brings four years of hands-on expertise specializing in Brazilian waxing treatments designed to provide a smooth and rejuvenated skin experience.",
+    experience: "4 years experience",
+    phone: "555-555-5555",
+    title: "braziian waxing",
+    email:"mckinneyalison@gmail.com",
+    description: "Experience our Brazilian waxing treatment, meticulously crafted to offer a smooth and radiant skin experience. Our treatment ensures efficient hair removal with a focus on skin rejuvenation, leaving you feeling refreshed and confident.",
+    price: " $80",
+    addOn1: "brazilian - $80", 
+    addOn2: "brozilian - $80",
+    addOn3: "brazillian half off with purchase of gift card - $40",
+    addOn4: " brozilian half off with purchase of gift card - $40",
+    addOn5: "",
+    image: "/body/card4.png",
+    image2: "",
+    photo: "/body/bio4.png",
+    slot: '11:00am 12:00pm',
+    slot2: '12:00pm 1:00pm',
+    slot3: '1:00pm 2:00pm',
+    slot4: '2:00pm 3:00pm',
+    slot5: '3:00pm 4:00pm',
+    slot6: '4:00pm 5:00pm',
+    slot7: '5:00pm 6:00pm',
+    days: 'Monday-Friday',
+  },  
+];
       
-  export default waxings;
+export default waxings;

@@ -8,8 +8,8 @@ import {
   FaBath,
 } from 'react-icons/fa';
 
-type Treatments = {
-  treatments: {
+type Waxings = {
+  waxings: {
   id: number;
   service: string;
   title: string;
@@ -20,21 +20,21 @@ type Treatments = {
   };
 }
 
-const Cards = ({ treatments }: Treatments) => {
+const Cards = ({ waxings }: Waxings) => {
   return (
     <>
       <div className="card">
-        <Link className="card-link" href={`/body-treatments/${treatments.id}`}  >
-          <img className=" img-fluid" src={treatments.image} alt="massages" /> 
+        <Link className="card-link" href={`/waxings-treatments/${waxings.id}`}  >
+          <img className=" img-fluid" src={waxings.image} alt="massages" /> 
         </Link>
         <div className="card-body">
          
           <h6>
           <FaBuilding className="social-icon mt-n1 me-2 mt-1" />{' '}
-            {treatments.title}</h6>
+            {waxings.title}</h6>
           <h6>
           <FaMoneyBillWave className="social-icon mt-n1 me-2 mt-1" />
-          {treatments.price}
+          {waxings.price}
           </h6>
         </div>
       </div>
