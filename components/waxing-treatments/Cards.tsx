@@ -24,7 +24,7 @@ const Cards = ({ waxings }: Waxings) => {
   return (
     <>
       <div className="card">
-        <Link className="card-link" href={`/waxings-treatments/${waxings.id}`}  >
+        <Link className="card-link" href={`/waxing-treatments/${waxings.id}`}  >
           <img className=" img-fluid" src={waxings.image} alt="massages" /> 
         </Link>
         <div className="card-body">

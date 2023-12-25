@@ -1,5 +1,4 @@
 // body page
-// facials page
 
 import Navbar from '@/components/navbar/Navbar';
 import Cover from '@/components/body-treatments/Cover';

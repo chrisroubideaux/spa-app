@@ -5,8 +5,8 @@ import Image from 'next/image';
 import Calendar from 'react-calendar';
 //import axios from 'axios';
 
-type Waxings = {
-  waxings: {
+type Treatments = {
+  treatments: {
   id: number;
   photo: string;
   name: string;
@@ -22,7 +22,7 @@ type Waxings = {
   };
 };
 
-export default function Bookings({ waxings }: Waxings ) {
+export default function Bookings({ treatments }: Treatments ) {
  
   const handleDayClick = (date: Date) => {
     // Handle the selected date
@@ -112,7 +112,7 @@ export default function Bookings({ waxings }: Waxings ) {
               <div className="">
                 <div className="list-group-item list-group-item-action d-flex gap-3 py-3 ">
                   <Image
-                    src={waxings.photo}
+                    src={treatments.photo}
                     className="avatar"
                     width={200}
                     height={100}
@@ -120,25 +120,25 @@ export default function Bookings({ waxings }: Waxings ) {
                   />
                   <div className="d-flex gap-2 w-100 justify-content-between mt-1">
                     <div className="">
-                      <h6 className="fs-5 me-2">{waxings.name}</h6>
+                      <h6 className="fs-5 me-2">{treatments.name}</h6>
                       <h6 className="">10-am 6pm</h6>
                     </div>
                     <small className="opacity-50 text-nowrap">
-                      <h6 className="">{waxings.days}</h6>
-                      <h6 className="">{waxings.slot}</h6>
+                      <h6 className="">{treatments.days}</h6>
+                      <h6 className="">{treatments.slot}</h6>
                       {/* select time slot component */}
                       <select
                       //   value={selectedSlot}
                       //   onChange={(e) => setSelectedSlot(e.target.value)}
                       >
                         <option value="">Select a time slot</option>
-                        <option value={waxings.slot}>{waxings.slot}</option>
-                        <option value={waxings.slot2}>{waxings.slot2}</option>
-                        <option value={waxings.slot3}>{waxings.slot3}</option>
-                        <option value={waxings.slot4}>{waxings.slot4}</option>
-                        <option value={waxings.slot5}>{waxings.slot5}</option>
-                        <option value={waxings.slot6}>{waxings.slot6}</option>
-                        <option value={waxings.slot7}>{waxings.slot7}</option>
+                        <option value={treatments.slot}>{treatments.slot}</option>
+                        <option value={treatments.slot2}>{treatments.slot2}</option>
+                        <option value={treatments.slot3}>{treatments.slot3}</option>
+                        <option value={treatments.slot4}>{treatments.slot4}</option>
+                        <option value={treatments.slot5}>{treatments.slot5}</option>
+                        <option value={treatments.slot6}>{treatments.slot6}</option>
+                        <option value={treatments.slot7}>{treatments.slot7}</option>
                       </select>
                     </small>
                   </div>

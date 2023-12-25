@@ -53,7 +53,7 @@ export default function Navbar() {
                     </Link>
                   </li>
                   <li>
-                    <Link className="dropdown-item" href="/waxing/">
+                    <Link className="dropdown-item" href="/waxing-treatments/">
                       Waxing
                     </Link>
                   </li>                  

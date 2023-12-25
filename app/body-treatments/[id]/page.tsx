@@ -1,5 +1,5 @@
 // body treatment [id] page
-//  [id] detail page
+
 'use client';
 import Navbar from '@/components/navbar/Navbar';
 import Nav from '@/components/body-treatments/Nav';
