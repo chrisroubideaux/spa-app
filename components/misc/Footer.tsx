@@ -5,15 +5,14 @@ import { FaFacebook, FaInstagram, FaTiktok, FaYoutube, FaAngleDown, } from 'reac
 export default function Footer() {
 
   return (
-    <div>
-      <footer className=" h-80">
+    <div className="py-5">
+      <footer className=" h-100 py-5">
         <div className="container-fluid mt-7">
           <div className="row">
             <div className="col-xxl-5 col-lg-5 col-md-7">
               <div className="mb-7 mb-xl-0">
                 <div className="">
                   <Link href="#">
-
                  {/* img */}
                   </Link>
                 </div>

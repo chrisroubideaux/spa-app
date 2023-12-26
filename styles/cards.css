@@ -15,15 +15,9 @@
 }
   
 .card-body {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  color: #000;
-  overflow: hidden;
-  position: relative;
-  transition: transform 0.5s;
+  border-radius: 10px;
+  margin: auto;
+  border-style: none;
 }
       
 /* cards */

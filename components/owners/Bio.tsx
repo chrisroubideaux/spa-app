@@ -1,20 +1,19 @@
-// bio component
-
+// owner bio component
 import Image from 'next/image';
 
-type Massages = {
-  massages: {
+type Owners = {
+  owners: {
   id: number;
   photo: string;
   };
 }
 
-export default function Bio ({ massages }: Massages ) {
+export default function Bio ({ owners }: Owners ) {
   return (
     <div>
       <Image
         className="img-fluid image"
-        src={massages.photo}
+        src={owners.photo}
         width={500}
         height={500}
         alt="Test"

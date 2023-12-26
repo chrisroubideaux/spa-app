@@ -37,7 +37,9 @@ export default function Page({ params }: { params: { id: string } }) {
                 <div className="d-flex justify-content-end mt-5">
                   <p className=" lh-3 fs-5 m-1">{facial && facial.description}</p>
                 </div>
-                <Bookings facials={facial} />
+                <div className="mt-4">
+                  <Bookings facials={facial} />
+                </div>
               </div>
             </div>
           </div>          

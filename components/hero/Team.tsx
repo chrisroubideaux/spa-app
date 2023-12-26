@@ -1,16 +1,11 @@
-// hero compoent for massages page
 'use client';
 // cover component
 import React, { useEffect, useState } from 'react';
 
 export default function Cover() {
-  // S
+  // s
   const [currentStringIndex, setCurrentStringIndex] = useState(0);
-  const textStrings = [
-    'Welcome to',
-    'we are the best spa in town',
-    'we specialize in giving the ultimate luxurious spa experience ',
-  ];
+  const textStrings = ['Welcome to club ivy', 'spa and relaxation', 'we specialize in giving the ultimate luxurious spa experience '];
   const typedText = textStrings[currentStringIndex];
 
   useEffect(() => {
@@ -27,17 +22,17 @@ export default function Cover() {
 
   return (
     <>
-      <header className="position-relative">
+      <header className="position-relative">        
         <div
           className=" opacity-dark "
           style={{
-            backgroundImage:
-              ' linear-gradient(#2d3245b3, #04091eb3), url(../hero/waxing.png)',
+            backgroundImage: ' linear-gradient(#2d3245b3, #04091eb3), url(../hero/hero3.png)',
             height: '32rem',
             backgroundSize: 'cover',
             borderRadius: '30px',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
+           
           }}
         >
           <span className="mask bg-gradient-primary"></span>
@@ -45,19 +40,19 @@ export default function Cover() {
             <div className="row">
               <div className="col-lg-8 text-start mt-4">
                 <h1 className="mt-4">
-                 
-                  <span className="">{typedText}</span>
+                  Welcome to <span className="text-white">To the best spa experiance</span>
+                  <span className="text-white">{typedText}</span>
                 </h1>
-                <p className="lead text-white text-start pe-5 mt-4">
-                  Now you can enjoy the best spa experiance. We offer a wide
-                  range of services to suit your needs.
+                <p className="lead text-dark text-start pe-5 mt-4">
+                 Now you can enjoy the best spa experiance. We offer a wide range of services to suit your needs.
                 </p>
                 <br />
+                
               </div>
             </div>
           </div>
         </div>
-        {/* 
+         {/* 
         <div className="position-absolute w-100 z-index-1 bottom-0">
           <svg
             className="waves"

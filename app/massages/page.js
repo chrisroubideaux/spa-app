@@ -4,7 +4,7 @@ import Navbar from '@/components/navbar/Navbar';
 import Cover from '@/components/massages/Cover';
 import Banner from '@/components/massages/Banner';
 import Cards from '@/components/massages/Cards';
-import Reviews from '@/components/massages/Reviews';
+import Reviews from '@/components/misc/Reviews';
 import Details from '@/components/misc/Details';
 import Footer from '@/components/misc/Footer';
 

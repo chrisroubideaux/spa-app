@@ -60,7 +60,7 @@ export default function Navbar() {
                 </ul>
               </li>
               <li className="nav-item px-3">
-                <Link className="nav-link" href="/staff/">
+                <Link className="nav-link" href="/team/">
                   Staff
                 </Link>
               </li>

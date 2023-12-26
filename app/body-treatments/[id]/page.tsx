@@ -23,7 +23,7 @@ export default function Page({ params }: { params: { id: string } }) {
   return (
     <>
       <Navbar />
-      <div className="layout h-100">
+      <div className="layout mt-3 h-100">
         <div className="container my-5">
           <div className="container-fluid">
             <Nav />
@@ -40,7 +40,9 @@ export default function Page({ params }: { params: { id: string } }) {
                 <div className="d-flex justify-content-end mt-5">
                   <p className=" lh-3 fs-5 m-1">{treatment && treatment.description}</p>
                 </div>
-                <Bookings treatments={treatment} />
+                <div className="mt-4">
+                  <Bookings treatments={treatment} />
+                </div>
               </div>
             </div>
           </div>          

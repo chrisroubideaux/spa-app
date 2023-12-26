@@ -3,7 +3,7 @@ import { FaHandshake, FaBoxTissue } from 'react-icons/fa';
 export default function Details() {
   return (
     <>
-      <div className="container px-5 py-5 my-5">
+      <div className="container px-5 py-5 my-5 mt-5">
         <h1 className="">What we offer!</h1>
         <hr className="hr" />
         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">

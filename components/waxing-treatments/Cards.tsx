@@ -1,4 +1,5 @@
-// card component for massages
+// card component for wax treatments
+
 import Link from 'next/link';
 import {
   FaBuilding,
@@ -21,6 +22,7 @@ type Waxings = {
 }
 
 const Cards = ({ waxings }: Waxings) => {
+
   return (
     <>
       <div className="card">
@@ -28,13 +30,12 @@ const Cards = ({ waxings }: Waxings) => {
           <img className=" img-fluid" src={waxings.image} alt="massages" /> 
         </Link>
         <div className="card-body">
-         
           <h6>
-          <FaBuilding className="social-icon mt-n1 me-2 mt-1" />{' '}
+            <FaBuilding className="social-icon mt-n1 me-2 mt-1" />{' '}
             {waxings.title}</h6>
           <h6>
-          <FaMoneyBillWave className="social-icon mt-n1 me-2 mt-1" />
-          {waxings.price}
+            <FaMoneyBillWave className="social-icon mt-n1 me-2 mt-1" />
+            {waxings.price}
           </h6>
         </div>
       </div>
