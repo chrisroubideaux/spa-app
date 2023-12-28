@@ -7,6 +7,8 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
 
+// Import routes
+//const authRoutes = require('./routes/auth');
 
 // Load environment variables from .env file
 require('dotenv').config();
@@ -80,7 +82,7 @@ function verifyToken(req, res, next) {
 }
 */
 }
-// Configure session middleware (optional if you're using JWT)
+// Configure session middleware
 const sessionMiddleware = session({
   secret: process.env.SESSION_SECRET || 'secret-key',
   resave: false,
@@ -97,6 +99,7 @@ app.use(
     },
   })
 );
+
 app.use(sessionMiddleware);
 // Middleware to log requests
 app.use((req: Request, res: Response, next: NextFunction) => {
@@ -108,6 +111,17 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello, Express with TypeScript!');
 });
+
+
+// Authentication-related routes
+
+// auth routes and profile routes
+//app.use('/auth', authRoutes);
+
+//app.post('/auth', authRoutes);
+
+//app.use('/user', userRoutes);
+
 
 
 // Start the server
