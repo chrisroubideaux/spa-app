@@ -55,46 +55,46 @@ userRoutes.get('/:id', verifyToken, async (req: Request, res: Response) => {
 
 // PUT (update) user profile (protected route)
 userRoutes.put('/', verifyToken, async (req: Request<{}, {}, { fullName: string, email: string, newPassword: string }>, res: Response) => {
-    try {
-      const userId = (req as any).userId;
-      const { fullName, email, newPassword } = req.body;
-  
-      // Assuming the update was successful, perform the logic to update the user
-      const user = await User.findById(userId);
-  
-      if (!user) {
-        return res.status(404).json({ error: 'User not found' });
-      }
-  
-      if (fullName) {
-        user.fullName = fullName;
-      }
-      if (email) {
-        user.email = email;
-      }
-      if (newPassword) {
-        // Handle password update logic (hashing, etc.) as needed
-        user.password = newPassword;
-      }
-  
-      // Save the updated user data
-      await user.save();
-  
-      res.status(200).json({ message: 'User profile updated successfully', fullName }); // Including fullName in the response
+  try {
+    const userId = (req as any).userId;
+    const { fullName, email, newPassword } = req.body;
+
+    // Assuming the update was successful, perform the logic to update the user
+    const user = await User.findById(userId);
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    if (fullName) {
+      user.fullName = fullName;
+    }
+    if (email) {
+      user.email = email;
+    }
+    if (newPassword) {
+      // Handle password update logic (hashing, etc.) as needed
+      user.password = newPassword;
+    }
+
+    // Save the updated user data
+    await user.save();
+
+    res.status(200).json({ message: 'User profile updated successfully', fullName }); // Including fullName in the response
+  } catch (error) {
+    console.error('Error updating user profile:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// Inside the userRoutes.delete() handler, pass both userId and res to deleteUserController
+userRoutes.delete('/', verifyToken, async (req: Request, res: Response) => {
+  try {
+    const userId = (req as any).userId;
+        await deleteUserController(userId, res); // Pass 'res' as the second argument
     } catch (error) {
-      console.error('Error updating user profile:', error);
+      console.error('Error deleting user profile:', error);
       res.status(500).json({ error: 'Internal server error' });
     }
   });
-
-    // Inside the userRoutes.delete() handler, pass both userId and res to deleteUserController
-    userRoutes.delete('/', verifyToken, async (req: Request, res: Response) => {
-        try {
-        const userId = (req as any).userId;
-        await deleteUserController(userId, res); // Pass 'res' as the second argument
-        } catch (error) {
-        console.error('Error deleting user profile:', error);
-        res.status(500).json({ error: 'Internal server error' });
-        }
-    });
 export default userRoutes;

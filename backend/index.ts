@@ -7,15 +7,16 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
 
+
 // Import routes
-//const authRoutes = require('./routes/auth');
+import authRoutes from './routes/auth'; 
 
 // Load environment variables from .env file
 require('dotenv').config();
 
 const app = express();
 const port = 3001;
-
+// mongoDB connection
 const mongoURI = process.env.MONGO_URI;
 
 // mongoose
@@ -82,6 +83,7 @@ function verifyToken(req, res, next) {
 }
 */
 }
+
 // Configure session middleware
 const sessionMiddleware = session({
   secret: process.env.SESSION_SECRET || 'secret-key',
@@ -101,6 +103,7 @@ app.use(
 );
 
 app.use(sessionMiddleware);
+
 // Middleware to log requests
 app.use((req: Request, res: Response, next: NextFunction) => {
   console.log(`${req.method} ${req.path}`);
@@ -113,12 +116,10 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 
-// Authentication-related routes
-
 // auth routes and profile routes
-//app.use('/auth', authRoutes);
+app.use('/auth', authRoutes);
 
-//app.post('/auth', authRoutes);
+app.post('/auth', authRoutes);
 
 //app.use('/user', userRoutes);
 
