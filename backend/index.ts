@@ -7,8 +7,8 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
 
-
 // Import routes
+import facialRoutes from './facials/facials';
 import authRoutes from './routes/auth'; 
 
 // Load environment variables from .env file
@@ -115,6 +115,8 @@ app.get('/', (req: Request, res: Response) => {
   res.send('Hello, Express with TypeScript!');
 });
 
+// page routes
+app.use('/facials', facialRoutes);
 
 // auth routes and profile routes
 app.use('/auth', authRoutes);
