@@ -1,7 +1,7 @@
 // data for facials page
 
 type Facials = {
-  id: number;
+  _id: number;
   service: string;
   name: string;
   bio: string;
@@ -27,7 +27,7 @@ type Facials = {
     
 const facials: Facials[] = [ 
    {
-     id: 1,
+     _id: 1,
      service: "Facial",
      name: "Maddie Smith",
      bio: "With over 7 years of experience in skincare and aesthetics, Maddie is dedicated to providing personalized facial treatments that cater to individual skin types. Her expertise lies in using natural ingredients and specialized techniques to enhance skin health and promote a radiant complexion.",
@@ -51,7 +51,7 @@ const facials: Facials[] = [
      days: 'Monday-Friday',
     },
     {
-     id: 2,
+     _id: 2,
      service: "Facial",
      name: "Alicia Moore",
      bio: "With 8 years of experience in skincare and facial treatments, Alicia is passionate about delivering high-quality skincare solutions tailored to individual needs. Her expertise lies in providing deep facial treatments that target skin imperfections and promote a rejuvenated, radiant complexion.",
@@ -75,7 +75,7 @@ const facials: Facials[] = [
      days: 'Monday-Friday',
     },
     {
-     id: 3,
+     _id: 3,
      service: "Facial",
      name: "Tracy Wilson",
      bio: "With 7 years of experience in skincare and beauty treatments, Tracy specializes in providing advanced facial treatments tailored to enhance skin health and radiance. Her commitment to skincare excellence and personalized care ensures clients achieve optimal results.",
@@ -99,7 +99,7 @@ const facials: Facials[] = [
      days: 'Monday-Friday',
     }, 
     {
-      id: 4,
+      _id: 4,
       service: "Facial",
       name: "Rayven Grimes",
       bio: "With 4 years of experience in skincare and facial treatments, Rayven specializes in providing customized deluxe facial services. Her dedication to tailoring treatments ensures clients receive personalized care for their skincare needs.",

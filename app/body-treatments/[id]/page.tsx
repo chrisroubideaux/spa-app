@@ -2,10 +2,10 @@
 
 'use client';
 import Navbar from '@/components/navbar/Navbar';
-import Nav from '@/components/body-treatments/Nav';
-import Bio from '@/components/body-treatments/Bio';
-import Bookings from '@/components/body-treatments/tours/Bookings';
-import Iconbar from '@/components/body-treatments/Iconbar';
+import Nav from '@/components/bodyTreatments/Nav';
+import Bio from '@/components/bodyTreatments/Bio';
+import Bookings from '@/components/bodyTreatments/tours/Bookings';
+import Iconbar from '@/components/bodyTreatments/Iconbar';
 import Footer from '@/components/misc/Footer';
 // data
 

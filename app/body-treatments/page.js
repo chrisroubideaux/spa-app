@@ -1,9 +1,9 @@
 // body page
 
 import Navbar from '@/components/navbar/Navbar';
-import Cover from '@/components/body-treatments/Cover';
-import Banner from '@/components/body-treatments/Banner';
-import Cards from '@/components/body-treatments/BodyTreatments';
+import Cover from '@/components/bodyTreatments/Cover';
+import Banner from '@/components/bodyTreatments/Banner';
+import Cards from '@/components/bodyTreatments/Cards';
 import Reviews from '@/components/misc/Reviews';
 import Details from '@/components/misc/Details';
 import Footer from '@/components/misc/Footer';
