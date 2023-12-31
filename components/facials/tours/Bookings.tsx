@@ -134,7 +134,7 @@ export default function Bookings({ facials }: Facials ) {
                       //   onChange={(e) => setSelectedSlot(e.target.value)}
                       >
                         <option value="">Select a time slot</option>
-                        <option value="slot">{facials && facials.slot}</option>
+                        <option value="slot">{facials.slot}</option>
                         <option value="slot">{facials.slot2}</option>
                         <option value="slot">{facials.slot3}</option>
                         <option value="slot">{facials.slot4}</option>

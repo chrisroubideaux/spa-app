@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 type Massages = {
   massages: {
-  id: number;
+  _id: number;
   service: string;
   title: string;
   price: string;
@@ -19,7 +19,7 @@ const Cards = ({ massages }: Massages) => {
   return (
     <>
       <div className="card">
-        <Link className="card-link" href={`/massages/${massages.id}`}  >
+        <Link className="card-link" href={`/massages/${massages._id}`}  >
           <img className="img img-fluid" src={massages.image} alt="massages" /> 
         </Link>
         <div className="card-body">

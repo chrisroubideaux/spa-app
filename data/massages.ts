@@ -127,7 +127,6 @@ const massages: Massages[] = [
     slot7: '5:00pm 6:00pm',
     days: 'Monday-Friday',
   },
-
  ];
   
 export default massages;

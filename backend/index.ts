@@ -7,11 +7,13 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
 
-// Import routes
+// page import routes
 import facialRoutes from './facials/facials';
+import massageRoutes from './massages/massages';
+// auth routes
 import authRoutes from './routes/auth'; 
 
-// Load environment variables from .env file
+// variables from .env file
 require('dotenv').config();
 
 const app = express();
@@ -117,6 +119,7 @@ app.get('/', (req: Request, res: Response) => {
 
 // page routes
 app.use('/facials', facialRoutes);
+app.use('/massages', massageRoutes);
 
 // auth routes and profile routes
 app.use('/auth', authRoutes);

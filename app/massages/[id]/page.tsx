@@ -1,21 +1,32 @@
 // detail page for massage page
 'use client';
+import { useState, useEffect } from 'react';
 import Navbar from '@/components/navbar/Navbar';
 import Nav from '@/components/massages/Nav';
 import Bio from '@/components/massages/Bio';
 import Bookings from '@/components/massages/tours/Bookings';
 import Iconbar from '@/components/massages/Iconbar';
 import Footer from '@/components/misc/Footer';
-import massages from '@/data/massages';
+//import massages from '@/data/massages';
+
+// axios import
+import axios from 'axios'
 
 
-export default function Page({ params }: { params: { id: string } }) {
-  const massage = massages.find((massage) => massage.id === Number(params.id));
+export default function Page({ params }: { params: { id: number } }) {
+  
+  const [massage, setMassage] = useState<any>(null);
 
-  if (!massage) {
-    // return message not found
-    return <div>Massage not found</div>;
-  }
+  // useEffect hook to fetch the massage data
+  useEffect(() => {
+    axios.get(`http://localhost:3001/massages/${params.id}`)
+      .then((response) => {
+        setMassage(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching massage data:', error);
+      });
+  }, [params.id]);
 
   return (
     <>
@@ -38,7 +49,7 @@ export default function Page({ params }: { params: { id: string } }) {
                   <p className=" lh-3 fs-5 m-1">{massage && massage.description}</p>
                 </div>
                 <div className="mt-4">
-                  <Bookings massages = {massage} />
+                  <Bookings massages= {massage} />
                 </div>
               </div>
             </div>

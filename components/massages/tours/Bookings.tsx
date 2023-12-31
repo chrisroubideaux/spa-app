@@ -7,7 +7,7 @@ import Calendar from 'react-calendar';
 
 type Massages = {
   massages: {
-  id: number;
+  _id: number;
   photo: string;
   name: string;
   days: string;
@@ -36,6 +36,8 @@ export default function Bookings({massages}: Massages ) {
 
   return (
     <>
+    { massages && (
+      <div>
       <div
         className="modal fade"
         id="exampleModalToggle"
@@ -161,7 +163,6 @@ export default function Bookings({massages}: Massages ) {
                 >
                   Book Appointment
                 </button>
-
                 {/* */}
               </div>
             </div>
@@ -175,6 +176,8 @@ export default function Bookings({massages}: Massages ) {
       >
         Book an appointment
       </button>
+    </div>
+      )} 
     </>
   );
 }

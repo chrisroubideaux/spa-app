@@ -1,5 +1,6 @@
 // massages page
-
+'use client';
+import { useState, useEffect } from 'react';
 import Navbar from '@/components/navbar/Navbar';
 import Cover from '@/components/massages/Cover';
 import Banner from '@/components/massages/Banner';
@@ -8,9 +9,35 @@ import Reviews from '@/components/misc/Reviews';
 import Details from '@/components/misc/Details';
 import Footer from '@/components/misc/Footer';
 
-import massages from '@/data/massages';
+//import massages from '@/data/massages';
+import axios from 'axios';
 
-function page() {
+type Massages = {
+  _id: number;
+  service: string;
+  title: string;
+  price: string;
+  price2: string;
+  price3: string;
+  image: string;
+};
+
+
+const Massages = () => {
+  const [massages, setMassages] = useState<Massages[]>([]);
+  
+  useEffect(() => {
+    // Make a GET request to fetch massage data from server
+    axios
+      .get('http://localhost:3001/massages')
+      .then((response) => {
+        // Update the state with the fetched massages
+        setMassages(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching massages:', error);
+      });
+  }, []);
   return (
     <>
       <Navbar />
@@ -20,7 +47,7 @@ function page() {
         <div className="container px-4 py-5">
           <div className="row row-cols-1 row-cols-1 row-cols-lg-3 row-cols-lg-4 g-4 py-4">
             {massages.map((massages) => (
-              <div key={massages.id} className="pt-4 ">
+              <div key={massages._id} className="pt-4 ">
                 <Cards massages={massages} />
               </div>
             ))}
@@ -40,4 +67,4 @@ function page() {
   );
 }
 
-export default page;
+export default Massages;

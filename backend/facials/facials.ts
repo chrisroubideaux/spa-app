@@ -1,3 +1,4 @@
+// crud operations for facials
 import express, { Request, Response } from 'express';
 import Facial from './facial'; // Importing the Facial model
 
