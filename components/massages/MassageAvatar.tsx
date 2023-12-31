@@ -3,7 +3,7 @@ import { FaEnvelope, FaFacebookF, FaInstagram, FaTiktok } from 'react-icons/fa';
 
 type Massages = {
   massages: {
-  id: number;
+  _id: number;
   title: string;
   name: string;
   email: string;
@@ -14,7 +14,7 @@ type Massages = {
 const Cards = ({ massages }: Massages) => {
   return (
     <>
-      <Link className="nav-link" href={`/massages/${massages.id}`}>
+      <Link className="nav-link" href={`/massages/${massages._id}`}>
         <div
           className="d-flex gap-2 justify-content-between m-5"
           style={{ maxWidth: '540px' }}

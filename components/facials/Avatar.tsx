@@ -4,7 +4,7 @@ import { FaEnvelope, FaFacebookF, FaInstagram, FaTiktok } from 'react-icons/fa';
 
 type Facials = {
   facials: {
-  id: number;
+  _id: number;
   title: string;
   name: string;
   email: string;
@@ -15,7 +15,7 @@ type Facials = {
 const Cards = ({ facials }: Facials) => {
   return (
     <>
-      <Link className="nav-link" href={`/facials/${facials.id}`}>
+      <Link className="nav-link" href={`/facials/${facials._id}`}>
       <div
         className="d-flex gap-2 justify-content-between m-5"
         style={{ maxWidth: '540px' }}

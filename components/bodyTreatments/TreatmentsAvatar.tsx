@@ -6,7 +6,7 @@ import { FaEnvelope, FaFacebookF, FaInstagram, FaTiktok } from 'react-icons/fa';
 
 type Treatments = {
   treatments: {
-  id: number;
+  _id: number;
   photo: string;
   name: string;
   title: string;
@@ -17,7 +17,7 @@ type Treatments = {
 export default function Card ({ treatments }: Treatments ) {
   return (
     <>
-      <Link className="nav-link" href={`/body-treatments/${treatments.id}`}>
+      <Link className="nav-link" href={`/body-treatments/${treatments._id}`}>
       <div
           className="d-flex gap-2 justify-content-between m-5"
           style={{ maxWidth: '540px' }}

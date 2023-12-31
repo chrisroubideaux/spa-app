@@ -13,7 +13,7 @@ import Footer from '@/components/misc/Footer';
 
 import axios from 'axios';
 
-type Tretments = {
+type Treatments = {
   _id: number;
   service: string;
   title: string;
@@ -22,7 +22,7 @@ type Tretments = {
 };
 
 const Treatments = () => {
-  const [treatments, setTreatments] = useState<Tretments[]>([]);
+  const [treatments, setTreatments] = useState<Treatments[]>([]);
 
   useEffect(() => {
     // Make a GET request to fetch body-treatment data from server

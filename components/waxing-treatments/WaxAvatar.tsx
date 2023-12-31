@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 type Waxings = {
   waxings: {
-  id: number;
+  _id: number;
   title: string;
   name: string;
   email: string;
@@ -15,7 +15,7 @@ type Waxings = {
 const Cards = ({ waxings }: Waxings) => {
   return (
     <>
-      <Link className="nav-link" href={`/waxing-treatments/${waxings.id}`}>
+      <Link className="nav-link" href={`/waxing-treatments/${waxings._id}`}>
       <div
         className="d-flex gap-2 justify-content-between m-5"
         style={{ maxWidth: '540px' }}
