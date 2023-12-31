@@ -7,21 +7,17 @@ import Bio from '@/components/facials/Bio';
 import Bookings from '@/components/facials/tours/Bookings';
 import Iconbar from '@/components/facials/Iconbar';
 import Footer from '@/components/misc/Footer';
-//import facials from '@/data/facials';
+// axios import
 import axios from 'axios';
 
 export default function Page ({ params }: { params: { id: number; } }) {  
- 
- // const [facial, setFacial] = useState<{ id: number; name: string; title: string; photo: string; description: string; } | null>(null);
- 
+  
   const [facial, setFacial] = useState<any>(null);
 
 // useEffect hook to fetch the facial data
 useEffect(() => {
-  // Make a GET request to fetch the facial data based on the ID
   axios.get(`http://localhost:3001/facials/${params.id}`)
     .then((response) => {
-      // Update the state with the fetched facial data
       setFacial(response.data);
     })
     .catch((error) => {
