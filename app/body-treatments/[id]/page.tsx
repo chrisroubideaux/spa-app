@@ -7,10 +7,7 @@ import Bio from '@/components/bodyTreatments/Bio';
 import Bookings from '@/components/bodyTreatments/tours/Bookings';
 import Iconbar from '@/components/bodyTreatments/Iconbar';
 import Footer from '@/components/misc/Footer';
-// data
-
-//import treatments from '@/data/treatments';
-
+// axios import
 import axios from 'axios';
 
 export default function Page({ params }: { params: { id: number } }) {

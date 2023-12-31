@@ -4,15 +4,17 @@ import { FaBriefcase, FaEnvelope, FaMobile } from 'react-icons/fa';
 
 type Waxings = {
   waxings: {
-  id: number;
-  phone: string;
-  email: string;
-  experience: string;
+   _id: number;
+   phone: string;
+   email: string;
+   experience: string;
   };
 }
 
 export default function Iconbar ({ waxings }: Waxings )  {
   return (
+    <>
+    {waxings && (
     <ul className="nav list-inline hstack gap-4 flex-wrap  mt-4">
       <li className="nav-item">
         <h6 className=" mb-2 fs-6 fw-normal">
@@ -33,5 +35,7 @@ export default function Iconbar ({ waxings }: Waxings )  {
         </h6>
       </li>
     </ul>
+    )}
+    </>
   );
 }

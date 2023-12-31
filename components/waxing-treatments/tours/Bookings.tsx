@@ -36,6 +36,8 @@ export default function Bookings({ waxings }: Waxings ) {
 
   return (
     <>
+    { waxings && (
+    <div>
       <div
         className="modal fade"
         id="exampleModalToggle"
@@ -175,6 +177,8 @@ export default function Bookings({ waxings }: Waxings ) {
       >
         Book an appointment
       </button>
+    </div>
+    )}
     </>
   );
 }

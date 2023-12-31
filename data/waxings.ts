@@ -129,7 +129,7 @@ const waxings: Waxings [] = [
     addOn2: "brozilian - $80",
     addOn3: "brazillian half off with purchase of gift card - $40",
     addOn4: " brozilian half off with purchase of gift card - $40",
-    addOn5: "",
+    addOn5: "tinting - $20 add on",
     image: "/waxings/card4.png",
     image2: "",
     photo: "/waxings/bio4.png",

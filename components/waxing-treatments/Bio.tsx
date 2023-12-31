@@ -5,11 +5,12 @@ type Waxings = {
   waxings: {
   id: number;
   photo: string;
-  };
-}
+  } | null;
+};
 export default function Bio ({ waxings }: Waxings ) {
   return (
     <div>
+      {waxings && (
       <Image
         className="img-fluid image"
         src={waxings.photo}
@@ -17,6 +18,7 @@ export default function Bio ({ waxings }: Waxings ) {
         height={500}
         alt="Test"
       />
+      )}
     </div>
   );
 }

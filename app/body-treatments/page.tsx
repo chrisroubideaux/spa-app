@@ -13,7 +13,6 @@ import Footer from '@/components/misc/Footer';
 
 import axios from 'axios';
 
-
 type Tretments = {
   _id: number;
   service: string;

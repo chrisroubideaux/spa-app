@@ -11,6 +11,7 @@ const cors = require('cors');
 import facialRoutes from './facials/facials';
 import massageRoutes from './massages/massages';
 import treatmentRoutes from './bodyTreatments/treatments';
+import waxingRoutes from './waxings/waxings';
 // auth routes
 import authRoutes from './routes/auth'; 
 
@@ -122,6 +123,7 @@ app.get('/', (req: Request, res: Response) => {
 app.use('/facials', facialRoutes);
 app.use('/massages', massageRoutes);
 app.use('/body-treatments', treatmentRoutes);
+app.use('/waxing-treatments', waxingRoutes);
 
 // auth routes and profile routes
 app.use('/auth', authRoutes);

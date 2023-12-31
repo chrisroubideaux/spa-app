@@ -11,12 +11,10 @@ import {
 
 type Waxings = {
   waxings: {
-  id: number;
+  _id: number;
   service: string;
   title: string;
   price: string;
-  price2: string;
-  price3: string;
   image: string;
   };
 }
@@ -26,8 +24,8 @@ const Cards = ({ waxings }: Waxings) => {
   return (
     <>
       <div className="card">
-        <Link className="card-link" href={`/waxing-treatments/${waxings.id}`}  >
-          <img className=" img-fluid" src={waxings.image} alt="massages" /> 
+        <Link className="card-link" href={`/waxing-treatments/${waxings._id}`}  >
+          <img className=" img-fluid" src={waxings.image} alt="waxings" /> 
         </Link>
         <div className="card-body">
           <h6>

@@ -1,25 +1,29 @@
 // waxing [id] page
-// body treatment [id] page
-
 'use client';
+import { useState, useEffect } from 'react';
 import Navbar from '@/components/navbar/Navbar';
 import Nav from '@/components/waxing-treatments/Nav';
 import Bio from '@/components/waxing-treatments/Bio';
 import Bookings from '@/components/waxing-treatments/tours/Bookings';
 import Iconbar from '@/components/waxing-treatments/Iconbar';
 import Footer from '@/components/misc/Footer';
-// data
-
-import waxings from '@/data/waxings';
+// axios import
+import axios from 'axios';
 
 
 export default function Page({ params }: { params: { id: string } }) {
-  const waxing = waxings.find((waxing) => waxing.id === Number(params.id));
+  const [waxing, setWaxing] = useState<any>(null);
 
-  if (!waxing) {
-    // return message not found
-    return <div>Page not found</div>;
-  }
+  // useEffect hook to fetch the waxing-treatment data
+  useEffect(() => {
+    axios.get(`http://localhost:3001/waxing-treatments/${params.id}`)
+      .then((response) => {
+        setWaxing(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching waxing-treatment data:', error);
+      });
+  }, [params.id]);
 
   return (
     <>
