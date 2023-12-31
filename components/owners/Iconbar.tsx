@@ -4,7 +4,7 @@ import { FaBriefcase, FaEnvelope, FaMobile } from 'react-icons/fa';
 
 type Owners = {
   owners: {
-  id: number;
+  _id: number;
   phone: string;
   email: string;
   experience: string;
@@ -12,7 +12,9 @@ type Owners = {
 }
 
 export default function Iconbar ({ owners }: Owners )  {
-  return (
+  return (   
+    <>
+    { owners && (
     <ul className="nav list-inline hstack gap-4 flex-wrap  mt-4">
       <li className="nav-item">
         <h6 className=" mb-2 fs-6 fw-normal">
@@ -29,9 +31,11 @@ export default function Iconbar ({ owners }: Owners )  {
       <li className="nav-item">
         <h6 className="fs-6 fw-normal">
           <FaBriefcase className="card-icon mt-n1 me-2" />
-          Exp:{owners.experience}
+          {owners.experience}
         </h6>
       </li>
     </ul>
+    )}  
+    </>
   );
 }

@@ -20,10 +20,24 @@ import Details from '@/components/misc/Details';
 import Reviews from '@/components/misc/Reviews';
 import Footer from '@/components/misc/Footer';
 
-import owners from '@/data/owners';
+//import owners from '@/data/owners';
 
 // axios import
 import axios from 'axios';
+
+type Owners = {
+  _id: number;
+  title: string;
+  name: string;
+  email: string;
+  phone: string;
+  experience: string; 
+  bio: string;
+  photo: string;
+  image: string;
+  image2: string; 
+}
+
 
 type Massages = {
   _id: number;
@@ -78,7 +92,22 @@ function Team() {
   const [facials, setFacials] = useState<Facials[]>([]);
   const [treatments, setTreatments] = useState<Treatments[]>([]);
   const [waxings, setWaxings] = useState<Waxings[]>([]);
-
+  const [owners, setOwners] = useState<Owners[]>([]);
+  
+  
+  // massage useEffect
+  useEffect(() => {
+    // Make a GET request to fetch facial data from server
+    axios
+      .get('http://localhost:3001/owners')
+      .then((response) => {
+        // Update the state with the fetched facials
+        setOwners(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching owners:', error);
+      });
+  }, []);
   
   // massage useEffect
   useEffect(() => {
@@ -145,9 +174,9 @@ function Team() {
         <div className="container px-4 py-5">
           <h1 className=" text-center py-5 my-5">Owners</h1>
           <div className="row row-cols-lg-5 justify-content-center gy-3 mb-4">
-            {owners.map((owner) => (
-              <div key={owner.id} className="col py-3">
-                <OwnerAvatar owners={owner} />
+            {owners.map((owners) => (
+              <div key={owners._id} className="col py-3">
+                <OwnerAvatar owners={owners} />
               </div>
             ))}
           </div>

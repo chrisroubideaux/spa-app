@@ -12,6 +12,7 @@ import facialRoutes from './facials/facials';
 import massageRoutes from './massages/massages';
 import treatmentRoutes from './bodyTreatments/treatments';
 import waxingRoutes from './waxings/waxings';
+import ownerRoutes from './owners/owners';
 // auth routes
 import authRoutes from './routes/auth'; 
 
@@ -124,6 +125,16 @@ app.use('/facials', facialRoutes);
 app.use('/massages', massageRoutes);
 app.use('/body-treatments', treatmentRoutes);
 app.use('/waxing-treatments', waxingRoutes);
+app.use('/owners', ownerRoutes);
+
+// contact page
+app.get('/contact', (req, res) => {
+  res.send('Contact page');
+});
+// about page
+app.get('/about', (req, res) => {
+  res.send('About page');
+});
 
 // auth routes and profile routes
 app.use('/auth', authRoutes);

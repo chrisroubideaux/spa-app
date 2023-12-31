@@ -107,7 +107,6 @@ export default function Footer() {
                             Waxing
                           </Link>
                         </li>
-                        
                       </ul>
                     </div>
                   </div>
@@ -229,7 +228,7 @@ export default function Footer() {
         <div className="container  ">
           <div className="row align-items-center">
             <div className="col-md-9">
-             <p>Copyright © 2023 Club Ivy</p>
+             <p>Copyright © 2024 Club Ivy</p>
             </div>
             <div className="col-md-3">
               <div className="d-flex justify-content-md-end">

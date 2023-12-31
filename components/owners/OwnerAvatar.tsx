@@ -4,18 +4,19 @@ import Link from 'next/link';
 
 type Owners = {
   owners: {
-  id: number;
+  _id: number;
   title: string;
   name: string;
   email: string;
   photo: string;
+  
  };
 }
   
 const Cards = ({ owners }: Owners) => {
   return (
     <>
-      <Link className="nav-link" href={`/owners/${owners.id}`}>
+      <Link className="nav-link" href={`/owners/${owners._id}`}>
       <div
         className=" gap-2 "
         style={{ maxWidth: '540px' }}

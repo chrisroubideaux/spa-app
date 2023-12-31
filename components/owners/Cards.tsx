@@ -4,7 +4,7 @@ import { FaEnvelope, FaFacebookF, FaInstagram, FaTiktok } from 'react-icons/fa';
 
 type Owners = {
   owners: {
-  id: number;
+  _id: number;
   name: string;
   title: string;
   email: string;
@@ -15,7 +15,7 @@ type Owners = {
 export default function Cards ({ owners }: Owners ) {
   return (
     <>
-      <Link className="nav-link" href={`/owners/${owners.id}`}>
+      <Link className="nav-link" href={`/owners/${owners._id}`}>
         <div
           className="d-flex gap-2 justify-content-between m-5"
           style={{ maxWidth: '540px' }}
