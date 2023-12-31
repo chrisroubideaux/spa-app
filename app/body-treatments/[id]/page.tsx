@@ -1,5 +1,6 @@
 // body treatment [id] page
 'use client';
+import { useState, useEffect } from 'react';
 import Navbar from '@/components/navbar/Navbar';
 import Nav from '@/components/bodyTreatments/Nav';
 import Bio from '@/components/bodyTreatments/Bio';
@@ -8,16 +9,23 @@ import Iconbar from '@/components/bodyTreatments/Iconbar';
 import Footer from '@/components/misc/Footer';
 // data
 
-import treatments from '@/data/treatments';
+//import treatments from '@/data/treatments';
 
+import axios from 'axios';
 
-export default function Page({ params }: { params: { id: string } }) {
-  const treatment = treatments.find((treatment) => treatment.id === Number(params.id));
+export default function Page({ params }: { params: { id: number } }) {
+  const [treatment, setTreatment] = useState<any>(null);
 
-  if (!treatment) {
-    // return message not found
-    return <div>Page not found</div>;
-  }
+  // useEffect hook to fetch the body-treatment data
+  useEffect(() => {
+    axios.get(`http://localhost:3001/body-treatments/${params.id}`)
+      .then((response) => {
+        setTreatment(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching body-treatment data:', error);
+      });
+  }, [params.id]);
 
   return (
     <>

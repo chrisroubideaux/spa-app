@@ -1,5 +1,6 @@
 // body page
-
+'use client';
+import { useState, useEffect } from 'react'
 import Navbar from '@/components/navbar/Navbar';
 import Cover from '@/components/bodyTreatments/Cover';
 import Banner from '@/components/bodyTreatments/Banner';
@@ -8,9 +9,34 @@ import Reviews from '@/components/misc/Reviews';
 import Details from '@/components/misc/Details';
 import Footer from '@/components/misc/Footer';
 
-import treatments from '@/data/treatments';
+//import treatments from '@/data/treatments';
 
-function page() {
+import axios from 'axios';
+
+
+type Tretments = {
+  _id: number;
+  service: string;
+  title: string;
+  price: string;
+  image: string;
+};
+
+const Treatments = () => {
+  const [treatments, setTreatments] = useState<Tretments[]>([]);
+
+  useEffect(() => {
+    // Make a GET request to fetch body-treatment data from server
+    axios
+      .get('http://localhost:3001/body-treatments')
+      .then((response) => {
+        // Update the state with the fetched body-treatments
+        setTreatments(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching body-treatments:', error);
+      });
+  }, []);
   return (
     <>
       <Navbar />
@@ -20,7 +46,7 @@ function page() {
         <div className="container px-4 py-5">
           <div className="row row-cols-1 row-cols-1 row-cols-lg-3 row-cols-lg-4 g-4 py-4">
             {treatments.map((treatments) => (
-              <div key={treatments.id} className="pt-4 ">
+              <div key={treatments._id} className="pt-4 ">
                 <Cards treatments={treatments} />
               </div>
             ))}
@@ -40,4 +66,4 @@ function page() {
   );
 }
 
-export default page;
+export default Treatments;

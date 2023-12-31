@@ -10,6 +10,7 @@ const cors = require('cors');
 // page import routes
 import facialRoutes from './facials/facials';
 import massageRoutes from './massages/massages';
+import treatmentRoutes from './bodyTreatments/treatments';
 // auth routes
 import authRoutes from './routes/auth'; 
 
@@ -120,6 +121,7 @@ app.get('/', (req: Request, res: Response) => {
 // page routes
 app.use('/facials', facialRoutes);
 app.use('/massages', massageRoutes);
+app.use('/body-treatments', treatmentRoutes);
 
 // auth routes and profile routes
 app.use('/auth', authRoutes);

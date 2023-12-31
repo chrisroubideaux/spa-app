@@ -5,11 +5,12 @@ type Treatments = {
   treatments: {
   id: number;
   photo: string;
-  };
+  } | null;
 }
 export default function Bio ({ treatments }: Treatments ) {
   return (
     <div>
+      {treatments && (
       <Image
         className="img-fluid image"
         src={treatments.photo}
@@ -17,6 +18,7 @@ export default function Bio ({ treatments }: Treatments ) {
         height={500}
         alt="Test"
       />
+      )}
     </div>
   );
 }
