@@ -1,26 +1,22 @@
-
-
-// icon bar for facial components
+// icon bar for facial components\\
 import { FaMobile, FaEnvelope, FaBriefcase } from 'react-icons/fa';
 
 type Facials = {
   facials: {
     _id: number;  
+    photo: string;
+    name: string;
     phone: string;
     email: string;
     experience: string;
-
-  } | null;
+  } 
 };
 
 export default function Iconbar({ facials }: Facials) {
-  // Check if facials is null before accessing its properties
-  if (!facials) {
-    return null; // or handle the case when facials is null
-  }
-
+ 
   return (
     <>
+    { facials && (
       <ul className="nav list-inline hstack gap-4 flex-wrap mt-4">
         <li className="nav-item">
           <h6 className="mb-2 fs-6 fw-normal">
@@ -41,6 +37,7 @@ export default function Iconbar({ facials }: Facials) {
           </h6>
         </li>
       </ul>
+      )}
     </>
   );
 }

@@ -20,13 +20,13 @@ type Facials = {
   price2: string;
   image: string;
 };
-// Add other properties of Facial here
+
 
 const Facials = () => {
   const [facials, setFacials] = useState<Facials[]>([]);
 
   useEffect(() => {
-    // Make a GET request to fetch facials from server
+    // Make a GET request to fetch facial data from server
     axios
       .get('http://localhost:3001/facials')
       .then((response) => {
@@ -37,6 +37,7 @@ const Facials = () => {
         console.error('Error fetching facials:', error);
       });
   }, []);
+  
   return (
     <>
       <Navbar />
@@ -51,7 +52,6 @@ const Facials = () => {
               </div>
             ))}
           </div>
-
           <hr className="hr" />
           <h1 className=" text-center py-5 my-5">Reviews</h1>
           <div className="">

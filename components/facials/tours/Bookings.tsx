@@ -111,7 +111,7 @@ export default function Bookings({ facials }: Facials ) {
               {/* list group component */}
               <div className="">
                 <div className="list-group-item list-group-item-action d-flex gap-3 py-3 ">
-               
+                { facials && facials.photo && (
                   <Image
                     src={facials.photo}
                     className="avatar"
@@ -119,7 +119,7 @@ export default function Bookings({ facials }: Facials ) {
                     height={100}
                     alt="..."
                   />
-                
+                )}
                   <div className="d-flex gap-2 w-100 justify-content-between mt-1">
                     <div className="">
                       <h6 className="fs-5 me-2">{facials && facials.name}</h6>
@@ -135,13 +135,15 @@ export default function Bookings({ facials }: Facials ) {
                       //   onChange={(e) => setSelectedSlot(e.target.value)}
                       >
                         <option value="">Select a time slot</option>
-                        <option value="slot">{facials.slot}</option>
-                        <option value="slot">{facials.slot2}</option>
-                        <option value="slot">{facials.slot3}</option>
-                        <option value="slot">{facials.slot4}</option>
-                        <option value="slot">{facials.slot5}</option>
-                        <option value="slot">{facials.slot6}</option>
-                        <option value="slot">{facials.slot7}</option>
+                        <option value="slot">
+                          {facials && facials.slot}
+                          </option>
+                        <option value="slot">{facials && facials.slot2}</option>
+                        <option value="slot">{facials && facials.slot3}</option>
+                        <option value="slot">{facials && facials.slot4}</option>
+                        <option value="slot">{facials && facials.slot5}</option>
+                        <option value="slot">{facials && facials.slot6}</option>
+                        <option value="slot">{facials && facials.slot7}</option>
                       </select>
                     </small>
                   </div>

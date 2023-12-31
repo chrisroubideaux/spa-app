@@ -9,7 +9,7 @@ type Facials = {
 
   } | null
 }
-export default function Bio ({facials}: Facials ) {
+export default function Bio ({ facials }: Facials ) {
   return (
     <div>
      {facials && (

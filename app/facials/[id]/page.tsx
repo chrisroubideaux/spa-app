@@ -10,22 +10,22 @@ import Footer from '@/components/misc/Footer';
 //import facials from '@/data/facials';
 import axios from 'axios';
 
-
-export default function Page ({ params }: { params: { id: number; } }) {
+export default function Page ({ params }: { params: { id: number; } }) {  
  
-  
-const [facial, setFacial] = useState<{ id: number; name: string; title: string; photo: string; description: string;} | null>(null);
+ // const [facial, setFacial] = useState<{ id: number; name: string; title: string; photo: string; description: string; } | null>(null);
+ 
+  const [facial, setFacial] = useState<any>(null);
 
-
+// useEffect hook to fetch the facial data
 useEffect(() => {
-  // Make a GET request to fetch the product data based on the ID
+  // Make a GET request to fetch the facial data based on the ID
   axios.get(`http://localhost:3001/facials/${params.id}`)
     .then((response) => {
-      // Update the state with the fetched product data
+      // Update the state with the fetched facial data
       setFacial(response.data);
     })
     .catch((error) => {
-      console.error('Error fetching product data:', error);
+      console.error('Error fetching facial data:', error);
     });
 }, [params.id]);
 
@@ -43,18 +43,15 @@ useEffect(() => {
                 {facial && facial.name}
                 </h1>
                 <Bio facials={facial} />
-               {/*  <Iconbar facials={facial} /> */}
+                 <Iconbar facials={facial} /> 
               </div>
               <div className="col-md-4">
-                 <h4 className="mt-3 fw-normal">{facial && facial.title}</h4>
-
+                <h4 className="mt-3 fw-normal">{facial && facial.title}</h4>
                 <div className="d-flex justify-content-end mt-5">
                   <p className=" lh-3 fs-5 m-1">{facial && facial.description}</p>
                 </div>
                 <div className="mt-4">
-                  {/*
-                  <Bookings facials={facial} /> 
-                  */}
+                  <Bookings facials={facial} />
                 </div>
               </div>
             </div>
