@@ -16,7 +16,7 @@ export default function Page ({ params }: { params: { id: number; } }) {
 
 // useEffect hook to fetch the facial data
 useEffect(() => {
-  axios.get(`ttps://ivy-server-1f33e818883d.herokuapp.com/facials/${params.id}`)
+  axios.get(`https://ivy-server-1f33e818883d.herokuapp.com/facials/${params.id}`)
     .then((response) => {
       setFacial(response.data);
     })
