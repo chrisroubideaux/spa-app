@@ -28,7 +28,7 @@ const Facials = () => {
   useEffect(() => {
     // Make a GET request to fetch facial data from server
     axios
-      .get('http://localhost:3001/facials')
+      .get('https://ivy-server-1f33e818883d.herokuapp.com/facials')
       .then((response) => {
         // Update the state with the fetched facials
         setFacials(response.data);

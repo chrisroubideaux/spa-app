@@ -1,3 +1,4 @@
+{/*
 import express, { Request, Response } from 'express';
 import User from '../models/user';
 import { register, login } from '../controllers/authController';
@@ -94,3 +95,5 @@ authRoutes.post('/login', async (req: Request, res: Response) => {
 });
 
 export default authRoutes;
+
+*/}

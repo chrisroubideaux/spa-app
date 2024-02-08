@@ -31,7 +31,7 @@ const userSchema: Schema<UserDocument> = new mongoose.Schema(
     timestamps: true,
   }
 );
-
+{/*
 // Hash the password before saving it
 userSchema.pre<UserDocument>('save', async function (next) {
     try {
@@ -46,7 +46,7 @@ userSchema.pre<UserDocument>('save', async function (next) {
         next(error);
     }
 });
-
+*/}
 // Method to compare passwords
 userSchema.methods.comparePassword = async function (candidatePassword: string) {
   try {

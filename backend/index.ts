@@ -3,7 +3,6 @@ import express, { Request, Response, NextFunction } from 'express';
 const session = require('express-session');
 const { json, urlencoded } = require('body-parser');
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
 
@@ -14,13 +13,13 @@ import treatmentRoutes from './bodyTreatments/treatments';
 import waxingRoutes from './waxings/waxings';
 import ownerRoutes from './owners/owners';
 // auth routes
-import authRoutes from './routes/auth'; 
+//import authRoutes from './routes/auth'; 
 
 // variables from .env file
 require('dotenv').config();
 
 const app = express();
-const port = 3001;
+const PORT = process.env.PORT 
 // mongoDB connection
 const mongoURI = process.env.MONGO_URI;
 
@@ -137,15 +136,12 @@ app.get('/about', (req, res) => {
 });
 
 // auth routes and profile routes
-app.use('/auth', authRoutes);
+//app.use('/auth', authRoutes);
 
-app.post('/auth', authRoutes);
+//app.post('/auth', authRoutes);
 
 //app.use('/user', userRoutes);
 
-
-
-// Start the server
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
