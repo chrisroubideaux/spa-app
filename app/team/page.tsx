@@ -99,7 +99,7 @@ function Team() {
   useEffect(() => {
     // Make a GET request to fetch facial data from server
     axios
-      .get('http://localhost:3001/owners')
+      .get('https://ivy-server-1f33e818883d.herokuapp.com/owners')
       .then((response) => {
         // Update the state with the fetched facials
         setOwners(response.data);
@@ -113,7 +113,7 @@ function Team() {
   useEffect(() => {
     // Make a GET request to fetch facial data from server
     axios
-      .get('http://localhost:3001/facials')
+      .get('https://ivy-server-1f33e818883d.herokuapp.com/facials')
       .then((response) => {
         // Update the state with the fetched facials
         setFacials(response.data);
@@ -128,7 +128,7 @@ function Team() {
   useEffect(() => {
     // Make a GET request to fetch massage data from server
     axios
-      .get('http://localhost:3001/massages')
+      .get('https://ivy-server-1f33e818883d.herokuapp.com/massages')
       .then((response) => {
         // Update the state with the fetched massages
         setMassages(response.data);
@@ -142,7 +142,7 @@ function Team() {
   useEffect(() => {
     // Make a GET request to fetch body-treatment data from server
     axios
-      .get('http://localhost:3001/body-treatments')
+      .get('https://ivy-server-1f33e818883d.herokuapp.com/body-treatments')
       .then((response) => {
         // Update the state with the fetched body-treatments
         setTreatments(response.data);
@@ -156,7 +156,7 @@ function Team() {
   useEffect(() => {
     // Make a GET request to fetch waxing-treatment data from server
     axios
-      .get('http://localhost:3001/waxing-treatments')
+      .get('https://ivy-server-1f33e818883d.herokuapp.com/waxing-treatments')
       .then((response) => {
         // Update the state with the fetched waxing-treatments
         setWaxings(response.data);

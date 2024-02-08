@@ -29,7 +29,7 @@ const Massages = () => {
   useEffect(() => {
     // Make a GET request to fetch massage data from server
     axios
-      .get('ttps://ivy-server-1f33e818883d.herokuapp.com/massages')
+      .get('https://ivy-server-1f33e818883d.herokuapp.com/massages')
       .then((response) => {
         // Update the state with the fetched massages
         setMassages(response.data);
