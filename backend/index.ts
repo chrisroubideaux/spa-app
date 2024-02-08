@@ -34,7 +34,7 @@ mongoose
   });
 // cors middleware
 const corsOptions = {
-  origin: 'https://ivy-client-5e9387cb37e4.herokuapp.com' || 'http://localhost:3000',
+  origin: 'http://localhost:3000',
 };
 
 app.use(cors(corsOptions));
