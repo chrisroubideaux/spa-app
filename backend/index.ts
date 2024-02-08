@@ -32,10 +32,11 @@ mongoose
   .catch((error: any) => {
     console.error('Error connecting to MongoDB:', error);
   });
-// cors middleware
-const corsOptions = {
-  origin: 'http://localhost:3000',
-};
+  const corsOptions = {
+    origin: 'https://ivy-client-5e9387cb37e4.herokuapp.com',
+  };
+  
+  
 
 app.use(cors(corsOptions));
 app.use(json());

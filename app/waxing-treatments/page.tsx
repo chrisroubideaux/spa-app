@@ -28,7 +28,7 @@ const Waxings = () => {
   useEffect(() => {
     // Make a GET request to fetch waxing-treatment data from server
     axios
-      .get('http://localhost:3001/waxing-treatments')
+      .get('https://ivy-server-1f33e818883d.herokuapp.com/waxing-treatments')
       .then((response) => {
         // Update the state with the fetched waxing-treatments
         setWaxings(response.data);

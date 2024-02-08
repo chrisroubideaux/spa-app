@@ -27,7 +27,7 @@ const Treatments = () => {
   useEffect(() => {
     // Make a GET request to fetch body-treatment data from server
     axios
-      .get('http://localhost:3001/body-treatments')
+      .get('https://ivy-server-1f33e818883d.herokuapp.com/body-treatments')
       .then((response) => {
         // Update the state with the fetched body-treatments
         setTreatments(response.data);

@@ -19,7 +19,7 @@ export default function Page({ params }: { params: { id: number } }) {
 
   // useEffect hook to fetch the massage data
   useEffect(() => {
-    axios.get(`http://localhost:3001/massages/${params.id}`)
+    axios.get(`ttps://ivy-server-1f33e818883d.herokuapp.com/massages/${params.id}`)
       .then((response) => {
         setMassage(response.data);
       })

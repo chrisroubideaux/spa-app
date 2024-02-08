@@ -15,7 +15,7 @@ export default function Page({ params }: { params: { id: number } }) {
 
   // useEffect hook to fetch the body-treatment data
   useEffect(() => {
-    axios.get(`http://localhost:3001/body-treatments/${params.id}`)
+    axios.get(`https://ivy-server-1f33e818883d.herokuapp.com/body-treatments/${params.id}`)
       .then((response) => {
         setTreatment(response.data);
       })
