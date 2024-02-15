@@ -1,6 +1,6 @@
 // body treatment controller
 import { Request, Response } from 'express';
-import Treatment from './treatment'; // Importing the Treatment model
+import Treatment from './treatment'; 
 
 // Controller for GET all treatments
 export const getAllTreatments = async (req: Request, res: Response): Promise<void> => {

@@ -1,6 +1,6 @@
 // crud operations for waxing-treatments
 import express, { Request, Response } from 'express';
-import Waxing from './waxing'; // Importing the Waxing model
+import Waxing from './waxing';
 
 const waxingRoutes = express.Router();
 

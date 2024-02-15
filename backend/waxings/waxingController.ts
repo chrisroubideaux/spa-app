@@ -1,6 +1,6 @@
 // waxing controller file
 import { Request, Response } from 'express';
-import Waxing from './waxing'; // Importing the Waxing model
+import Waxing from './waxing'; 
 
 // Controller for GET all waxing services
 export const getAllWaxingServices = async (req: Request, res: Response): Promise<void> => {

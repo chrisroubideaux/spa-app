@@ -1,54 +1,53 @@
 // owner page
 'use client';
+import axios from 'axios';
 import { useState, useEffect } from 'react';
+// component imports
 import Navbar from '@/components/navbar/Navbar';
-import Cover from '@/components/facials/Cover';
-import Banner from '@/components/facials/Banner';
-import Cards from '@/components/facials/Cards';
+import Cover from '@/components/owners/Cover';
+//import Banner from '@/components/owners/Banner';
+import Cards from '@/components/owners/Cards';
 import Reviews from '@/components/massages/Reviews';
 import Details from '@/components/misc/Details';
 import Footer from '@/components/misc/Footer';
 
-//import facials from '@/data/facials';
-import axios from 'axios';
-
-type Facials = {
+type Owners = {
   _id: number;
-  service: string;
   title: string;
-  price: string;
-  price2: string;
+  name: string;
+  email: string;
+  phone: string;
+  experience: string; 
+  bio: string;
+  photo: string;
   image: string;
-};
-
-
-const Facials = () => {
-  const [facials, setFacials] = useState<Facials[]>([]);
+  image2: string; 
+}
+const Owners = () => {
+  const [owners, setOwners] = useState<Owners[]>([]);
 
   useEffect(() => {
-    // Make a GET request to fetch facial data from server
     axios
-      .get('http://localhost:3001/facials')
+      .get('https://ivy-server-1f33e818883d.herokuapp.com/owners')
       .then((response) => {
-        // Update the state with the fetched facials
-        setFacials(response.data);
+        setOwners(response.data);
       })
       .catch((error) => {
-        console.error('Error fetching facials:', error);
+        console.error('Error fetching owners:', error);
       });
   }, []);
-  
+
   return (
     <>
       <Navbar />
       <div className="layout mt-3 h-100">
         <Cover />
-        <Banner />
+      
         <div className="container px-4 py-5">
           <div className="row row-cols-1 row-cols-1 row-cols-lg-3 row-cols-lg-4 g-4 py-4">
-            {facials.map((facials) => (
-              <div key={facials._id} className="pt-4 ">
-                <Cards facials={facials} />
+            {owners.map((owners) => (
+              <div key={owners._id} className="pt-4 ">
+                <Cards owners={owners} />
               </div>
             ))}
           </div>
@@ -66,5 +65,5 @@ const Facials = () => {
   );
 };
 
-export default Facials;
+export default Owners;
 

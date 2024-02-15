@@ -1,6 +1,8 @@
 // body page
 'use client';
+import axios from 'axios';
 import { useState, useEffect } from 'react'
+// component imports
 import Navbar from '@/components/navbar/Navbar';
 import Cover from '@/components/bodyTreatments/Cover';
 import Banner from '@/components/bodyTreatments/Banner';
@@ -9,9 +11,6 @@ import Reviews from '@/components/misc/Reviews';
 import Details from '@/components/misc/Details';
 import Footer from '@/components/misc/Footer';
 
-//import treatments from '@/data/treatments';
-
-import axios from 'axios';
 
 type Treatments = {
   _id: number;
@@ -25,11 +24,11 @@ const Treatments = () => {
   const [treatments, setTreatments] = useState<Treatments[]>([]);
 
   useEffect(() => {
-    // Make a GET request to fetch body-treatment data from server
+   
     axios
       .get('https://ivy-server-1f33e818883d.herokuapp.com/body-treatments')
       .then((response) => {
-        // Update the state with the fetched body-treatments
+       
         setTreatments(response.data);
       })
       .catch((error) => {

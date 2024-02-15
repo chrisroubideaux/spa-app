@@ -1,6 +1,8 @@
 // facials page
 'use client';
+import axios from 'axios';
 import { useState, useEffect } from 'react';
+// component imports
 import Navbar from '@/components/navbar/Navbar';
 import Cover from '@/components/facials/Cover';
 import Banner from '@/components/facials/Banner';
@@ -8,9 +10,6 @@ import Cards from '@/components/facials/Cards';
 import Reviews from '@/components/massages/Reviews';
 import Details from '@/components/misc/Details';
 import Footer from '@/components/misc/Footer';
-
-//import facials from '@/data/facials';
-import axios from 'axios';
 
 type Facials = {
   _id: number;
@@ -21,12 +20,11 @@ type Facials = {
   image: string;
 };
 
-
 const Facials = () => {
+
   const [facials, setFacials] = useState<Facials[]>([]);
 
   useEffect(() => {
-    // Make a GET request to fetch facial data from server
     axios
       .get(`https://ivy-server-1f33e818883d.herokuapp.com/facials`)
       .then((response) => {

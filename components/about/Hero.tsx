@@ -1,9 +1,9 @@
 'use client';
 // cover component
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-export default function Heror() {
-  // s
+export default function Hero() {
+
   const [currentStringIndex, setCurrentStringIndex] = useState(0);
   const textStrings = [
     'We provide Ultimate relaxation',

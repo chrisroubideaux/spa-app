@@ -1,6 +1,6 @@
 // crud operations for owners
 import express, { Request, Response } from 'express';
-import Owner from './owner'; // Importing the Owner model
+import Owner from './owner';
 
 const ownerRoutes = express.Router();
 

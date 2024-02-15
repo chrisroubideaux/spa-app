@@ -1,20 +1,20 @@
 // waxing [id] page
 'use client';
 import { useState, useEffect } from 'react';
+import axios from 'axios';
+// component imports
 import Navbar from '@/components/navbar/Navbar';
 import Nav from '@/components/waxing-treatments/Nav';
 import Bio from '@/components/waxing-treatments/Bio';
 import Bookings from '@/components/waxing-treatments/tours/Bookings';
 import Iconbar from '@/components/waxing-treatments/Iconbar';
 import Footer from '@/components/misc/Footer';
-// axios import
-import axios from 'axios';
+
 
 
 export default function Page({ params }: { params: { id: string } }) {
   const [waxing, setWaxing] = useState<any>(null);
 
-  // useEffect hook to fetch the waxing-treatment data
   useEffect(() => {
     axios.get(`https://ivy-server-1f33e818883d.herokuapp.com/waxing-treatments/${params.id}`)
       .then((response) => {

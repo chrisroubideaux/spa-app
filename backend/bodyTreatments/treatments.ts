@@ -1,6 +1,6 @@
 // crund opertions for body-treatments
 import express, { Request, Response } from 'express';
-import Treatment from './treatment'; // Importing the Treatment model
+import Treatment from './treatment'; 
 
 const treatmentRoutes = express.Router();
 

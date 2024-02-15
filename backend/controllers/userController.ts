@@ -10,7 +10,7 @@ require('dotenv').config();
 interface UserType {
   fullName: string;
   email: string;
-  // Add other user fields here as needed
+
 }
 
 type UserDocument = Document & UserType;
@@ -29,7 +29,7 @@ const getUser = async (req: Request, res: Response): Promise<void> => {
     const userUserData = {
       fullName: user.fullName,
       email: user.email,
-      // Add other user fields here as needed
+    
     };
 
     res.status(200).json({ message: 'User profile data', user: userUserData });
@@ -53,7 +53,7 @@ const getUserById = async (req: Request, res: Response): Promise<void> => {
     const userData = {
       fullName: user.fullName,
       email: user.email,
-      // Add other user fields here as needed
+     
     };
 
     res.status(200).json({ message: 'User profile data', user: userData });

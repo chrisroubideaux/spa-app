@@ -1,19 +1,19 @@
 // body treatment [id] page
 'use client';
+import axios from 'axios';
 import { useState, useEffect } from 'react';
+// component imports
 import Navbar from '@/components/navbar/Navbar';
 import Nav from '@/components/bodyTreatments/Nav';
 import Bio from '@/components/bodyTreatments/Bio';
 import Bookings from '@/components/bodyTreatments/tours/Bookings';
 import Iconbar from '@/components/bodyTreatments/Iconbar';
 import Footer from '@/components/misc/Footer';
-// axios import
-import axios from 'axios';
 
 export default function Page({ params }: { params: { id: number } }) {
+  
   const [treatment, setTreatment] = useState<any>(null);
 
-  // useEffect hook to fetch the body-treatment data
   useEffect(() => {
     axios.get(`https://ivy-server-1f33e818883d.herokuapp.com/body-treatments/${params.id}`)
       .then((response) => {

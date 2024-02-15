@@ -1,20 +1,19 @@
 //  [id] detail page
 'use client';
+import axios from 'axios';
 import { useState, useEffect } from 'react';
+// component imports
 import Navbar from '@/components/navbar/Navbar';
 import Nav from '@/components/facials/Nav';
 import Bio from '@/components/facials/Bio';
 import Bookings from '@/components/facials/tours/Bookings';
 import Iconbar from '@/components/facials/Iconbar';
 import Footer from '@/components/misc/Footer';
-// axios import
-import axios from 'axios';
+
 
 export default function Page ({ params }: { params: { id: number; } }) {  
   
   const [facial, setFacial] = useState<any>(null);
-
-// useEffect hook to fetch the facial data
 useEffect(() => {
   axios.get(`https://ivy-server-1f33e818883d.herokuapp.com/facials/${params.id}`)
     .then((response) => {

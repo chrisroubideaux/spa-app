@@ -1,6 +1,6 @@
 // massage controller
 import { Request, Response } from 'express';
-import Massage from './massage'; // Importing the Massage model
+import Massage from './massage';
 
 // Controller for GET all massages
 export const getAllMassages = async (req: Request, res: Response): Promise<void> => {

@@ -1,6 +1,6 @@
 // crud operations for massages
 import express, { Request, Response } from 'express';
-import Massage from './massage'; // Importing the Massage model
+import Massage from './massage';
 
 const massageRoutes = express.Router();
 

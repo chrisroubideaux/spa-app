@@ -1,29 +1,21 @@
 // page for employees
 'use client';
+import axios from 'axios';
 import { useState, useEffect } from 'react';
-
+// component imports
 import Navbar from '@/components/navbar/Navbar';
 import Cover from '@/components/hero/Cover';
-// massage imports
 import Banner from '@/components/misc/Banner';
 import MassageAvatar from '@/components/massages/MassageAvatar';
-// facial imports
 import Avatar from '@/components/facials/Avatar';
-// treatments imports
 import TreatmentsAvatar from '@/components/bodyTreatments/TreatmentsAvatar';
-// waxing imports
 import WaxAvatar from '@/components/waxing-treatments/WaxAvatar';
-// owners imports
 import OwnerAvatar from '@/components/owners/OwnerAvatar';
 // misc imports
 import Details from '@/components/misc/Details';
 import Reviews from '@/components/misc/Reviews';
 import Footer from '@/components/misc/Footer';
 
-//import owners from '@/data/owners';
-
-// axios import
-import axios from 'axios';
 
 type Owners = {
   _id: number;
@@ -95,13 +87,11 @@ function Team() {
   const [owners, setOwners] = useState<Owners[]>([]);
   
   
-  // massage useEffect
+  // owners useEffect
   useEffect(() => {
-    // Make a GET request to fetch facial data from server
     axios
       .get('https://ivy-server-1f33e818883d.herokuapp.com/owners')
       .then((response) => {
-        // Update the state with the fetched facials
         setOwners(response.data);
       })
       .catch((error) => {
@@ -109,13 +99,11 @@ function Team() {
       });
   }, []);
   
-  // massage useEffect
+  // facial useEffect
   useEffect(() => {
-    // Make a GET request to fetch facial data from server
     axios
       .get('https://ivy-server-1f33e818883d.herokuapp.com/facials')
       .then((response) => {
-        // Update the state with the fetched facials
         setFacials(response.data);
       })
       .catch((error) => {
@@ -126,11 +114,9 @@ function Team() {
 
   // massage useEffect
   useEffect(() => {
-    // Make a GET request to fetch massage data from server
     axios
       .get('https://ivy-server-1f33e818883d.herokuapp.com/massages')
       .then((response) => {
-        // Update the state with the fetched massages
         setMassages(response.data);
       })
       .catch((error) => {
@@ -139,12 +125,10 @@ function Team() {
   }, []);
 
   // body-treatments useEffect  
-  useEffect(() => {
-    // Make a GET request to fetch body-treatment data from server
+  useEffect(() => {   
     axios
       .get('https://ivy-server-1f33e818883d.herokuapp.com/body-treatments')
       .then((response) => {
-        // Update the state with the fetched body-treatments
         setTreatments(response.data);
       })
       .catch((error) => {
@@ -154,11 +138,9 @@ function Team() {
 
   // waxing-treatments useEffect
   useEffect(() => {
-    // Make a GET request to fetch waxing-treatment data from server
     axios
       .get('https://ivy-server-1f33e818883d.herokuapp.com/waxing-treatments')
       .then((response) => {
-        // Update the state with the fetched waxing-treatments
         setWaxings(response.data);
       })
       .catch((error) => {

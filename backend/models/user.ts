@@ -2,9 +2,9 @@ import mongoose, { Document, Schema, Model } from 'mongoose';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
-require('dotenv').config(); // Load environment variables
+require('dotenv').config(); 
 
-// Define the user schema and its types
+
 type UserType = {
   email?: string;
   password?: string;
@@ -16,7 +16,7 @@ type UserType = {
 
 type UserDocument = Document & UserType;
 
-// Define the user schema
+
 const userSchema: Schema<UserDocument> = new mongoose.Schema(
   {
     email: { type: String, unique: true, sparse: true },
@@ -25,7 +25,7 @@ const userSchema: Schema<UserDocument> = new mongoose.Schema(
     facebookId: { type: String },
     facebookDisplayName: { type: String },
     facebookEmail: { type: String },
-    // ... other fields
+   
   },
   {
     timestamps: true,

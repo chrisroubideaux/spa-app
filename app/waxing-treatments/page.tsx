@@ -1,6 +1,8 @@
 // waxing services page
 'use client';
 import { useState, useEffect } from 'react';
+import axios from 'axios';
+// component imports
 import Navbar from '@/components/navbar/Navbar';
 import Cover from '@/components/waxing-treatments/Cover';
 import Banner from '@/components/waxing-treatments/Banner';
@@ -8,10 +10,6 @@ import Cards from '@/components/waxing-treatments/Cards';
 import Reviews from '@/components/misc/Reviews';
 import Details from '@/components/misc/Details';
 import Footer from '@/components/misc/Footer';
-
-// data
-// import waxings from '@/data/waxings';
-import axios from 'axios';
 
 type Waxings = {
   _id: number;
@@ -26,11 +24,9 @@ const Waxings = () => {
   const [waxings, setWaxings] = useState<Waxings[]>([]);
 
   useEffect(() => {
-    // Make a GET request to fetch waxing-treatment data from server
     axios
       .get('https://ivy-server-1f33e818883d.herokuapp.com/waxing-treatments')
       .then((response) => {
-        // Update the state with the fetched waxing-treatments
         setWaxings(response.data);
       })
       .catch((error) => {

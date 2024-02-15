@@ -1,20 +1,17 @@
 //  [id] detail page
 'use client';
+import axios from 'axios';
 import { useState, useEffect } from 'react';
+// component imports
 import Navbar from '@/components/navbar/Navbar';
 import Nav from '@/components/facials/Nav';
 import Bio from '@/components/owners/Bio';
 import Iconbar from '@/components/owners/Iconbar';
 import Footer from '@/components/misc/Footer';
 
-// axios import
-import axios from 'axios';
-
 export default function Page ({ params }: { params: { id: number; } }) {  
   
   const [owner, setOwner] = useState<any>(null);
-
-// useEffect hook to fetch the owner data
 useEffect(() => {
   axios.get(`http://localhost:3001/owners/${params.id}`)
     .then((response) => {

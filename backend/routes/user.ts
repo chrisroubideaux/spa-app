@@ -1,10 +1,10 @@
-
+// user routes
 import express, { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import {
   getUserById,
   updateUser,
-  deleteUser as deleteUserController, // Renaming to avoid conflict
+  deleteUser as deleteUserController, 
 } from '../controllers/userController';
 import User from '../models/user';
 
@@ -33,7 +33,7 @@ function verifyToken(
       res.status(401).json({ error: 'Invalid token' });
       return;
     }
-    (req as any).userId = (decoded as { id: string }).id; // Adding userId to request object
+    (req as any).userId = (decoded as { id: string }).id; 
     next();
   });
 }

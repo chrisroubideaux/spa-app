@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import Facial from './facial'; // Importing the Facial model
+import Facial from './facial';
 
 // Controller for GET all facials
 export const getAllFacials = async (req: Request, res: Response): Promise<void> => {

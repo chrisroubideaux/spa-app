@@ -1,6 +1,6 @@
 // owner controller file 
 import { Request, Response } from 'express';
-import Owner from './owner'; // Importing the Owner model
+import Owner from './owner'; 
 
 // Controller for GET all owners
 export const getAllOwners = async (req: Request, res: Response): Promise<void> => {

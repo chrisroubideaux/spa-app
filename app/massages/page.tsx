@@ -1,6 +1,8 @@
 // massages page
 'use client';
+import axios from 'axios';
 import { useState, useEffect } from 'react';
+// component imports
 import Navbar from '@/components/navbar/Navbar';
 import Cover from '@/components/massages/Cover';
 import Banner from '@/components/massages/Banner';
@@ -8,9 +10,6 @@ import Cards from '@/components/massages/Cards';
 import Reviews from '@/components/misc/Reviews';
 import Details from '@/components/misc/Details';
 import Footer from '@/components/misc/Footer';
-
-//import massages from '@/data/massages';
-import axios from 'axios';
 
 type Massages = {
   _id: number;
@@ -22,16 +21,14 @@ type Massages = {
   image: string;
 };
 
-
 const Massages = () => {
-  const [massages, setMassages] = useState<Massages[]>([]);
-  
+  const [massages, setMassages] = useState<Massages[]>([]); 
+
   useEffect(() => {
-    // Make a GET request to fetch massage data from server
     axios
       .get('https://ivy-server-1f33e818883d.herokuapp.com/massages')
       .then((response) => {
-        // Update the state with the fetched massages
+     
         setMassages(response.data);
       })
       .catch((error) => {
