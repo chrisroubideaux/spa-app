@@ -2,7 +2,7 @@
 import Image from 'next/image';
 // maps component
 import Nav from './Nav';
-import GoogleMapReact from 'google-map-react';
+//import GoogleMapReact from 'google-map-react';
 
 import {
   FaBriefcase,
@@ -15,30 +15,8 @@ import {
   FaTty,
 } from 'react-icons/fa';
 
-interface MarkerProps {
-  lat: number;
-  lng: number;
-  text: string;
-}
-
 
 export default function Form({}) {
-  
-  const chicagoTimeZoneOffset = -5 * 60; 
-
-  const defaultProps = {
-    center: {
-      lat: 41.8781,
-      lng: -87.6298,
-    },
-    zoom: 11,
-  };
-
-  const Marker: React.FC<MarkerProps> = ({ text }) => (
-    <div style={{ color: 'red', fontWeight: 'bold' }}>
-      {text}
-    </div>
-  );
 
   return (
     <>
@@ -53,19 +31,7 @@ export default function Form({}) {
                     <div className="cards ">
                       <div className="card-body p-3">
                         {/* map */}
-                          <div
-                            className="container-fluid card"
-                            style={{ height: '50vh', width: '100%' }}
-                          >
-                            <GoogleMapReact
-                              bootstrapURLKeys={{ key: 'AIzaSyDWcgwIWNx3EG26ctbNi_Uru0QGetQkW48' }}
-                              defaultCenter={defaultProps.center}
-                              defaultZoom={defaultProps.zoom}
-                              
-                            >
-                               <Marker lat={41.8781} lng={-87.6298} text="My Marker" />
-                            </GoogleMapReact>
-                      </div>
+                         
 
                   </div>
                   <div className="col-md-6">
