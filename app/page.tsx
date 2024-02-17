@@ -113,8 +113,10 @@ useEffect(() => {
               </div>
             ))}
           </div>
+
           {/* facials */}
           <h1 className=" text-center py-5 my-5">Facials</h1>
+          <div className="container px-4 py-5">
           <div className="row row-cols-1 row-cols-1 row-cols-lg-3 row-cols-lg-4 g-4 py-4">
             {facials.map((facials) => (
               <div key={facials._id} className="pt-4 ">
@@ -144,6 +146,7 @@ useEffect(() => {
            </div>
           </div>
         </div>
+      </div>
       <Footer />
     </>
   )
