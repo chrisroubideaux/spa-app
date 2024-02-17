@@ -1,9 +1,8 @@
 // contact form component
 import Image from 'next/image';
 // maps component
-
+import Nav from './Nav';
 import GoogleMapReact from 'google-map-react';
-import { FaMapMarkerAlt } from 'react-icons/fa';
 
 import {
   FaBriefcase,
@@ -15,7 +14,12 @@ import {
   FaTiktok,
   FaTty,
 } from 'react-icons/fa';
-import Nav from './Nav';
+
+interface MarkerProps {
+  lat: number;
+  lng: number;
+  text: string;
+}
 
 
 export default function Form({}) {
@@ -29,6 +33,12 @@ export default function Form({}) {
     },
     zoom: 11,
   };
+
+  const Marker: React.FC<MarkerProps> = ({ text }) => (
+    <div style={{ color: 'red', fontWeight: 'bold' }}>
+      {text}
+    </div>
+  );
 
   return (
     <>
@@ -48,10 +58,12 @@ export default function Form({}) {
                             style={{ height: '50vh', width: '100%' }}
                           >
                             <GoogleMapReact
-                              bootstrapURLKeys={{ key: '' }}
+                              bootstrapURLKeys={{ key: 'AIzaSyDWcgwIWNx3EG26ctbNi_Uru0QGetQkW48' }}
                               defaultCenter={defaultProps.center}
                               defaultZoom={defaultProps.zoom}
+                              
                             >
+                               <Marker lat={41.8781} lng={-87.6298} text="My Marker" />
                             </GoogleMapReact>
                       </div>
 
