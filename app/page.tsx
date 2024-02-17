@@ -8,19 +8,11 @@ import Cards from '@/components/massages/Cards';
 import FacialCard from '@/components/facials/FacialCard';
 import WaxCard from '@/components/waxing-treatments/WaxCard';
 import Treatment from '@/components/bodyTreatments/Treatment';
-
-
-
 import Footer from '@/components/misc/Footer';
 import Cover from '@/components/hero/Cover';
 
-// metadata
-export const metadata = {
-  title: 'club ivy - spa & resort',
-  description: 'nextjs real estate app',
-};
 
-
+// types
 type Massages = {
   _id: number;
   service: string;
