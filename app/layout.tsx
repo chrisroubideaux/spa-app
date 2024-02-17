@@ -1,7 +1,6 @@
 "use client"
 import { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import {  Raleway, Montserrat } from 'next/font/google';
 import '@/styles/globals.css';
 import '@/styles/hero.css';

@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 import Navbar from '@/components/navbar/Navbar';
 import Cover from '@/components/bodyTreatments/Cover';
 import Banner from '@/components/bodyTreatments/Banner';
-import Cards from '@/components/bodyTreatments/Cards';
+import Treatment from '@/components/bodyTreatments/Treatment';
 import Reviews from '@/components/misc/Reviews';
 import Details from '@/components/misc/Details';
 import Footer from '@/components/misc/Footer';
@@ -45,7 +45,7 @@ const Treatments = () => {
           <div className="row row-cols-1 row-cols-1 row-cols-lg-3 row-cols-lg-4 g-4 py-4">
             {treatments.map((treatments) => (
               <div key={treatments._id} className="pt-4 ">
-                <Cards treatments={treatments} />
+                <Treatment treatments={treatments} />
               </div>
             ))}
           </div>

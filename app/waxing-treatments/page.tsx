@@ -6,7 +6,7 @@ import axios from 'axios';
 import Navbar from '@/components/navbar/Navbar';
 import Cover from '@/components/waxing-treatments/Cover';
 import Banner from '@/components/waxing-treatments/Banner';
-import Cards from '@/components/waxing-treatments/Cards';
+import WaxCard from '@/components/waxing-treatments/WaxCard';
 import Reviews from '@/components/misc/Reviews';
 import Details from '@/components/misc/Details';
 import Footer from '@/components/misc/Footer';
@@ -43,7 +43,7 @@ const Waxings = () => {
           <div className="row row-cols-1 row-cols-1 row-cols-lg-3 row-cols-lg-4 g-4 py-4">
             {waxings.map((waxings) => (
               <div key={waxings._id} className="pt-4 ">
-                <Cards waxings={waxings} />
+                <WaxCard waxings={waxings} />
               </div>
             ))}
           </div>
