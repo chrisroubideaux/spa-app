@@ -1,7 +1,9 @@
 // contact form component
 import Image from 'next/image';
 // maps component
+
 import GoogleMapReact from 'google-map-react';
+import { FaMapMarkerAlt } from 'react-icons/fa';
 
 import {
   FaBriefcase,
@@ -15,8 +17,10 @@ import {
 } from 'react-icons/fa';
 import Nav from './Nav';
 
+
 export default function Form({}) {
-  const chicagoTimeZoneOffset = -5 * 60; // Chicago is in UTC-5
+  
+  const chicagoTimeZoneOffset = -5 * 60; 
 
   const defaultProps = {
     center: {
@@ -39,20 +43,18 @@ export default function Form({}) {
                     <div className="cards ">
                       <div className="card-body p-3">
                         {/* map */}
-                        <div className='"mt-1'>
-                          <h1 className="text-center">Map</h1>
-                          <div style={{ height: '60vh', width: '100%' }}>
+                          <div
+                            className="container-fluid card"
+                            style={{ height: '50vh', width: '100%' }}
+                          >
                             <GoogleMapReact
-                              bootstrapURLKeys={{
-                                key: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '',
-                              }}
+                              bootstrapURLKeys={{ key: '' }}
                               defaultCenter={defaultProps.center}
                               defaultZoom={defaultProps.zoom}
-                            ></GoogleMapReact>
-                          </div>
-                        {/* end map */}
+                            >
+                            </GoogleMapReact>
                       </div>
-                    </div>
+
                   </div>
                   <div className="col-md-6">
                     <div className="cards">
@@ -140,7 +142,8 @@ export default function Form({}) {
               </div>
             </div>
           </div>
-          </div>
+        </div>
+        </div>
         </section>
       </div>
     </>
