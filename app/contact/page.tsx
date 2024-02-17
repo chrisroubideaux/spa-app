@@ -31,7 +31,7 @@ export default function Contact() {
                       <div className="card-body p-3">
                         {/* map */}
                          
-                        <Map />
+                        <Map chicagoTimeZoneOffset={0} />
                   </div>
                   <div className="col-md-6">
                     <div className="cards">
