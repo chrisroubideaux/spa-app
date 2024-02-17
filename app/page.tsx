@@ -107,46 +107,21 @@ useEffect(() => {
           {/* massages */}
           <h1 className=" text-center py-5 my-5">Massages</h1>
           <div className="container px-4 py-5">
-          <div className="row row-cols-1 row-cols-1 row-cols-lg-3 row-cols-lg-4 g-4 py-4">
+            <div className="row row-cols-1 row-cols-1 row-cols-lg-3 row-cols-lg-4 g-4 py-4">
             {massages.map((massages) => (
               <div key={massages._id} className="pt-4 ">
                 <Cards massages={massages} />
               </div>
-            ))}
+              ))}
+            </div>
+
+          
+          
           </div>
 
-          {/* facials */}
-          <h1 className=" text-center py-5 my-5">Facials</h1>
-         
-          <div className="row row-cols-1 row-cols-1 row-cols-lg-3 row-cols-lg-4 g-4 py-4">
-            {facials.map((facials) => (
-              <div key={facials._id} className="pt-4 ">
-                <FacialCard facials={facials} />
-              </div>
-            ))}
-
-            {/* body treatments */}
-          <h1 className=" text-center py-5 my-5">Body Treatments</h1>
-        
-          <div className="row row-cols-1 row-cols-1 row-cols-lg-3 row-cols-lg-4 g-4 py-4">
-            {treatments.map((treatments) => (
-              <div key={treatments._id} className="pt-4 ">
-                <Treatment treatments={treatments} />
-              </div>
-            ))}
-          </div>
-          {/* waxing treatments */}
-          <h1 className=" text-center py-5 my-5">Waxing Treatments</h1>
-          <div className="row row-cols-1 row-cols-1 row-cols-lg-3 row-cols-lg-4 g-4 py-4">
-            {waxings.map((waxings) => (
-              <div key={waxings._id} className="pt-4 ">
-                <WaxCard waxings={waxings} />
-              </div>
-            ))}
-          </div>
-           </div>
-          </div>
+          
         </div>
+          
       
       <Footer />
     </>
