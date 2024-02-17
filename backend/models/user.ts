@@ -1,5 +1,5 @@
 import mongoose, { Document, Schema, Model } from 'mongoose';
-import bcrypt from 'bcrypt';
+//import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
 require('dotenv').config(); 
@@ -47,7 +47,9 @@ userSchema.pre<UserDocument>('save', async function (next) {
     }
 });
 */}
+
 // Method to compare passwords
+{/*
 userSchema.methods.comparePassword = async function (candidatePassword: string) {
   try {
     return await bcrypt.compare(candidatePassword, this.password);
@@ -55,6 +57,8 @@ userSchema.methods.comparePassword = async function (candidatePassword: string) 
     throw error;
   }
 };
+
+*/}
 
 // Method to generate a JWT token for the user
 userSchema.methods.generateAuthToken = function () {

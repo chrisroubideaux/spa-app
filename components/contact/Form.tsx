@@ -1,5 +1,8 @@
 // contact form component
 import Image from 'next/image';
+// maps component
+import GoogleMapReact from 'google-map-react';
+
 import {
   FaBriefcase,
   FaEnvelope,
@@ -13,6 +16,16 @@ import {
 import Nav from './Nav';
 
 export default function Form({}) {
+  const chicagoTimeZoneOffset = -5 * 60; // Chicago is in UTC-5
+
+  const defaultProps = {
+    center: {
+      lat: 41.8781,
+      lng: -87.6298,
+    },
+    zoom: 11,
+  };
+
   return (
     <>
       <div className="">
@@ -28,7 +41,15 @@ export default function Form({}) {
                         {/* map */}
                         <div className='"mt-1'>
                           <h1 className="text-center">Map</h1>
-                        </div>
+                          <div style={{ height: '60vh', width: '100%' }}>
+                            <GoogleMapReact
+                              bootstrapURLKeys={{
+                                key: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '',
+                              }}
+                              defaultCenter={defaultProps.center}
+                              defaultZoom={defaultProps.zoom}
+                            ></GoogleMapReact>
+                          </div>
                         {/* end map */}
                       </div>
                     </div>
@@ -118,6 +139,7 @@ export default function Form({}) {
                 </div>
               </div>
             </div>
+          </div>
           </div>
         </section>
       </div>

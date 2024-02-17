@@ -53,7 +53,7 @@ const Login = () => {
                   )}
                   */}
                   <button className="w-100 btn btn-md fw-bold" type="submit">
-                    register
+                    login
                   </button>
                 </div>
               </form>

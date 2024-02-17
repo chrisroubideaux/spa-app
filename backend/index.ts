@@ -12,8 +12,16 @@ import massageRoutes from './massages/massages';
 import treatmentRoutes from './bodyTreatments/treatments';
 import waxingRoutes from './waxings/waxings';
 import ownerRoutes from './owners/owners';
+
 // auth routes
 //import authRoutes from './routes/auth'; 
+
+
+// google auth
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const Facebook = require('passport-facebook').Strategy;
+const User = require('./models/user');
 
 // variables from .env file
 require('dotenv').config();
@@ -31,13 +39,14 @@ mongoose
   })
   .catch((error: any) => {
     console.error('Error connecting to MongoDB:', error);
-  });
-  const corsOptions = {
-    origin: 'https://ivy-client-5e9387cb37e4.herokuapp.com',
-  };
-  
-  
+});
 
+// CORS
+const corsOptions = {
+  origin: 'https://ivy-client-5e9387cb37e4.herokuapp.com',
+};
+  
+  
 app.use(cors(corsOptions));
 app.use(json());
 app.use(express.json());
@@ -65,30 +74,6 @@ function verifyToken(req: { headers: { [x: string]: any; }; userId: any; }, res:
   });
 }
 
-{
-  /*}
-function verifyToken(req, res, next) {
-  const token = req.headers['authorization'];
-
-  if (!token) {
-    return res.status(401).json({ error: 'Authentication token is missing' });
-  }
-
-  jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
-    if (err) {
-      if (err.name === 'TokenExpiredError') {
-        return res.status(401).json({ error: 'Token has expired' });
-      }
-      console.error('Token verification error:', err);
-      return res.status(401).json({ error: 'Invalid token' });
-    }
-    req.userId = decoded.id;
-    next();
-  });
-}
-*/
-}
-
 // Configure session middleware
 const sessionMiddleware = session({
   secret: process.env.SESSION_SECRET || 'secret-key',
@@ -102,12 +87,15 @@ app.use(
     resave: false,
     saveUninitialized: true,
     cookie: {
-      secure: false, // Set to true if using HTTPS
+      secure: false, 
     },
   })
 );
 
 app.use(sessionMiddleware);
+
+// google passport oAuth
+
 
 // Middleware to log requests
 app.use((req: Request, res: Response, next: NextFunction) => {
