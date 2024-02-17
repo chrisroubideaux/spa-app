@@ -101,14 +101,14 @@ export default function Form({}) {
 
                         <a href="/" className="">
                           <FaInstagram
-                            className="social-icons me-2"
+                            className="social-icons me-3"
                             width="24"
                             height="25"
                           />
                         </a>
                         <a href="#!" className="">
                           <FaTiktok
-                            className="social-icons"
+                            className="social-icons me-3"
                             width="24"
                             height="25"
                           />
