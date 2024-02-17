@@ -1,9 +1,6 @@
 // contact form component
+// contact form component
 import Image from 'next/image';
-// maps component
-import Nav from './Nav';
-//import GoogleMapReact from 'google-map-react';
-
 import {
   FaBriefcase,
   FaEnvelope,
@@ -14,10 +11,9 @@ import {
   FaTiktok,
   FaTty,
 } from 'react-icons/fa';
-
+import Nav from './Nav';
 
 export default function Form({}) {
-
   return (
     <>
       <div className="">
@@ -31,8 +27,12 @@ export default function Form({}) {
                     <div className="cards ">
                       <div className="card-body p-3">
                         {/* map */}
-                         
-
+                        <div className='"mt-1'>
+                          <h1 className="text-center">Map</h1>
+                        </div>
+                        {/* end map */}
+                      </div>
+                    </div>
                   </div>
                   <div className="col-md-6">
                     <div className="cards">
@@ -120,8 +120,6 @@ export default function Form({}) {
               </div>
             </div>
           </div>
-        </div>
-        </div>
         </section>
       </div>
     </>
