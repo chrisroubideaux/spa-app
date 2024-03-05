@@ -8,8 +8,6 @@ import '@/styles/cards.css';
 import '@/styles/modal.css';
 import '@/styles/form.css';
 
-
-
 const inter = Raleway({ subsets: ['latin'] })
 
 
