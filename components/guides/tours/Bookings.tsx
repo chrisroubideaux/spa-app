@@ -1,12 +1,13 @@
-// booking component for appointments
+// modal component for booking a tour
 'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Calendar from 'react-calendar';
 import axios from 'axios';
 
-type Facials = {
-  facials: {
+
+type Guides = {
+  guides: {
   _id: number;
   photo: string;
   name: string;
@@ -23,7 +24,7 @@ type Facials = {
   };
 };
 
-export default function Bookings({facials }: Facials ) {
+export default function Bookings({guides }: Guides ) {
   
   const [selectedSlot, setSelectedSlot] = useState(''); // State to store the selected time slot
   const [selectedAppointment, setSelectedAppointment] = useState(null);
@@ -35,7 +36,7 @@ export default function Bookings({facials }: Facials ) {
   const handleDayClick = (date: Date | null) => {
     // Handle the selected day
     setSelectedDay(null);
-    setSelectedDate(date || new Date()); 
+    setSelectedDate(date || new Date()); // Update the type of selectedDate to allow for null values
   };
 
 // Function to handle the form submission
@@ -51,7 +52,7 @@ const handleSubmit = async (e: { preventDefault: () => void; }) => {
     const response = await axios.post(
       'https://ivy-client-5e9387cb37e4.herokuapp.com/appointments',
       {
-        facialId: facials._id, // Send the massage ID
+        guideId: guides._id, // Send the guide ID
         selectedSlot, // Send the selected time slot
         selectedDate, // Send the selected date
         appointmentId: selectedAppointment, // Send the appointment ID if rescheduling
@@ -120,7 +121,7 @@ const showAlertMessage = (message: React.SetStateAction<string>) => {
   return (
     <>
     <div>
-     {facials && (
+     { guides && (
     <><div
             className="modal fade"
             id="exampleModalToggle"
@@ -196,9 +197,9 @@ const showAlertMessage = (message: React.SetStateAction<string>) => {
                     {/* list group component */}
                     <div className="">
                       <div className="list-group-item list-group-item-action d-flex gap-3 py-3 ">
-                        {facials.photo && (
+                        {guides.photo && (
                           <Image
-                            src={facials.photo}
+                            src={guides.photo}
                             className="avatar"
                             width={200}
                             height={100}
@@ -207,39 +208,39 @@ const showAlertMessage = (message: React.SetStateAction<string>) => {
 
                         <div className="d-flex gap-2 w-100 justify-content-between mt-1">
                           <div className="">
-                            <h6 className="fs-5 me-2">{facials.name}</h6>
-                            <h6 className="">{facials.name}</h6>
-                            <h6 className="">{facials.times}</h6>
+                            <h6 className="fs-5 me-2">{guides.name}</h6>
+                            <h6 className="">{guides.name}</h6>
+                            <h6 className="">{guides.times}</h6>
                           </div>
                           <small className="opacity-50 text-nowrap">
-                            <h6 className="">{facials.days}</h6>
-                            <h6 className="">{facials.slot}</h6>
+                            <h6 className="">{guides.days}</h6>
+                            <h6 className="">{guides.slot}</h6>
                             {/* select time slot component */}
                             <select
                               value={selectedSlot}
                               onChange={(e) => setSelectedSlot(e.target.value)}
                             >
                               <option value="">Select a time slot</option>
-                              <option value={facials.slot}>
-                                {facials.slot}
+                              <option value={guides.slot}>
+                                {guides.slot}
                               </option>
-                              <option value={facials.slot2}>
-                                {facials.slot2}
+                              <option value={guides.slot2}>
+                                {guides.slot2}
                               </option>
-                              <option value={facials.slot3}>
-                                {facials.slot3}
+                              <option value={guides.slot3}>
+                                {guides.slot3}
                               </option>
-                              <option value={facials.slot4}>
-                                {facials.slot4}
+                              <option value={guides.slot4}>
+                                {guides.slot4}
                               </option>
-                              <option value={facials.slot5}>
-                                {facials.slot5}
+                              <option value={guides.slot5}>
+                                {guides.slot5}
                               </option>
-                              <option value={facials.slot6}>
-                                {facials.slot6}
+                              <option value={guides.slot6}>
+                                {guides.slot6}
                               </option>
-                              <option value={facials.slot7}>
-                                {facials.slot7}
+                              <option value={guides.slot7}>
+                                {guides.slot7}
                               </option>
                             </select>
                           </small>

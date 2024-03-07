@@ -50,7 +50,7 @@ const handleSubmit = async (e: { preventDefault: () => void; }) => {
   try {
     // Send a POST request to create or reschedule the appointment
     const response = await axios.post(
-      'https://ivy-client-5e9387cb37e4.herokuapp.com/appointments',
+      'https://ivy-client-5e9387cb37e4.herokuapp.com/massages',
       {
         massageId: massages._id, // Send the massage ID
         selectedSlot, // Send the selected time slot
