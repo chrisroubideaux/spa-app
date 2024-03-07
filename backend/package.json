@@ -40,5 +40,14 @@
     "@types/jsonwebtoken": "^9.0.6",
     "@types/passport": "^1.0.16",
     "@types/validator": "^13.11.7"
+  },
+  "compilerOptions": {
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "types": [
+      "node",
+      "jsonwebtoken"
+    ]
   }
 }
