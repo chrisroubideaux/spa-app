@@ -196,6 +196,7 @@ const showAlertMessage = (message: React.SetStateAction<string>) => {
             {/* list group component */}
             <div className="">
               <div className="list-group-item list-group-item-action d-flex gap-3 py-3 ">
+                {massages.photo && (
                 <Image
                   src={massages.photo}
                   className="avatar"
@@ -203,6 +204,8 @@ const showAlertMessage = (message: React.SetStateAction<string>) => {
                   height={100}
                   alt="..."
                 />
+)}
+
                 <div className="d-flex gap-2 w-100 justify-content-between mt-1">
                   <div className="">
                     <h6 className="fs-5 me-2">{massages.name}</h6>
