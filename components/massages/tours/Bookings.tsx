@@ -153,8 +153,8 @@ export default function Bookings({massages }: Massages ) {
                       <h6 className="">{massages.slot}</h6>
                       {/* select time slot component */}
                       <select
-                      //   value={selectedSlot}
-                      //   onChange={(e) => setSelectedSlot(e.target.value)}
+                        value={selectedSlot.toString()} // Convert selectedSlot to a string
+                        onChange={(e) => setSelectedSlot(new Date(e.target.value))} // Convert the selected slot value to a Date object
                       >
                         <option value="">Select a time slot</option>
                         <option value={massages.slot}>{massages.slot}</option>
