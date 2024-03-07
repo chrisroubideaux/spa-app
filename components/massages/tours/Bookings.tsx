@@ -119,166 +119,166 @@ const showAlertMessage = (message: React.SetStateAction<string>) => {
 
   return (
     <>
-    <div
-      className="modal fade"
-      id="exampleModalToggle"
-      aria-hidden="true"
-      aria-labelledby="exampleModalToggleLabel"
-      tabIndex={-1}
-    >
-      <div className="modal-dialog modal-dialog-centered">
-        <div className="modal-content">
-          <div className="modal-header">
-            <h1 className="fw-normal fs-5" id="exampleModalToggleLabel">
-              Book your tour
-            </h1>
-            <button
-              type="button"
-              className="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div className="modal-body">
-            <a data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
-              <Calendar
-                className="calendar text-center "
-                onClickDay={handleDayClick}
-                value={selectedDay}
-              />
-            </a>
-          </div>
-          <div className="modal-footer"></div>
-        </div>
-      </div>
-    </div>
-    <div
-      className="modal fade"
-      id="exampleModalToggle2"
-      aria-hidden="true"
-      aria-labelledby="exampleModalToggleLabel2"
-      tabIndex={-1}
-    >
-      <div className="modal-dialog modal-dialog-centered modal-lg">
-        <div className="modal-content">
-          <div className="modal-header">
-            <h6 className="fs-5" id="exampleModalToggleLabel2">
-              Select a time
-            </h6>
-            <button
-              type="button"
-              className="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div className="modal-body">
-            {/* alert component */}
-            {showAlert && (
-              <div
-                className="card mb-2"
-                style={{ maxWidth: '540px' }}
-                role="alert"
-              >
-                <div className="card-body">
-                  <p className="fs-6">
-                    {alertMessage} || {selectedDate.toDateString()}
-                  </p>
-                  <h3 className="fs-6"> </h3>
+    <div>
+     { massages && (
+    <><div
+            className="modal fade"
+            id="exampleModalToggle"
+            aria-hidden="true"
+            aria-labelledby="exampleModalToggleLabel"
+            tabIndex={-1}
+          >
+            <div className="modal-dialog modal-dialog-centered">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h1 className="fw-normal fs-5" id="exampleModalToggleLabel">
+                    Book your tour
+                  </h1>
+                  <button
+                    type="button"
+                    className="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
                 </div>
-                <div className="card-footer d-flex text-nowrap m-auto">
-                  <button className="btn btn-sm" onClick={handleSubmit}>
-                    view your appointment
-                  </button>
+                <div className="modal-body">
+                  <a data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+                    <Calendar
+                      className="calendar text-center "
+                      onClickDay={handleDayClick}
+                      value={selectedDay} />
+                  </a>
                 </div>
-              </div>
-            )}
-            {/* list group component */}
-            <div className="">
-              <div className="list-group-item list-group-item-action d-flex gap-3 py-3 ">
-                {massages.photo && (
-                <Image
-                  src={massages.photo}
-                  className="avatar"
-                  width={200}
-                  height={100}
-                  alt="..."
-                />
-)}
-
-                <div className="d-flex gap-2 w-100 justify-content-between mt-1">
-                  <div className="">
-                    <h6 className="fs-5 me-2">{massages.name}</h6>
-                    <h6 className="">{massages.name}</h6>
-                    <h6 className="">{massages.times}</h6>
-                  </div>
-                  <small className="opacity-50 text-nowrap">
-                    <h6 className="">{massages.days}</h6>
-                    <h6 className="">{massages.slot}</h6>
-                    {/* select time slot component */}
-                    <select
-                      value={selectedSlot}
-                      onChange={(e) => setSelectedSlot(e.target.value)}
-                    >
-                      <option value="">Select a time slot</option>
-                      <option value={massages.slot}>
-                        {massages.slot}
-                      </option>
-                      <option value={massages.slot2}>
-                        {massages.slot2}
-                      </option>
-                      <option value={massages.slot3}>
-                        {massages.slot3}
-                      </option>
-                      <option value={massages.slot4}>
-                        {massages.slot4}
-                      </option>
-                      <option value={massages.slot5}>
-                        {massages.slot5}
-                      </option>
-                      <option value={massages.slot6}>
-                        {massages.slot6}
-                      </option>
-                      <option value={massages.slot7}>
-                        {massages.slot7}
-                      </option>
-                    </select>
-                  </small>
-                </div>
+                <div className="modal-footer"></div>
               </div>
             </div>
-          </div>
-          <div className="modal-footer">
-            <button
+          </div><div
+            className="modal fade"
+            id="exampleModalToggle2"
+            aria-hidden="true"
+            aria-labelledby="exampleModalToggleLabel2"
+            tabIndex={-1}
+          >
+              <div className="modal-dialog modal-dialog-centered modal-lg">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h6 className="fs-5" id="exampleModalToggleLabel2">
+                      Select a time
+                    </h6>
+                    <button
+                      type="button"
+                      className="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div className="modal-body">
+                    {/* alert component */}
+                    {showAlert && (
+                      <div
+                        className="card mb-2"
+                        style={{ maxWidth: '540px' }}
+                        role="alert"
+                      >
+                        <div className="card-body">
+                          <p className="fs-6">
+                            {alertMessage} || {selectedDate.toDateString()}
+                          </p>
+                          <h3 className="fs-6"> </h3>
+                        </div>
+                        <div className="card-footer d-flex text-nowrap m-auto">
+                          <button className="btn btn-sm" onClick={handleSubmit}>
+                            view your appointment
+                          </button>
+                        </div>
+                      </div>
+                    )}
+                    {/* list group component */}
+                    <div className="">
+                      <div className="list-group-item list-group-item-action d-flex gap-3 py-3 ">
+                        {massages.photo && (
+                          <Image
+                            src={massages.photo}
+                            className="avatar"
+                            width={200}
+                            height={100}
+                            alt="..." />
+                        )}
+
+                        <div className="d-flex gap-2 w-100 justify-content-between mt-1">
+                          <div className="">
+                            <h6 className="fs-5 me-2">{massages.name}</h6>
+                            <h6 className="">{massages.name}</h6>
+                            <h6 className="">{massages.times}</h6>
+                          </div>
+                          <small className="opacity-50 text-nowrap">
+                            <h6 className="">{massages.days}</h6>
+                            <h6 className="">{massages.slot}</h6>
+                            {/* select time slot component */}
+                            <select
+                              value={selectedSlot}
+                              onChange={(e) => setSelectedSlot(e.target.value)}
+                            >
+                              <option value="">Select a time slot</option>
+                              <option value={massages.slot}>
+                                {massages.slot}
+                              </option>
+                              <option value={massages.slot2}>
+                                {massages.slot2}
+                              </option>
+                              <option value={massages.slot3}>
+                                {massages.slot3}
+                              </option>
+                              <option value={massages.slot4}>
+                                {massages.slot4}
+                              </option>
+                              <option value={massages.slot5}>
+                                {massages.slot5}
+                              </option>
+                              <option value={massages.slot6}>
+                                {massages.slot6}
+                              </option>
+                              <option value={massages.slot7}>
+                                {massages.slot7}
+                              </option>
+                            </select>
+                          </small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="modal-footer">
+                    <button
+                      className="btn btn-md"
+                      data-bs-target="#exampleModalToggle"
+                      data-bs-toggle="modal"
+                    >
+                      Back to calendar
+                    </button>
+
+                    <div className="d-flex justify-content-end">
+                      <button
+                        type="submit"
+                        className="btn btn-md"
+                        onClick={handleSubmit}
+                      >
+                        Book Appointment
+                      </button>
+
+                      {/* */}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><button
               className="btn btn-md"
               data-bs-target="#exampleModalToggle"
               data-bs-toggle="modal"
             >
-              Back to calendar
-            </button>
-
-            <div className="d-flex justify-content-end">
-              <button
-                type="submit"
-                className="btn btn-md"
-                onClick={handleSubmit}
-              >
-                Book Appointment
-              </button>
-
-              {/* */}
-            </div>
-          </div>
-        </div>
-      </div>
+              Book a tour
+            </button></>
+     )}
     </div>
-    <button
-      className="btn btn-md"
-      data-bs-target="#exampleModalToggle"
-      data-bs-toggle="modal"
-    >
-      Book a tour
-    </button>
   </>
   );
 }
