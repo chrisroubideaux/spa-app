@@ -1,4 +1,5 @@
 // userController from controllers folder
+{/*
 import { Request, Response } from 'express';
 import User from '../models/user';
 import jwt from 'jsonwebtoken';
@@ -110,3 +111,4 @@ const deleteUser = async (userId: string, res: Response) => {
 
 
 export { getUser, getUserById, updateUser, deleteUser };
+*/}

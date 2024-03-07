@@ -3,7 +3,7 @@ import express, { Request, Response, NextFunction } from 'express';
 const session = require('express-session');
 const { json, urlencoded } = require('body-parser');
 const mongoose = require('mongoose');
-const jwt = require('jsonwebtoken');
+//const jwt = require('jsonwebtoken');
 const cors = require('cors');
 
 // page import routes
@@ -21,7 +21,7 @@ import ownerRoutes from './owners/owners';
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const Facebook = require('passport-facebook').Strategy;
-const User = require('./models/user');
+//const User = require('./models/user');
 
 // variables from .env file
 require('dotenv').config();
@@ -54,7 +54,7 @@ app.use(express.json());
 app.use(urlencoded({ extended: true }));
 
 // Define the verifyToken middleware function
-
+{/*
 function verifyToken(req: { headers: { [x: string]: any; }; userId: any; }, res: { status: (arg0: number) => { (): any; new(): any; json: { (arg0: { error: string; }): any; new(): any; }; }; }, next: () => void) {
   const token = req.headers['authorization'];
   console.log('Token for Verification:', token);
@@ -75,6 +75,8 @@ function verifyToken(req: { headers: { [x: string]: any; }; userId: any; }, res:
   });
 }
 
+app.use(verifyToken);
+*/}
 // Configure session middleware
 const sessionMiddleware = session({
   secret: process.env.SESSION_SECRET || 'secret-key',

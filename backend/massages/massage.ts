@@ -30,7 +30,7 @@ type Massage = {
 interface MassageDocument extends Massage, Document {}
 
 // Define the schema for Facial
-const facialSchema = new Schema<MassageDocument>({
+const massageSchema = new Schema<MassageDocument>({
     service: { type: String, required: true },
     name: { type: String, required: true },
     bio: { type: String, required: true },
@@ -55,6 +55,6 @@ const facialSchema = new Schema<MassageDocument>({
 }, { timestamps: true });
 
 // Create the model for Massages
-const Massage: Model<MassageDocument> = mongoose.model<MassageDocument>('Massage', facialSchema);
+const Massage: Model<MassageDocument> = mongoose.model<MassageDocument>('Massage', massageSchema);
 
 export default Massage;

@@ -1,3 +1,4 @@
+{/*
 import mongoose, { Document, Schema, Model } from 'mongoose';
 //import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
@@ -31,34 +32,8 @@ const userSchema: Schema<UserDocument> = new mongoose.Schema(
     timestamps: true,
   }
 );
-{/*
-// Hash the password before saving it
-userSchema.pre<UserDocument>('save', async function (next) {
-    try {
-        if (this.isModified('password')) {
-            const saltRounds = 10;
-            const salt = await bcrypt.genSalt(saltRounds);
-            const hashedPassword = await bcrypt.hash(this.password || '', salt); // Add null check for password
-            this.password = hashedPassword;
-        }
-        next();
-    } catch (error: any) { // Specify the type of the error parameter
-        next(error);
-    }
-});
-*/}
 
-// Method to compare passwords
-{/*
-userSchema.methods.comparePassword = async function (candidatePassword: string) {
-  try {
-    return await bcrypt.compare(candidatePassword, this.password);
-  } catch (error) {
-    throw error;
-  }
-};
 
-*/}
 
 // Method to generate a JWT token for the user
 userSchema.methods.generateAuthToken = function () {
@@ -72,3 +47,5 @@ userSchema.methods.generateAuthToken = function () {
 const User: Model<UserDocument> = mongoose.model<UserDocument>('User', userSchema);
 
 export default User;
+
+*/}

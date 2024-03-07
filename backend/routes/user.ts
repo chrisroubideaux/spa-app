@@ -1,4 +1,5 @@
 // user routes
+{/*
 import express, { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import {
@@ -99,3 +100,5 @@ userRoutes.delete('/', verifyToken, async (req: Request, res: Response) => {
     }
   });
 export default userRoutes;
+
+*/}
