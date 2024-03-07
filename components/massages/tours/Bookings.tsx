@@ -55,6 +55,7 @@ const handleSubmit = async (e: { preventDefault: () => void; }) => {
         massageId: massages._id, // Send the massage ID
         selectedSlot, // Send the selected time slot
         selectedDate, // Send the selected date
+        appointmentId: selectedAppointment, // Send the appointment ID if rescheduling
       }
     );
 
