@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Calendar from 'react-calendar';
+import axios from 'axios';
+import { set } from 'mongoose';
 //import axios from 'axios';
 
 type Massages = {
@@ -22,17 +24,38 @@ type Massages = {
   };
 };
 
-export default function Bookings({massages}: Massages ) {
+export default function Bookings({massages }: Massages ) {
+  
+  const [selectedDay, setSelectedDay] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedSlot, setSelectedSlot] = useState(new Date());
+  const [alertMessage, setAlertMessage] = useState(new Date());
  
   const handleDayClick = (date: Date) => {
     // Handle the selected date
     setSelectedDay(date);
     setSelectedDate(date);
+    setSelectedSlot(date);
+    setAlertMessage(date);
   };
-  const [selectedDay, setSelectedDay] = useState(new Date());
-  const [selectedDate, setSelectedDate] = useState(new Date());
-  const [selectedSlot, setSelectedSlot] = useState('');
-  const [alertMessage, setAlertMessage] = useState('');
+
+  function handleSubmit(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
+    event.preventDefault();
+    // Perform the necessary actions when the form is submitted
+    // For example, make an API call using axios
+    axios.post('https://ivy-client-5e9387cb37e4.herokuapp.com/massages', {
+      selectedDate,
+      selectedSlot,
+    })
+      .then(response => {
+        // Handle the response
+        console.log(response.data);
+      })
+      .catch(error => {
+        // Handle the error
+        console.error(error);
+      });
+  }
 
   return (
     <>
@@ -101,7 +124,7 @@ export default function Bookings({massages}: Massages ) {
               >
                 <div className="card-body">
                   <p className="fs-6">
-                    {alertMessage} || {selectedDate.toDateString()}  
+                    {String(alertMessage)} || {selectedDate.toDateString()}  
                   </p>
                   <h3 className="fs-6"> </h3>
                 </div>
@@ -159,7 +182,7 @@ export default function Bookings({massages}: Massages ) {
                 <button
                   type="submit"
                   className="btn btn-md"
-                  // onClick={handleSubmit}
+                  onClick={handleSubmit}
                 >
                   Book Appointment
                 </button>

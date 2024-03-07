@@ -27,7 +27,8 @@ const User = require('./models/user');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT 
+const PORT = process.env.PORT  || 3001;
+
 // mongoDB connection
 const mongoURI = process.env.MONGO_URI;
 
@@ -43,7 +44,7 @@ mongoose
 
 // CORS
 const corsOptions = {
-  origin: 'https://ivy-client-5e9387cb37e4.herokuapp.com',
+  origin: 'https://ivy-client-5e9387cb37e4.herokuapp.com' || 'http://localhost:3000',
 };
   
   
@@ -132,5 +133,6 @@ app.get('/about', (req, res) => {
 //app.use('/user', userRoutes);
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT} `);
 });
+

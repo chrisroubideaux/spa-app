@@ -45,7 +45,7 @@ export default function Page({ params }: { params: { id: number } }) {
                   <p className=" lh-3 fs-5 m-1">{massage && massage.description}</p>
                 </div>
                 <div className="mt-4">
-                  <Bookings massages= {massage} />
+                  <Bookings massages={massage} />
                 </div>
               </div>
             </div>
