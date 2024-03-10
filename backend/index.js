@@ -38,7 +38,7 @@ mongoose
 
 // cors middleware
 const corsOptions = {
-  origin: 'https://ivy-client-5e9387cb37e4.herokuapp.co',
+  origin: 'https://ivy-client-5e9387cb37e4.herokuapp.com',
 };
 app.use(cors(corsOptions));
 app.use(json());
