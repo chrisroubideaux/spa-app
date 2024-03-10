@@ -61,7 +61,7 @@ passport.use(
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       callbackURL:
         process.env.GOOGLE_CALLBACK_URL ||
-        'https://midwest-realtors-95d2cdb37007.herokuapp.com/auth/google/callback',
+        'https://ivy-database-87df4cfe65bb.herokuapp.com/auth/google/callback',
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
