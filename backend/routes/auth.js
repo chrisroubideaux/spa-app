@@ -1,4 +1,6 @@
 // routes/auth.js
+{
+  /*
 const express = require('express');
 const User = require('../models/user');
 const authRoutes = express.Router();
@@ -117,8 +119,7 @@ authRoutes.post('/login', async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 });
-*/
-}
+
 
 // Google OAuth login route
 authRoutes.get(
@@ -136,3 +137,6 @@ authRoutes.get(
 );
 
 module.exports = authRoutes;
+
+*/
+}

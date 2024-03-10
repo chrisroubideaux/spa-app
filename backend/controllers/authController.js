@@ -1,7 +1,7 @@
 // auth controller
 
 const User = require('../models/user');
-const bcrypt = require('bcrypt');
+//const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 //const passport = require('passport');
