@@ -25,10 +25,10 @@ const Cards = ({ facials }: Facials) => {
             alt="massages"
            /> 
           <div className="carousel-caption pb-5 mt-5">
-            <h6 className="">{facials.service}</h6>
-            <h6>{facials.title}</h6>
-            <h6>{facials.price}</h6>
-        </div>
+            <h6 className="text-white">{facials.service}</h6>
+            <h6 className="text-white">{facials.title}</h6>
+            <h6 className="text-white">{facials.price}</h6>
+          </div>
         </div>
       </Link>
     </>
