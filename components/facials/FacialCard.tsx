@@ -17,16 +17,20 @@ const Cards = ({ facials }: Facials) => {
 
   return (
     <>
-      <div className="card">
-        <Link className="card-link" href={`/facials/${facials._id}`}  >
-          <img className="img img-fluid" src={facials.image} alt="massages" /> 
-        </Link>
-        <div className="card-body">
-          <h6 className="">{facials.service}</h6>
-          <h6>{facials.title}</h6>
-          <h6>{facials.price}</h6>
+      <Link className="card-link" href={`/facials/${facials._id}`}  >
+        <div className="card">
+          <img
+           src={facials.image} 
+           className="img img-fluid"
+            alt="massages"
+           /> 
+          <div className="carousel-caption pb-5 mt-5">
+            <h6 className="">{facials.service}</h6>
+            <h6>{facials.title}</h6>
+            <h6>{facials.price}</h6>
         </div>
-      </div>
+        </div>
+      </Link>
     </>
   );
 };
