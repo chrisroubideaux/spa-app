@@ -1,10 +1,10 @@
 // massages schema
 import mongoose from 'mongoose';
 // Create the model for Massages
-const Massage = mongoose.model('Massage', facialSchema);
+const Massage = mongoose.model('Massage', massageSchema);
 
 // Define the schema for Facial
-const facialSchema = new mongoose.Schema(
+const massageSchema = new mongoose.Schema(
   {
     service: { type: String, required: true },
     name: { type: String, required: true },

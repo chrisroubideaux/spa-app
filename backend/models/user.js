@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 //const bcrypt = require('bcrypt');
 require('dotenv').config();
-const jwt = require('jsonwebtoken');
+//const jwt = require('jsonwebtoken');
 
 // Define the user schema
 const userSchema = new mongoose.Schema(
