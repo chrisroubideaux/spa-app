@@ -28,7 +28,7 @@ const Owners = () => {
 
   useEffect(() => {
     axios
-      .get('https://ivy-server-1f33e818883d.herokuapp.com/owners')
+      .get('https://ivy-database-87df4cfe65bb.herokuapp.com/owners')
       .then((response) => {
         setOwners(response.data);
       })

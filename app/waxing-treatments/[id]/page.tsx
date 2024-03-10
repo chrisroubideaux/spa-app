@@ -16,7 +16,7 @@ export default function Page({ params }: { params: { id: string } }) {
   const [waxing, setWaxing] = useState<any>(null);
 
   useEffect(() => {
-    axios.get(`https://ivy-server-1f33e818883d.herokuapp.com/waxing-treatments/${params.id}`)
+    axios.get(`https://ivy-database-87df4cfe65bb.herokuapp.com/waxing-treatments/${params.id}`)
       .then((response) => {
         setWaxing(response.data);
       })

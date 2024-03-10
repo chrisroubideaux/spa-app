@@ -26,7 +26,7 @@ const Treatments = () => {
   useEffect(() => {
    
     axios
-      .get('https://ivy-server-1f33e818883d.herokuapp.com/body-treatments')
+      .get('https://ivy-database-87df4cfe65bb.herokuapp.com/body-treatments')
       .then((response) => {
        
         setTreatments(response.data);

@@ -26,7 +26,7 @@ const Facials = () => {
 
   useEffect(() => {
     axios
-      .get(`https://ivy-server-1f33e818883d.herokuapp.com/facials`)
+      .get(`https://ivy-database-87df4cfe65bb.herokuapp.com/facials`)
       .then((response) => {
       
         setFacials(response.data);

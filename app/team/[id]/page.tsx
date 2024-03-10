@@ -13,7 +13,7 @@ export default function Page ({ params }: { params: { id: number; } }) {
   
   const [owner, setOwner] = useState<any>(null);
 useEffect(() => {
-  axios.get(`http://localhost:3001/owners/${params.id}`)
+  axios.get(`https://ivy-database-87df4cfe65bb.herokuapp.com/owners/${params.id}`)
     .then((response) => {
       setOwner(response.data);
     })

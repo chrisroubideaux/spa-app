@@ -15,7 +15,7 @@ export default function Page({ params }: { params: { id: number } }) {
   const [massage, setMassage] = useState<any>(null);
   
   useEffect(() => {
-    axios.get(`https://ivy-server-1f33e818883d.herokuapp.com/massages/${params.id}`)
+    axios.get(`https://ivy-database-87df4cfe65bb.herokuapp.com/massages/${params.id}`)
       .then((response) => {
         setMassage(response.data);
       })

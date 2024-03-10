@@ -15,7 +15,7 @@ export default function Page ({ params }: { params: { id: number; } }) {
   
   const [facial, setFacial] = useState<any>(null);
 useEffect(() => {
-  axios.get(`https://ivy-server-1f33e818883d.herokuapp.com/facials/${params.id}`)
+  axios.get(`https://ivy-database-87df4cfe65bb.herokuapp.com/facials/${params.id}`)
     .then((response) => {
       setFacial(response.data);
     })

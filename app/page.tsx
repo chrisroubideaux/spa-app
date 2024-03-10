@@ -51,7 +51,7 @@ const [waxings, setWaxings] = useState<Treatments[]>([]);
 // useEffect 
 useEffect(() => {
   axios
-    .get('https://ivy-server-1f33e818883d.herokuapp.com/massages')
+    .get('https://ivy-database-87df4cfe65bb.herokuapp.com/massages')
     .then((response) => {
       setMassages(response.data);
     })
@@ -63,7 +63,7 @@ useEffect(() => {
 // useEffect
 useEffect(() => {
   axios
-    .get(`https://ivy-server-1f33e818883d.herokuapp.com/facials`)
+    .get(`https://ivy-database-87df4cfe65bb.herokuapp.com/facials`)
     .then((response) => {
     
       setFacials(response.data);
@@ -76,7 +76,7 @@ useEffect(() => {
 // useEffect
 useEffect(() => {
   axios
-    .get('https://ivy-server-1f33e818883d.herokuapp.com/waxing-treatments')
+    .get('https://ivy-database-87df4cfe65bb.herokuapp.com/waxing-treatments')
     .then((response) => {
       setWaxings(response.data);
     })
@@ -88,7 +88,7 @@ useEffect(() => {
 // useEffect
 useEffect(() => {
   axios
-    .get('https://ivy-server-1f33e818883d.herokuapp.com/body-treatments')
+    .get('https://ivy-database-87df4cfe65bb.herokuapp.com/body-treatments')
     .then((response) => {
      
       setTreatments(response.data);

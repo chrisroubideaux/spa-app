@@ -27,7 +27,7 @@ const Massages = () => {
   useEffect(() => {
     axios
     
-      .get('https://ivy-server-1f33e818883d.herokuapp.com/massages')
+      .get('https://ivy-database-87df4cfe65bb.herokuapp.com/massages')
       
       .then((response) => {
      
