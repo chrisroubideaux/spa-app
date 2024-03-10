@@ -28,7 +28,7 @@ const User = require('./models/user');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT;
+const port = process.env.PORT || 3001;
 
 // mongoDB connection
 const mongoURI = process.env.MONGO_URI;
@@ -104,7 +104,7 @@ app.use((req, res, next) => {
 
 // Routes
 app.get('/', (req, res) => {
-  res.send('Hello, Express with TypeScript!');
+  res.send('Hello!');
 });
 
 // page routes
@@ -196,6 +196,6 @@ app.use('/auth', authRoutes);
 app.post('/auth', authRoutes);
 app.use('/user', userRoutes);
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
