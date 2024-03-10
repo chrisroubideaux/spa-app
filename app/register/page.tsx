@@ -164,7 +164,8 @@ const Register = () => {
                 </button>
               </li>
               <li className="ms-3">
-                <button className="text-muted bg-transparent border-0">
+                <button className="text-muted bg-transparent border-0"
+                  onClick={handleGoogleRegister}>
                   <FaGoogle className="social-icons m-2 fs-3" />
                 </button>
               </li>
