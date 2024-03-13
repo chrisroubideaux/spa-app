@@ -60,13 +60,14 @@ const Register = () => {
   const handleGoogleRegister = () => {
     // Define the Google OAuth registration URL
     const googleOAuthURL =
-      'https://ivy-database-87df4cfe65bb.herokuapp.com/auth/google/callback';
+      'https://ivy-database-87df4cfe65bb.herokuapp.com/auth/google/register';
 
     // Open the Google OAuth URL in a popup window
     window.open(
       googleOAuthURL,
       'Google OAuth',
-      'width=500,height=500'
+      'width=600,height=600'
+  
     );
   };
   // Facebook registration function
