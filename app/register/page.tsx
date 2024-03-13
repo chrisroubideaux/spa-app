@@ -66,7 +66,7 @@ const Register = () => {
     window.open(
       googleOAuthURL,
       'Google OAuth',
-      'width=300,height=300'
+      'width=500,height=500'
     );
   };
   // Facebook registration function
@@ -79,7 +79,7 @@ const Register = () => {
     window.open(
       facebookOAuthURL,
       'Facebook OAuth',
-      'width=300,height=300'
+      'width=500,height=500'
     );
   };
 
