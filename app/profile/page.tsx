@@ -1,5 +1,6 @@
 // profile page
 'use client';
+{/*
 import Link from 'next/link';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -37,7 +38,7 @@ export default function Profile({}) {
     <div className="layout">
         <Navbar />
         <div className="container-fluid pt-5">
-            {/* main content */}
+           
             <div className="container text-center">
                 <h4>You have successfully registered your account</h4>
                 {users && (
@@ -52,3 +53,5 @@ export default function Profile({}) {
     </>
   );
 }
+
+*/}
