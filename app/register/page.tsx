@@ -60,7 +60,7 @@ const Register = () => {
   const handleGoogleRegister = () => {
     // Define the Google OAuth registration URL
     const googleOAuthURL =
-      'https://ivy-database-87df4cfe65bb.herokuapp.com/auth/google/register';
+      'https://ivy-database-87df4cfe65bb.herokuapp.com/auth/google/callback';
 
     // Open the Google OAuth URL in a popup window
     window.open(
