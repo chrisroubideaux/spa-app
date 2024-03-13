@@ -1,5 +1,4 @@
 // profile page
-'use client';
 {/*
 import Link from 'next/link';
 import axios from 'axios';
