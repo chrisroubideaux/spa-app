@@ -1,6 +1,7 @@
 // profile page
-{
-  /*
+'use client';
+// profile page
+'use client';
 import Link from 'next/link';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -15,7 +16,7 @@ export default function Profile({}) {
   useEffect(() => {
     const token = localStorage.getItem('token');
     axios
-      .get(`https://ivy-database-87df4cfe65bb.herokuapp.com/profile`, {
+      .get(`https://ivy-database-87df4cfe65bb.herokuapp.com/users`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -35,24 +36,19 @@ export default function Profile({}) {
 
   return (
     <>
-    <div className="layout">
+      <div className="layout">
         <Navbar />
         <div className="container-fluid pt-5">
-           
-            <div className="container text-center">
-                <h4>You have successfully registered your account</h4>
-                {users && (
-                <Link className='btn btn-md' href={`/profile/${(users as any).id}`}>
-                    
-                </Link>
-                )}
-            </div>
+          {/* main content */}
+          <div className="container text-center">
+            <h4>You have successfully registered your account</h4>
+            <Link className="btn btn-md w-100" href="/">
+              Go to profile
+            </Link>
+          </div>
         </div>
-    </div>
+      </div>
       <Footer />
     </>
   );
-}
-
-*/
 }

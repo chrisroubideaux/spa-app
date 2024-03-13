@@ -11,7 +11,6 @@ import Iconbar from '@/components/massages/Iconbar';
 import Footer from '@/components/misc/Footer';
 
 export default function Page({ params }: { params: { id: number } }) {
-  
   const [massage, setMassage] = useState<any>(null);
   
   useEffect(() => {
