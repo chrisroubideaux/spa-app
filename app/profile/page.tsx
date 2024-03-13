@@ -1,44 +1,52 @@
 // profile page
 'use client';
-// pages/profile/[id].js
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import axios from 'axios';
+import { useEffect, useState } from 'react';
+// import components
+import Navbar from '@/components/navbar/Navbar';
+import Footer from '@/components/misc/Footer';
 
-const Profile = () => {
-  const router = useRouter();
-  const { id } = router.query;
-  const [userData, setUserData] = useState(null);
+export default function Profile({}) {
+  const [users, setUsers] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (id) {
-      axios.get(`https://your-api-url.com/users/${id}`)
-        .then(response => {
-          setUserData(response.data);
-        })
-        .catch(error => {
-          console.error('Error fetching user data:', error);
-        });
-    }
-  }, [id]);
+    const token = localStorage.getItem('token');
+    axios
+      .get(`https://ivy-database-87df4cfe65bb.herokuapp.com/profile`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        if (response.status === 200) {
+          setUsers(response.data.user);
+        } else {
+          setError(response.data.message);
+        }
+      })
+    .catch((err) => {
+        setError(null);
+        console.error(err);
+    });
+  }, []);
 
-  if (typeof window === 'undefined') {
-    return null; // Don't render anything during server-side rendering
-  }
-
-if (!userData) {
-    return <div>Loading...</div>;
+  return (
+    <>
+      <div className="layout">
+        <Navbar />
+        <div className="container-fluid pt-5">
+          {/* main content */}
+          <div className="container text-center">
+            <h4>You have successfully registered your account</h4>
+            <Link className="btn btn-md w-100" href="/">
+              Go to profile
+            </Link>
+          </div>
+        </div>
+      </div>
+      <Footer />
+    </>
+  );
 }
-
-return (
-    <div>
-        <h1>Profile</h1>
-        <p>User ID: {(userData as { id: string }).id}</p>
-        <p>Email: {(userData as { id: string; email: string; fullName: string; }).email}</p>
-        <p>Full Name: {(userData as { id: string; email: string; fullName: string; }).fullName}</p>
-        {/* Add other user data here */}
-    </div>
-);
-};
-
-export default Profile;
