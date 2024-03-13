@@ -1,5 +1,4 @@
 // user model
-
 const mongoose = require('mongoose');
 //const bcrypt = require('bcrypt');
 require('dotenv').config();
@@ -11,9 +10,14 @@ const userSchema = new mongoose.Schema(
     email: { type: String, unique: true, sparse: true },
     password: { type: String, required: false },
     fullName: { type: String },
+    // facebook oAuth
     facebookId: { type: String },
     facebookDisplayName: { type: String },
     facebookEmail: { type: String },
+    // google oAuth
+    googleId: { type: String },
+    googleDisplayName: { type: String },
+    googleEmail: { type: String },
   },
   {
     timestamps: true,

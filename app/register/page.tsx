@@ -8,7 +8,6 @@ import { useRouter } from 'next/navigation';
 import { FaFacebook, FaGoogle, FaChevronUp } from 'react-icons/fa';
 
 
-
 const Register = () => {
   const router = useRouter();
   const [formData, setFormData] = useState({
@@ -34,7 +33,7 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-        'https://ivy-client-5e9387cb37e4.herokuapp.com/register',
+        'https://ivy-database-87df4cfe65bb.herokuapp.com/register',
         formData
       );
 
@@ -61,7 +60,7 @@ const Register = () => {
   const handleGoogleRegister = () => {
     // Define the Google OAuth registration URL
     const googleOAuthURL =
-      'https://ivy-client-5e9387cb37e4.herokuapp.com/auth/google/register';
+      'https://ivy-database-87df4cfe65bb.herokuapp.com/auth/google/register';
 
     // Open the Google OAuth URL in a popup window
     window.open(
@@ -74,7 +73,7 @@ const Register = () => {
   const handleFacebookRegister = () => {
     // Define the Facebook OAuth registration URL
     const facebookOAuthURL =
-      'https://ivy-client-5e9387cb37e4.herokuapp.com/auth/facebook/register';
+      'https://ivy-database-87df4cfe65bb.herokuapp.com/auth/facebook/register';
 
     // Open the Facebook OAuth URL in a popup window
     window.open(
