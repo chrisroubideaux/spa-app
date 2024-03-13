@@ -1,9 +1,71 @@
 // login page
 'use client';
+import axios from 'axios';
 import Link from 'next/link';
+import { useState } from 'react';
 import { FaFacebook, FaGoogle, FaChevronUp } from 'react-icons/fa';
 
 const Login = () => {
+
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
+
+  const [error, setError] = useState(null);
+
+  const handleChange = (e: { target: { name: any; value: any; }; }) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+
+    try {
+      // Send a POST request to the login endpoint using Axios
+      const response = await axios.post(
+        'https://midwest-realtors-95d2cdb37007.herokuapp.com/auth/login',
+        formData
+      );
+
+      if (response.status === 200) {
+        // Redirect to the profile page after successful login
+        window.location.href = '/user';
+      } else {
+        const data = response.data;
+        setError(data.message);
+      }
+    } catch (err) {
+      console.error(err);
+      setError(null);
+    }
+  };
+
+  // Add Google login function
+  const handleGoogleLogin = () => {
+    // Redirect the user to Google OAuth login
+    window.location.href =
+      'https://ivy-database-87df4cfe65bb.herokuapp.com/auth/google/login';
+  };
+
+  // Facebook registration function
+  const handleFacebookLogin = () => {
+    const facebookOAuthURL =
+      'https://ivy-database-87df4cfe65bb.herokuapp.com/auth/facebook/login';
+
+    window.open(
+      facebookOAuthURL,
+      'Facebook OAuth',
+      'width=300,height=300'
+    );
+  };
+
+
+
   return (
     <>
       <div className="">
@@ -68,7 +130,8 @@ const Login = () => {
                   </button>
                 </li>
                 <li className="ms-3">
-                  <button className="text-muted bg-transparent border-0">
+                  <button className="text-muted bg-transparent border-0"  
+                      onClick={handleGoogleLogin}>
                     <FaGoogle className="social-icons m-2 fs-3" />
                   </button>
                 </li>

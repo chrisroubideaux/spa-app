@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const ProfilePage = () => {
+const Profile = () => {
   const router = useRouter();
   const { id } = router.query;
   const [user, setUser] = useState(null);
@@ -13,7 +13,7 @@ const ProfilePage = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get(`https://ivy-database-87df4cfe65bb.herokuapp.co/${id}`);
+        const response = await axios.get(`https://ivy-database-87df4cfe65bb.herokuapp.com/${id}`);
         setUser(response.data);
         setLoading(false);
       } catch (error) {
@@ -46,4 +46,4 @@ const ProfilePage = () => {
   );
 };
 
-export default ProfilePage;
+export default Profile;
