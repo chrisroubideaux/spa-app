@@ -1,7 +1,10 @@
 // card component for massages
-
 import Link from 'next/link';
-
+import {
+  FaMoneyBillWave,
+  FaHandHoldingHeart,
+  FaUser,
+} from 'react-icons/fa';
 type Massages = {
   massages: {
   _id: number;
@@ -18,18 +21,27 @@ const Cards = ({ massages }: Massages) => {
 
   return (
     <>
-      <Link className="card-link" href={`/massages/${massages._id}`}  >
+      <Link className="card-link" href={`/massages/${massages._id}`}>
         <div className="card">
       
           <img 
-          src={massages.image} 
-          className="img img-fluid" 
-          alt="massages" 
+            src={massages.image} 
+            className="img img-fluid" 
+            alt="massages" 
           /> 
           <div className="carousel-caption pb-5 mt-5">
-            <h6 className="text-white">{massages.service}</h6>
-            <h6 className='text-white'>{massages.title}</h6>
-            <h6 className='text-white'>{massages.price}</h6>
+            <h6 className="text-white">
+              <FaHandHoldingHeart className="social-icon mt-n1 me-2 mt-1" />
+              {massages.service}
+              </h6>
+            <h6 className='text-white'>
+              <FaUser className="social-icon mt-n1 me-2 mt-1" />
+              {massages.title}
+              </h6>
+            <h6 className='text-white'>
+              <FaMoneyBillWave className="social-icon mt-n1 me-2 mt-1" />
+              {massages.price}
+              </h6>
           </div>
        </div>
       </Link>

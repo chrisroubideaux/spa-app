@@ -2,11 +2,9 @@
 
 import Link from 'next/link';
 import {
-  FaBuilding,
+  FaFillDrip,
   FaMoneyBillWave,
-  FaMapPin,
-  FaBed,
-  FaBath,
+  FaUser,
 } from 'react-icons/fa';
 
 type Waxings = {
@@ -33,7 +31,11 @@ const Cards = ({ waxings }: Waxings) => {
       
       <div className="carousel-caption pb-5 mt-5">
         <h6 className='text-white'>
-          <FaBuilding className="social-icon mt-n1 me-2 mt-1" />{' '}
+          <FaUser className="social-icon mt-n1 me-2 mt-1" />
+          {waxings.service}
+        </h6>
+        <h6 className='text-white'>
+          <FaFillDrip  className="social-icon mt-n1 me-2 mt-1" />{' '}
           {waxings.title}
         </h6>
         <h6 className='text-white'>
