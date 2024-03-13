@@ -41,9 +41,9 @@ export default function Profile({}) {
             <div className="container text-center">
                 <h4>You have successfully registered your account</h4>
                 {users && (
-                    <Link href={`/profile/${(users as any).id}`}>
-                        <a className="btn btn-md w-100">Go to profile</a>
-                    </Link>
+                <Link className='btn btn-md' href={`/profile/${(users as any).id}`}>
+                    
+                </Link>
                 )}
             </div>
         </div>
