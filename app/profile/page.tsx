@@ -26,26 +26,28 @@ export default function Profile({}) {
           setError(response.data.message);
         }
       })
-    .catch((err) => {
+      .catch((err) => {
         setError(null);
         console.error(err);
-    });
+      });
   }, []);
 
   return (
     <>
-      <div className="layout">
+    <div className="layout">
         <Navbar />
         <div className="container-fluid pt-5">
-          {/* main content */}
-          <div className="container text-center">
-            <h4>You have successfully registered your account</h4>
-            <Link className="btn btn-md w-100" href="/">
-              Go to profile
-            </Link>
-          </div>
+            {/* main content */}
+            <div className="container text-center">
+                <h4>You have successfully registered your account</h4>
+                {users && (
+                    <Link href={`/profile/${(users as any).id}`}>
+                        <a className="btn btn-md w-100">Go to profile</a>
+                    </Link>
+                )}
+            </div>
         </div>
-      </div>
+    </div>
       <Footer />
     </>
   );
