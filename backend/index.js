@@ -147,16 +147,21 @@ app.get('/contact', (req, res) => {
 app.get('/about', (req, res) => {
   res.send('About page');
 });
-
-// Google OAuth routes
+// Google OAuth register route
 app.get(
   '/auth/google/register',
   passport.authenticate('google', { scope: ['openid', 'profile', 'email'] })
 );
+
+// Google OAuth login route
 app.get(
   '/auth/google/login',
-  passport.authenticate('google', { scope: ['openid', 'profile', 'email'] })
+  passport.authenticate('google', {
+    scope: ['openid', 'profile', 'email'],
+  })
 );
+
+// Google OAuth login callback route
 app.get(
   '/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/login' }),
