@@ -13,7 +13,7 @@ const ProfilePage = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get(`https://ivy-database-87df4cfe65bb.herokuapp.com/${id}`);
+        const response = await axios.get(`https://ivy-database-87df4cfe65bb.herokuapp.co/${id}`);
         setUser(response.data);
         setLoading(false);
       } catch (error) {
