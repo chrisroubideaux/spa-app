@@ -216,7 +216,7 @@ const showAlertMessage = (message: React.SetStateAction<string>) => {
                           </div>
                           <small className="opacity-50 text-nowrap">
                             <h6 className="">{massages.times}</h6>
-                            <h6 className="">{massages.slot}</h6>
+
                             {/* select time slot component */}
                             <select
                               value={selectedSlot}
