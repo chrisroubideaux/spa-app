@@ -90,11 +90,10 @@ const Login = () => {
                   required
                   type="text"
                   name="fullName"
-                  //  value={formData.fullName}
-                  //  onChange={handleChange}
+                  // value={formData.fullName}
+                  // onChange={handleChange}
                   placeholder="Enter Email"
                 />
-
                 <input
                   className="form-control m-2 fw-bold"
                   required
@@ -104,7 +103,6 @@ const Login = () => {
                   //onChange={handleChange}
                   placeholder="Enter Password"
                 />
-
                 <div className="container mt-3">
                   {/*}
                   {errorMessage && (
@@ -125,7 +123,8 @@ const Login = () => {
               <h6 className="text-center mb-4">Or register with</h6>
               <ul className="nav justify-content-center list-unstyled d-flex pt-1 ">
                 <li className="ms-3">
-                  <button className="text-muted bg-transparent border-0">
+                  <button className="text-muted bg-transparent border-0"
+                    onClick={handleFacebookLogin} >
                     <FaFacebook className="social-icons m-2 fs-3" />
                   </button>
                 </li>
@@ -163,14 +162,15 @@ const Login = () => {
             backgroundRepeat: 'no-repeat',
             boxShadow: '0 0 20px 0 rgb(0 0 0 / 30%) ',
           }}
-        ></div>
+        >
+        </div>
 
-        <a href="#top" className="btn-scroll-top btn-sm" data-scroll>
-          <span className="btn-scroll-top-tooltip text-muted fs-sm me-2">
-            Top
-          </span>
-          <FaChevronUp className="btn-scroll-top-icon bx bx-chevron-up" />
-        </a>
+          <a href="#top" className="btn-scroll-top btn-sm" data-scroll>
+            <span className="btn-scroll-top-tooltip text-muted fs-sm me-2">
+              Top
+            </span>
+            <FaChevronUp className="btn-scroll-top-icon bx bx-chevron-up" />
+          </a>
       </div>
     </>
   );

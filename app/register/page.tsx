@@ -138,15 +138,13 @@ const Register = () => {
                 onChange={handleChange}
                 placeholder="Confirm Password"
               />
-
-              <div className="container mt-3">
-                
-                  {errorMessage && (
-                    <p className="text-danger">{errorMessage}</p>
-                  )}
-                  {successMessage && (
-                    <p className="text-success">{successMessage}</p>
-                  )}
+              <div className="container mt-3"> 
+                {errorMessage && (
+                  <p className="text-danger">{errorMessage}</p>
+                )}
+                {successMessage && (
+                  <p className="text-success">{successMessage}</p>
+                )}
                   
                 <button className="w-100 btn btn-md fw-bold" type="submit">
                   register
@@ -154,12 +152,12 @@ const Register = () => {
               </div>
             </form>
             {/* */}
-
             <hr className="my-4" />
             <h6 className="text-center mb-4">Or register with</h6>
             <ul className="nav justify-content-center list-unstyled d-flex pt-1 ">
               <li className="ms-3">
-                <button className="text-muted bg-transparent border-0">
+                <button className="text-muted bg-transparent border-0"
+                  onClick={handleFacebookRegister} >
                   <FaFacebook className="social-icons m-2 fs-3" />
                 </button>
               </li>
@@ -187,7 +185,8 @@ const Register = () => {
         </div>
       </div>
       <div
-        className=" mt-3 position-absolute top-0 end-0 w-50   d-none d-xl-block"
+        className=" mt-3 position-absolute top-0 end-0 w-50 
+        d-none d-xl-block"
         style={{
           backgroundImage: ' url(../hero/register.png)',
           height: '90vh',

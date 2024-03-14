@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-//const FacebookStrategy = require('passport-facebook').Strategy;
+const FacebookStrategy = require('passport-facebook').Strategy;
 const User = require('./models/user');
 
 // Import routes
@@ -53,6 +53,7 @@ app.use(
     saveUninitialized: true,
   })
 );
+
 // google passport oAuth
 passport.use(
   new GoogleStrategy(
@@ -104,6 +105,61 @@ passport.deserializeUser(async (id, done) => {
     done(err);
   }
 });
+
+// Facebook passport oAuth
+passport.use(
+  new FacebookStrategy(
+    {
+      clientID: process.env.FACEBOOK_CLIENT_ID,
+      clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
+      callbackURL:
+        process.env.FACEBOOK_CALLBACK_URL ||
+        'https://ivy-database-87df4cfe65bb.herokuapp.com/auth/google/callback',
+      profileFields: ['id', 'displayName', 'photos', 'emails'],
+    },
+    async (accessToken, refreshToken, profile, done) => {
+      console.log('Facebook Profile Data:', profile);
+
+      try {
+        // Check if the Facebook user is already registered in your database
+        const existingUser = await User.findOne({ 'facebook.id': profile.id });
+
+        if (existingUser) {
+          return done(null, existingUser);
+        }
+
+        // Create a new user with Facebook account details
+        const newUser = new User({
+          facebook: {
+            id: profile.id,
+            displayName: profile.displayName,
+            email: profile.emails[0].value,
+          },
+        });
+
+        await newUser.save();
+
+        return done(null, newUser);
+      } catch (err) {
+        return done(err);
+      }
+    }
+  )
+);
+
+passport.serializeUser((user, done) => {
+  done(null, user.id);
+});
+
+passport.deserializeUser(async (id, done) => {
+  try {
+    const user = await User.findById(id);
+    done(null, user);
+  } catch (err) {
+    done(err);
+  }
+});
+
 // Initialize Passport
 app.use(passport.initialize());
 app.use(passport.session());
@@ -128,11 +184,6 @@ function verifyToken(req, res, next) {
     next();
   });
 }
-
-// Routes
-app.get('/', (req, res) => {
-  res.send('Hello!');
-});
 
 app.use('/facials', facialRoutes);
 app.use('/massages', massageRoutes);
@@ -167,6 +218,40 @@ app.get(
   passport.authenticate('google', { failureRedirect: '/login' }),
   (req, res) => {
     res.redirect('https://ivy-client-5e9387cb37e4.herokuapp.com/profile');
+  }
+);
+
+// Facebook OAuth registration route
+app.get(
+  '/auth/facebook/register',
+  passport.authenticate('facebook', { scope: ['email'] })
+);
+
+// Facebook OAuth registration route
+app.get(
+  '/auth/facebook/register',
+  passport.authenticate('facebook', { scope: ['email'] })
+);
+
+// Facebook OAuth callback route for registration
+app.get(
+  '/auth/facebook/callback/register',
+  passport.authenticate('facebook', {
+    failureRedirect: '/login',
+  }),
+  (req, res) => {
+    res.redirect('https://ivy-client-5e9387cb37e4.herokuapp.com/profile');
+  }
+);
+
+// Callback routes for both registration and login
+app.get(
+  '/auth/facebook/callback',
+  passport.authenticate('facebook', {
+    failureRedirect: '/login',
+  }),
+  (req, res) => {
+    res.redirect('https://client-prime-5b6b37e08f74.herokuapp.com/users');
   }
 );
 
