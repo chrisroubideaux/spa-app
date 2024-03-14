@@ -2,7 +2,6 @@
 const mongoose = require('mongoose');
 
 const appointmentSchema = new mongoose.Schema({
-  mlsId: String,
   name: String,
   photo: String,
   title: String,

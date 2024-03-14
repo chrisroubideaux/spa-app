@@ -24,6 +24,16 @@ type Massages = {
   };
 };
 
+type Appointments = {
+  appointmentId: string;
+  massageId: string;
+  selectedSlot: string;
+  selectedDate: string;
+  createdAt: string;
+  updatedAt: string;
+  __v: number;
+};
+
 export default function Bookings({massages }: Massages ) {
   
   const [selectedSlot, setSelectedSlot] = useState(''); // State to store the selected time slot
@@ -50,7 +60,7 @@ const handleSubmit = async (e: { preventDefault: () => void; }) => {
   try {
     // Send a POST request to create or reschedule the appointment
     const response = await axios.post(
-      'https://ivy-client-5e9387cb37e4.herokuapp.com/appointments',
+      'https://ivy-client-5e9387cb37e4.herokuapp.com/massages',
       {
         massageId: massages._id, // Send the massage ID
         selectedSlot, // Send the selected time slot
