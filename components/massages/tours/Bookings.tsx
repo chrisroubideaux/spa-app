@@ -24,20 +24,12 @@ type Massages = {
   };
 };
 
-type Appointments = {
-  appointmentId: string;
-  massageId: string;
-  selectedSlot: string;
-  selectedDate: string;
-  createdAt: string;
-  updatedAt: string;
-  __v: number;
-};
 
 export default function Bookings({massages }: Massages ) {
   
-  const [selectedSlot, setSelectedSlot] = useState(''); // State to store the selected time slot
-  const [selectedAppointment, setSelectedAppointment] = useState(null);
+  const [selectedSlot, setSelectedSlot] = useState(''); 
+ // const [selectedAppointment, setSelectedAppointment] = useState(null);
+  const [selectedMassage, setSelectedMassage] = useState(null);
   const [showAlert, setShowAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState('');
   const [selectedDay, setSelectedDay] = useState(null);
@@ -46,7 +38,7 @@ export default function Bookings({massages }: Massages ) {
   const handleDayClick = (date: Date | null) => {
     // Handle the selected day
     setSelectedDay(null);
-    setSelectedDate(date || new Date()); // Update the type of selectedDate to allow for null values
+    setSelectedDate(date || new Date()); 
   };
 
 // Function to handle the form submission
@@ -65,14 +57,14 @@ const handleSubmit = async (e: { preventDefault: () => void; }) => {
         massageId: massages._id, // Send the massage ID
         selectedSlot, // Send the selected time slot
         selectedDate, // Send the selected date
-        appointmentId: selectedAppointment, // Send the appointment ID if rescheduling
+        massagetId: selectedMassage, // Send the appointment ID if rescheduling
       }
     );
 
     // Handle successful appointment creation or rescheduling
     console.log('Appointment created or rescheduled:', response.data);
 
-    if (selectedAppointment) {
+    if (selectedMassage) {
       // Appointment has been rescheduled
       showAlertMessage(
         `Your appointment has been rescheduled ${selectedSlot}.`
@@ -85,7 +77,7 @@ const handleSubmit = async (e: { preventDefault: () => void; }) => {
     }
 
     // Close the modal or perform any other desired actions
-    setSelectedAppointment(null);
+    setSelectedMassage(null);
     setSelectedSlot('');
   } catch (error) {
     // Handle errors (e.g., show an error message)
@@ -99,11 +91,11 @@ const handleSubmit = async (e: { preventDefault: () => void; }) => {
 };
 
 // Function to delete an appointment
-const handleDeleteAppointment = async (appointmentId: any) => {
+const handleDeleteAppointment = async (massageId: any) => {
   try {
     // Send a DELETE request to delete the appointment
     const response = await axios.delete(
-      `https://ivy-client-5e9387cb37e4.herokuapp.com/appointments/${appointmentId}`
+      `https://ivy-client-5e9387cb37e4.herokuapp.com/massages/${massageId}`
     );
 
     // Handle successful appointment deletion
@@ -112,7 +104,7 @@ const handleDeleteAppointment = async (appointmentId: any) => {
     // Close the modal or perform any other desired actions
     alert('Appointment has been canceled successfully.');
 
-    setSelectedAppointment(appointmentId);
+    setSelectedMassage(massageId);
   } catch (error) {
     // Handle errors (e.g., show an error message)
     console.error('Error deleting appointment:', error);
