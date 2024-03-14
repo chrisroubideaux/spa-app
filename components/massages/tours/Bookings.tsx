@@ -39,6 +39,7 @@ export default function Bookings({massages }: Massages ) {
     // Handle the selected day
     setSelectedDay(null);
     setSelectedDate(date || new Date()); 
+
   };
 
 // Function to handle the form submission
@@ -57,7 +58,7 @@ const handleSubmit = async (e: { preventDefault: () => void; }) => {
         massageId: massages._id, // Send the massage ID
         selectedSlot, // Send the selected time slot
         selectedDate, // Send the selected date
-        massagetId: selectedMassage, // Send the appointment ID if rescheduling
+        
       }
     );
 
