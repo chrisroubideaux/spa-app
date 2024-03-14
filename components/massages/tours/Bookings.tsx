@@ -32,14 +32,15 @@ export default function Bookings({massages }: Massages ) {
   const [selectedMassage, setSelectedMassage] = useState(null);
   const [showAlert, setShowAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState('');
-  const [selectedDay, setSelectedDay] = useState(null);
-  const [selectedDate, setSelectedDate] = useState(new Date());
- 
-  const handleDayClick = (date: Date | null) => {
-    // Handle the selected day
-    setSelectedDay(null);
-    setSelectedDate(date || new Date()); 
+  
+  const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
 
+  const [selectedDay, setSelectedDay] = useState<Date | null>(null);
+
+  const handleDayClick = (date: Date) => {
+    // Handle the selected day
+    setSelectedDay(date);
+    setSelectedDate(date);
   };
 
 // Function to handle the form submission
@@ -186,7 +187,7 @@ const showAlertMessage = (message: React.SetStateAction<string>) => {
                       >
                         <div className="card-body">
                           <p className="fs-6">
-                            {alertMessage} || {selectedDate.toDateString()}
+                            {alertMessage} || {selectedDate ? selectedDate.toDateString() : ''}
                           </p>
                           <h3 className="fs-6"> </h3>
                         </div>
