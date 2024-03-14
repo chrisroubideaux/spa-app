@@ -114,7 +114,7 @@ passport.use(
       clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
       callbackURL:
         process.env.FACEBOOK_CALLBACK_URL ||
-        'https://ivy-database-87df4cfe65bb.herokuapp.com/auth/google/callback',
+        'https://ivy-database-87df4cfe65bb.herokuapp.com/auth/facebook/callback',
       profileFields: ['id', 'displayName', 'photos', 'emails'],
     },
     async (accessToken, refreshToken, profile, done) => {
@@ -251,7 +251,7 @@ app.get(
     failureRedirect: '/login',
   }),
   (req, res) => {
-    res.redirect('https://client-prime-5b6b37e08f74.herokuapp.com/users');
+    res.redirect('https://client-prime-5b6b37e08f74.herokuapp.com/profile');
   }
 );
 
