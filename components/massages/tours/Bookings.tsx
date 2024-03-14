@@ -212,11 +212,10 @@ const showAlertMessage = (message: React.SetStateAction<string>) => {
                         <div className="d-flex gap-2 w-100 justify-content-between mt-1">
                           <div className="">
                             <h6 className="fs-5 me-2">{massages.name}</h6>
-                            <h6 className="">{massages.name}</h6>
-                            <h6 className="">{massages.times}</h6>
+                            <h6 className="">{massages.days}</h6>
                           </div>
                           <small className="opacity-50 text-nowrap">
-                            <h6 className="">{massages.days}</h6>
+                            <h6 className="">{massages.times}</h6>
                             <h6 className="">{massages.slot}</h6>
                             {/* select time slot component */}
                             <select

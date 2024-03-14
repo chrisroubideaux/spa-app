@@ -21,6 +21,7 @@ const massageSchema = new mongoose.Schema(
     image: String,
     image2: String,
     photo: String,
+    times: String,
     slot: String,
     slot2: String,
     slot3: String,
@@ -28,6 +29,7 @@ const massageSchema = new mongoose.Schema(
     slot5: String,
     slot6: String,
     slot7: String,
+    days: String,
     days: String,
   },
   { timestamps: true }
