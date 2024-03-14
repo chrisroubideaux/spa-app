@@ -1,5 +1,6 @@
 // routes/auth.js
 const mongoose = require('mongoose');
+const express = require('express');
 const User = require('../models/user');
 const authRoutes = express.Router();
 const passport = require('passport');
@@ -66,7 +67,7 @@ passport.use(
       clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
       callbackURL:
         process.env.FACEBOOK_CALLBACK_URL ||
-        'https://ivy-database-87df4cfe65bb.herokuapp.com/auth/google/callback',
+        'https://ivy-database-87df4cfe65bb.herokuapp.com/auth/facebook/callback',
       profileFields: ['id', 'displayName', 'photos', 'emails'],
     },
     async (accessToken, refreshToken, profile, done) => {
