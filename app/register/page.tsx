@@ -80,7 +80,7 @@ const Register = () => {
     window.open(
       facebookOAuthURL,
       'Facebook OAuth',
-      'width=500,height=500'
+      'width=600,height=600'
     );
   };
 

@@ -14,7 +14,7 @@ const User = require('./models/user');
 const facialRoutes = require('./facials/facials');
 
 const userRoutes = require('./routes/user');
-//const authRoutes = require('./routes/auth');
+const authRoutes = require('./routes/auth');
 const massageRoutes = require('./massages/massages');
 const treatmentRoutes = require('./bodyTreatments/treatments');
 const waxingRoutes = require('./waxings/waxings');
@@ -190,6 +190,7 @@ app.use('/massages', massageRoutes);
 app.use('/body-treatments', treatmentRoutes);
 app.use('/waxing-treatments', waxingRoutes);
 app.use('/owners', ownerRoutes);
+app.use('/auth', authRoutes);
 
 app.get('/contact', (req, res) => {
   res.send('Contact page');
