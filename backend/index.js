@@ -192,6 +192,9 @@ app.use('/waxing-treatments', waxingRoutes);
 app.use('/owners', ownerRoutes);
 app.use('/auth', authRoutes);
 
+// Place verifyToken middleware before userRoutes
+app.use('/user', verifyToken, userRoutes);
+
 app.get('/contact', (req, res) => {
   res.send('Contact page');
 });
@@ -255,10 +258,6 @@ app.get(
     res.redirect('https://client-prime-5b6b37e08f74.herokuapp.com/profile');
   }
 );
-
-// Auth routes
-//app.use('/auth', authRoutes);
-app.use('/user', verifyToken, userRoutes);
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);

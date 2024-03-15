@@ -8,12 +8,25 @@ const {
 } = require('../controllers/userController');
 const User = require('../models/user');
 
-// GET user profile page (protected route)
+// GET user profile by ID (protected route)
+
+userRoutes.get('/profile', async (req, res) => {
+  try {
+    const userId = req.user._id;
+    const userData = await getUserById(userId);
+    res.status(200).json(userData); // Send user data as response
+  } catch (error) {
+    console.error('Error fetching user profile by ID:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 userRoutes.get('/:id', async (req, res) => {
   try {
     const userId = req.params.id;
     console.log('User ID:', userId);
     const userData = await User.findById(userId);
+    res.status(200).json(userData); // Send user data as response
   } catch (error) {
     console.error('Error fetching user profile by ID:', error);
     res.status(500).json({ error: 'Internal server error' });
