@@ -47,14 +47,20 @@ authRoutes.get(
   '/auth/google',
   passport.authenticate('google', { scope: ['profile', 'email'] })
 );
-
 // Google OAuth callback route
 authRoutes.get(
   '/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/login' }),
   (req, res) => {
-    // Redirect to profile page after successful authentication
-    res.redirect(`/profile/${User._id}`);
+    if (req.user) {
+      const userId = req.user._id || req.user.id; // Adjust this according to your setup
+
+      // Redirect the user to their profile page with their ID
+      res.redirect(`/profile/${userId}`);
+    } else {
+      // Handle the case where req.user is not defined
+      res.redirect('/login');
+    }
   }
 );
 
