@@ -1,6 +1,5 @@
 // profile page
 'use client';
-
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 // import components
@@ -15,7 +14,6 @@ type User = {
   email: string;
   image: string;
 };
-
 
 export default function Profiles({}) {
 
@@ -54,11 +52,11 @@ export default function Profiles({}) {
             <div className="container-fluid ">
               <div className="row py-4">
                 <div className="col-md-6">
-                  {user.map((user) => (
-                    <div key={user._id} className="pt-4 ">
-                      <ProfileButton user={user} />
+                 
+
+                      <ProfileButton  />
                     </div>
-                  ))}
+                  
                 </div>
                 <div className="col-lg-6">
                   <h3 className="text-center fs-1 fw-bold "></h3>
@@ -69,7 +67,7 @@ export default function Profiles({}) {
               </div>
             </div>
         
-          </div>
+      
           <Footer />
     </>
   );
