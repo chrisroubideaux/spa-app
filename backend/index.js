@@ -190,7 +190,7 @@ app.use('/massages', massageRoutes);
 app.use('/body-treatments', treatmentRoutes);
 app.use('/waxing-treatments', waxingRoutes);
 app.use('/owners', ownerRoutes);
-app.use('/auth', authRoutes);
+app.use('/auth', verifyToken, authRoutes);
 
 // Place verifyToken middleware before userRoutes
 app.use('/user', verifyToken, userRoutes);
