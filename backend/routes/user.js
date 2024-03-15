@@ -1,7 +1,7 @@
 // user route crud operations
 const express = require('express');
 const authRoutes = express.Router();
-const passport = require('passport');
+
 const User = require('../models/user'); // Import User model
 
 const {
@@ -11,22 +11,6 @@ const {
 } = require('../controllers/userController');
 
 // Google OAuth callback route
-
-authRoutes.get(
-  '/auth/google/callback',
-  passport.authenticate('google', { failureRedirect: '/login' }),
-  (req, res) => {
-    if (req.user) {
-      const userId = req.user._id || req.user.id; // Adjust this according to your setup
-
-      // Redirect the user to their profile page with their ID
-      res.redirect(`/profile/${userId}`);
-    } else {
-      // Handle the case where req.user is not defined
-      res.redirect('/login');
-    }
-  }
-);
 
 // POST (create) new user profile route
 authRoutes.post('/', async (req, res) => {

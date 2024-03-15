@@ -224,7 +224,9 @@ authRoutes.get(
       const userId = req.user._id || req.user.id; // Adjust this according to your setup
 
       // Redirect the user to their profile page with their ID
-      res.redirect(`/profile/${userId}`);
+      res.redirect(
+        `https://ivy-client-5e9387cb37e4.herokuapp.com/profile/${userId}`
+      );
     } else {
       // Handle the case where req.user is not defined
       res.redirect('/login');
