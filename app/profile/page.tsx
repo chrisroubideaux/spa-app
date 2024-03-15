@@ -8,7 +8,7 @@ import Navbar from '@/components/navbar/Navbar';
 import ProfileButton from '@/components/profile/ProfileButton';
 import Footer from '@/components/misc/Footer';
 
-type Users = {
+type User = {
   _id: number;
   fullName: string;
   phone: string;
@@ -19,7 +19,7 @@ type Users = {
 
 export default function Profiles({}) {
 
-  const [users, setUsers] = useState<Users[]>([]);
+  const [user, setUser] = useState<User[]>([]);
   const [error, setError] = useState<string | null>(null);
 
 
@@ -33,7 +33,7 @@ export default function Profiles({}) {
       })
       .then((response) => {
         if (response.status === 200) {
-          setUsers(response.data.user);
+          setUser(response.data.user);
         } else {
           setError(response.data.message);
         }
@@ -47,36 +47,36 @@ export default function Profiles({}) {
   return (
     <>
 
-<div className="layout">
+      <div className="layout">
         <div className="container-fluid">
-          <Navbar />
-        </div>
-        <div className="container-fluid ">
-          <div className="row py-4">
-            <div className="col-md-6">
-              <h3 className="mt-2"></h3>
-              <h1 className="fs-3">
-              {users.map((users) => (
-              <div key={users._id} className="pt-4 ">
-                <ProfileButton users={users} />
-              </div>
-            ))}
-              </h1>
-              <div className="d-flex">
-              
+            <Navbar />
+            </div>
+            <div className="container-fluid ">
+              <div className="row py-4">
+                <div className="col-md-6">
+                  <h3 className="mt-2"></h3>
+                  <h1 className="fs-3">
+                  {user.map((user) => (
+                  <div key={user._id} className="pt-4 ">
+                    <ProfileButton user={user} />
+                  </div>
+                ))}
+                  </h1>
+                  <div className="d-flex">
+                  
+                  </div>
+                </div>
+                <div className="col-lg-6">
+                  <h3 className="text-center fs-1 fw-bold ">Bio</h3>
+                  <p className="d-flex justify-content-end fw-normal fs-5 mt-5 lh-3">
+                  test
+                  </p>
+                </div>
               </div>
             </div>
-            <div className="col-lg-6">
-              <h3 className="text-center fs-1 fw-bold ">Bio</h3>
-              <p className="d-flex justify-content-end fw-normal fs-5 mt-5 lh-3">
-               test
-              </p>
-            </div>
+            <Footer />
           </div>
-        </div>
-        <Footer />
-      </div>
-      <Footer />
+          <Footer />
     </>
   );
 }

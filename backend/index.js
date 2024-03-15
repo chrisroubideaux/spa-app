@@ -1,3 +1,4 @@
+// express server
 const express = require('express');
 const session = require('express-session');
 const { json, urlencoded } = require('body-parser');
@@ -7,19 +8,17 @@ const cors = require('cors');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const FacebookStrategy = require('passport-facebook').Strategy;
-const Users = require('./models/users');
+const User = require('./models/user');
 
 // Import routes
-
 const facialRoutes = require('./facials/facials');
-
 const userRoutes = require('./routes/user');
 const authRoutes = require('./routes/auth');
 const massageRoutes = require('./massages/massages');
 const treatmentRoutes = require('./bodyTreatments/treatments');
 const waxingRoutes = require('./waxings/waxings');
 const ownerRoutes = require('./owners/owners');
-
+// Load environment variables
 require('dotenv').config();
 
 const app = express();
@@ -66,7 +65,7 @@ passport.use(
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
-        const existingUser = await Users.findOne({
+        const existingUser = await User.findOne({
           email: profile.emails[0].value,
         });
 
@@ -75,7 +74,7 @@ passport.use(
         }
 
         // Create a new user with Google account details
-        const newUser = new Users({
+        const newUser = new User({
           email: profile.emails[0].value,
           fullName: profile.displayName,
         });
@@ -99,7 +98,7 @@ passport.serializeUser((user, done) => {
 // Deserialize user data when retrieving from the session
 passport.deserializeUser(async (id, done) => {
   try {
-    const user = await Users.findById(id);
+    const user = await User.findById(id);
     done(null, user);
   } catch (err) {
     done(err);
@@ -122,14 +121,14 @@ passport.use(
 
       try {
         // Check if the Facebook user is already registered in your database
-        const existingUser = await Users.findOne({ 'facebook.id': profile.id });
+        const existingUser = await User.findOne({ 'facebook.id': profile.id });
 
         if (existingUser) {
           return done(null, existingUser);
         }
 
         // Create a new user with Facebook account details
-        const newUser = new Users({
+        const newUser = new User({
           facebook: {
             id: profile.id,
             displayName: profile.displayName,
@@ -153,7 +152,7 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser(async (id, done) => {
   try {
-    const user = await Users.findById(id);
+    const user = await User.findById(id);
     done(null, user);
   } catch (err) {
     done(err);
@@ -185,6 +184,7 @@ function verifyToken(req, res, next) {
   });
 }
 
+// Routes
 app.use('/facials', facialRoutes);
 app.use('/massages', massageRoutes);
 app.use('/body-treatments', treatmentRoutes);
