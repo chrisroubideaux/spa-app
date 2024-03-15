@@ -185,6 +185,15 @@ function verifyToken(req, res, next) {
 }
 
 // Routes
+
+// Home route
+app.get('/', (req, res) => {
+  res.send('Welcome to project ivy');
+});
+app.get('/about', (req, res) => {
+  res.send('About page');
+});
+
 app.use('/facials', facialRoutes);
 app.use('/massages', massageRoutes);
 app.use('/body-treatments', treatmentRoutes);
@@ -193,9 +202,6 @@ app.use('/owners', ownerRoutes);
 app.use('/auth', authRoutes);
 app.use('/user', verifyToken, userRoutes);
 
-app.get('/about', (req, res) => {
-  res.send('About page');
-});
 // Google OAuth register route
 app.get(
   '/auth/google/register',

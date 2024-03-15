@@ -74,7 +74,7 @@ export default function Profiles({}) {
                 </div>
               </div>
             </div>
-            <Footer />
+        
           </div>
           <Footer />
     </>
