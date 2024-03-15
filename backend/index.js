@@ -222,7 +222,7 @@ app.get(
   passport.authenticate('google', { failureRedirect: '/login' }),
   (req, res) => {
     res.redirect(
-      `https://ivy-client-5e9387cb37e4.herokuapp.com/profile/${userId}`
+      `https://ivy-client-5e9387cb37e4.herokuapp.com/profile/${User._id}`
     );
   }
 );

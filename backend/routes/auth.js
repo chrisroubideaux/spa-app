@@ -54,7 +54,7 @@ authRoutes.get(
   passport.authenticate('google', { failureRedirect: '/login' }),
   (req, res) => {
     // Redirect to profile page after successful authentication
-    res.redirect('/profile');
+    res.redirect(`/profile/${User._id}`);
   }
 );
 
