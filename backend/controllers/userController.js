@@ -1,6 +1,6 @@
 // userController from controllers folder
 
-const User = require('../models/user');
+const Users = require('../models/users');
 //const jwt = require('jsonwebtoken');
 
 require('dotenv').config();
@@ -10,7 +10,7 @@ const getUser = async (req, res) => {
   try {
     const userId = req.userId;
 
-    const user = await User.findById(userId);
+    const user = await Users.findById(userId);
 
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
@@ -34,7 +34,7 @@ const getUserById = async (req, res) => {
   try {
     const userId = req.userId;
 
-    const user = await User.findById(userId);
+    const user = await Users.findById(userId);
 
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
@@ -59,7 +59,7 @@ const updateUser = async (req, res) => {
     const userId = req.userId;
     const { fullName, email, newPassword } = req.body;
 
-    const user = await User.findById(userId);
+    const user = await Users.findById(userId);
 
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
@@ -92,7 +92,7 @@ const deleteUser = async (req, res) => {
   try {
     const userId = req.userId;
 
-    await User.findByIdAndRemove(userId);
+    await Users.findByIdAndRemove(userId);
 
     res.status(200).json({ message: 'User profile deleted successfully' });
   } catch (error) {

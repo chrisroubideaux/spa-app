@@ -1,7 +1,7 @@
 // facebook passport configuration
 const passport = require('passport');
 const FacebookStrategy = require('passport-facebook').Strategy;
-const User = require('../models/user');
+const Users = require('../models/users');
 
 require('dotenv').config();
 
@@ -14,7 +14,7 @@ passport.use(
         return done(null, existingUser);
       }
 
-      const newUser = new User({
+      const newUser = new Users({
         facebook: {
           id: profile.id,
           displayName: profile.displayName,
@@ -37,7 +37,7 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser(async (id, done) => {
   try {
-    const user = await User.findById(id);
+    const user = await Users.findById(id);
     done(null, user);
   } catch (err) {
     done(err);

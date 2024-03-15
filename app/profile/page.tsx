@@ -1,22 +1,32 @@
 // profile page
 'use client';
-// profile page
-'use client';
-import Link from 'next/link';
+
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 // import components
 import Navbar from '@/components/navbar/Navbar';
+import ProfileButton from '@/components/profile/ProfileButton';
 import Footer from '@/components/misc/Footer';
 
-export default function Profile({}) {
-  const [users, setUsers] = useState(null);
-  const [error, setError] = useState(null);
+type Users = {
+  _id: number;
+  fullName: string;
+  phone: string;
+  email: string;
+  image: string;
+};
+
+
+export default function Profiles({}) {
+
+  const [users, setUsers] = useState<Users[]>([]);
+  const [error, setError] = useState<string | null>(null);
+
 
   useEffect(() => {
     const token = localStorage.getItem('token');
     axios
-      .get(`https://ivy-database-87df4cfe65bb.herokuapp.com/users`, {
+      .get(`https://ivy-database-87df4cfe65bb.herokuapp.com/user`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -36,17 +46,35 @@ export default function Profile({}) {
 
   return (
     <>
-      <div className="layout">
-        <Navbar />
-        <div className="container-fluid pt-5">
-          {/* main content */}
-          <div className="container text-center">
-            <h4>You have successfully registered your account</h4>
-            <Link className="btn btn-md w-100" href="/">
-              Go to profile
-            </Link>
+
+<div className="layout">
+        <div className="container-fluid">
+          <Navbar />
+        </div>
+        <div className="container-fluid ">
+          <div className="row py-4">
+            <div className="col-md-6">
+              <h3 className="mt-2"></h3>
+              <h1 className="fs-3">
+              {users.map((users) => (
+              <div key={users._id} className="pt-4 ">
+                <ProfileButton users={users} />
+              </div>
+            ))}
+              </h1>
+              <div className="d-flex">
+              
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <h3 className="text-center fs-1 fw-bold ">Bio</h3>
+              <p className="d-flex justify-content-end fw-normal fs-5 mt-5 lh-3">
+               test
+              </p>
+            </div>
           </div>
         </div>
+        <Footer />
       </div>
       <Footer />
     </>

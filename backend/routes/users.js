@@ -6,14 +6,14 @@ const {
   updateUser,
   deleteUser,
 } = require('../controllers/userController');
-const User = require('../models/user');
+const Users = require('../models/users');
 
 // GET user profile page (protected route)
 userRoutes.get('/:id', async (req, res) => {
   try {
     const userId = req.params.id;
     console.log('User ID:', userId);
-    const userData = await User.findById(userId);
+    const userData = await Users.findById(userId);
   } catch (error) {
     console.error('Error fetching user profile by ID:', error);
     res.status(500).json({ error: 'Internal server error' });

@@ -3,7 +3,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const bcrypt = require('bcrypt');
-const User = require('./models/user');
+const Users = require('./models/users');
 const jwt = require('jsonwebtoken');
 
 require('dotenv').config(); //
@@ -16,7 +16,7 @@ passport.use(
     },
     async (email, password, done) => {
       try {
-        const user = await User.findOne({ email });
+        const user = await Users.findOne({ email });
 
         if (!user) {
           return done(null, false, { message: 'Invalid email or password' });

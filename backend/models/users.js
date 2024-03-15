@@ -8,6 +8,7 @@ require('dotenv').config();
 const userSchema = new mongoose.Schema(
   {
     email: { type: String, unique: true, sparse: true },
+    image: { type: String, required: false },
     password: { type: String, required: false },
     fullName: { type: String },
     // facebook oAuth

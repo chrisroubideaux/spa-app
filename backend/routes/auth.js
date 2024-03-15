@@ -1,7 +1,7 @@
 // routes/auth.js
 const mongoose = require('mongoose');
 const express = require('express');
-const User = require('../models/user');
+const Users = require('../models/users');
 const authRoutes = express.Router();
 const passport = require('passport');
 const { Strategy: GoogleStrategy } = require('passport-google-oauth20');
@@ -21,11 +21,11 @@ passport.use(
     async (accessToken, refreshToken, profile, done) => {
       try {
         // Check if the user already exists in the database
-        let user = await User.findOne({ googleId: profile.id });
+        let user = await Users.findOne({ googleId: profile.id });
 
         if (!user) {
           // Create a new user if not found
-          user = new User({
+          user = new Users({
             googleId: profile.id,
             googleDisplayName: profile.displayName,
             googleEmail: profile.emails[0].value,
@@ -75,14 +75,14 @@ passport.use(
 
       try {
         // Check if the Facebook user is already registered in your database
-        const existingUser = await User.findOne({ 'facebook.id': profile.id });
+        const existingUser = await Users.findOne({ 'facebook.id': profile.id });
 
         if (existingUser) {
           return done(null, existingUser);
         }
 
         // Create a new user with Facebook account details
-        const newUser = new User({
+        const newUser = new Users({
           facebook: {
             id: profile.id,
             displayName: profile.displayName,

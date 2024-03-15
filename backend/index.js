@@ -7,7 +7,7 @@ const cors = require('cors');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const FacebookStrategy = require('passport-facebook').Strategy;
-const User = require('./models/user');
+const Users = require('./models/users');
 
 // Import routes
 
@@ -66,7 +66,7 @@ passport.use(
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
-        const existingUser = await User.findOne({
+        const existingUser = await Users.findOne({
           email: profile.emails[0].value,
         });
 
@@ -75,7 +75,7 @@ passport.use(
         }
 
         // Create a new user with Google account details
-        const newUser = new User({
+        const newUser = new Users({
           email: profile.emails[0].value,
           fullName: profile.displayName,
         });
@@ -99,7 +99,7 @@ passport.serializeUser((user, done) => {
 // Deserialize user data when retrieving from the session
 passport.deserializeUser(async (id, done) => {
   try {
-    const user = await User.findById(id);
+    const user = await Users.findById(id);
     done(null, user);
   } catch (err) {
     done(err);
@@ -122,14 +122,14 @@ passport.use(
 
       try {
         // Check if the Facebook user is already registered in your database
-        const existingUser = await User.findOne({ 'facebook.id': profile.id });
+        const existingUser = await Users.findOne({ 'facebook.id': profile.id });
 
         if (existingUser) {
           return done(null, existingUser);
         }
 
         // Create a new user with Facebook account details
-        const newUser = new User({
+        const newUser = new Users({
           facebook: {
             id: profile.id,
             displayName: profile.displayName,
@@ -153,7 +153,7 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser(async (id, done) => {
   try {
-    const user = await User.findById(id);
+    const user = await Users.findById(id);
     done(null, user);
   } catch (err) {
     done(err);
