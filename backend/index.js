@@ -190,14 +190,8 @@ app.use('/massages', massageRoutes);
 app.use('/body-treatments', treatmentRoutes);
 app.use('/waxing-treatments', waxingRoutes);
 app.use('/owners', ownerRoutes);
-app.use('/auth', verifyToken, authRoutes);
-
-// Place verifyToken middleware before userRoutes
+app.use('/auth', authRoutes);
 app.use('/user', verifyToken, userRoutes);
-
-app.get('/contact', (req, res) => {
-  res.send('Contact page');
-});
 
 app.get('/about', (req, res) => {
   res.send('About page');
