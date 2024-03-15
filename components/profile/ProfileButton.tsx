@@ -14,7 +14,7 @@ type User = {
   };
 };
 
-function ProfileButton ({ user}: User ) {
+function ProfileButton ({ user }: User ) {
   return (
     <Link className="btn btn-sm" href={`/profile/${user._id}`}>  
         go to profile

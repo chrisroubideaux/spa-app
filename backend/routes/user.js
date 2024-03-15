@@ -1,11 +1,13 @@
 // user route crud operations
 const express = require('express');
 const userRoutes = express.Router();
+
 const {
   getUserById,
   updateUser,
   deleteUser,
 } = require('../controllers/userController');
+
 const User = require('../models/user');
 
 // GET user profile page (protected route)
@@ -41,9 +43,7 @@ userRoutes.put('/:id', async (req, res) => {
 userRoutes.delete('/:id', async (req, res) => {
   try {
     const userId = req.params.id;
-
     await deleteUser(userId);
-
     res.status(200).json({ message: 'User profile deleted successfully' });
   } catch (error) {
     console.error('Error deleting user profile:', error);

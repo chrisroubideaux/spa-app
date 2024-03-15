@@ -49,25 +49,19 @@ export default function Profiles({}) {
 
       <div className="layout">
         <div className="container-fluid">
-            <Navbar />
-            </div>
+          <Navbar />
+        </div>
             <div className="container-fluid ">
               <div className="row py-4">
                 <div className="col-md-6">
-                  <h3 className="mt-2"></h3>
-                  <h1 className="fs-3">
                   {user.map((user) => (
-                  <div key={user._id} className="pt-4 ">
-                    <ProfileButton user={user} />
-                  </div>
-                ))}
-                  </h1>
-                  <div className="d-flex">
-                  
-                  </div>
+                    <div key={user._id} className="pt-4 ">
+                      <ProfileButton user={user} />
+                    </div>
+                  ))}
                 </div>
                 <div className="col-lg-6">
-                  <h3 className="text-center fs-1 fw-bold ">Bio</h3>
+                  <h3 className="text-center fs-1 fw-bold "></h3>
                   <p className="d-flex justify-content-end fw-normal fs-5 mt-5 lh-3">
                   test
                   </p>
