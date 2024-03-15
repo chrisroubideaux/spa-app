@@ -1,6 +1,8 @@
 // user route crud operations
 const express = require('express');
-const userRoutes = express.Router();
+const authRoutes = express.Router();
+const passport = require('passport');
+const User = require('../models/user'); // Import User model
 
 const {
   getUserById,
@@ -8,13 +10,29 @@ const {
   deleteUser,
 } = require('../controllers/userController');
 
-const User = require('../models/user');
+// Google OAuth callback route
+
+authRoutes.get(
+  '/auth/google/callback',
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  (req, res) => {
+    if (req.user) {
+      const userId = req.user._id || req.user.id; // Adjust this according to your setup
+
+      // Redirect the user to their profile page with their ID
+      res.redirect(`/profile/${userId}`);
+    } else {
+      // Handle the case where req.user is not defined
+      res.redirect('/login');
+    }
+  }
+);
 
 // POST (create) new user profile route
-userRoutes.post('/', async (req, res) => {
+authRoutes.post('/', async (req, res) => {
   try {
     const { email, fullName } = req.body;
-    const newUser = await createUser(email, fullName);
+    const newUser = await User.create({ email, fullName }); // Create new user using User model
     res.status(201).json(newUser);
   } catch (error) {
     console.error('Error creating new user profile:', error);
@@ -23,10 +41,9 @@ userRoutes.post('/', async (req, res) => {
 });
 
 // GET user profile page (protected route)
-userRoutes.get('/:id', async (req, res) => {
+authRoutes.get('/:id', async (req, res) => {
   try {
     const userId = req.params.id;
-    console.log('User ID:', userId);
     const userData = await getUserById(userId); // Use getUserById function to fetch user data
     res.status(200).json(userData);
   } catch (error) {
@@ -36,13 +53,12 @@ userRoutes.get('/:id', async (req, res) => {
 });
 
 // PUT (update) user profile (protected route)
-
-userRoutes.put('/:id', async (req, res) => {
+authRoutes.put('/:id', async (req, res) => {
   try {
     const userId = req.params.id;
     const { fullName, email, newPassword } = req.body;
 
-    await updateUser(userId, fullName, email, newPassword);
+    await updateUser(userId, fullName, email, newPassword); // Use updateUser function to update user data
 
     res.status(200).json({ message: 'User profile updated successfully' });
   } catch (error) {
@@ -52,11 +68,10 @@ userRoutes.put('/:id', async (req, res) => {
 });
 
 // DELETE user profile (protected route)
-
-userRoutes.delete('/:id', async (req, res) => {
+authRoutes.delete('/:id', async (req, res) => {
   try {
     const userId = req.params.id;
-    await deleteUser(userId);
+    await deleteUser(userId); // Use deleteUser function to delete user data
     res.status(200).json({ message: 'User profile deleted successfully' });
   } catch (error) {
     console.error('Error deleting user profile:', error);
@@ -64,4 +79,4 @@ userRoutes.delete('/:id', async (req, res) => {
   }
 });
 
-module.exports = userRoutes;
+module.exports = authRoutes;
