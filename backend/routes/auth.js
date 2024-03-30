@@ -47,13 +47,12 @@ authRoutes.get(
   '/auth/google',
   passport.authenticate('google', { scope: ['profile', 'email'] })
 );
-
 // Google OAuth login callback route
-app.get(
+authRoutes.get(
   '/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/login' }),
   (req, res) => {
-    res.redirect('https://ivy-client-5e9387cb37e4.herokuapp.com/profile');
+    res.redirect('/profile');
   }
 );
 

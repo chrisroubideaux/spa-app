@@ -7,12 +7,10 @@ exports.getAllWaxingServices = async (req, res) => {
     const waxingServices = await Waxing.find();
     res.status(200).json(waxingServices);
   } catch (error) {
-    res
-      .status(500)
-      .json({
-        message: 'Failed to fetch waxing services',
-        error: error.message,
-      });
+    res.status(500).json({
+      message: 'Failed to fetch waxing services',
+      error: error.message,
+    });
   }
 };
 
@@ -29,12 +27,10 @@ exports.getWaxingServiceById = async (req, res) => {
 
     res.status(200).json(waxingService);
   } catch (error) {
-    res
-      .status(500)
-      .json({
-        message: 'Failed to fetch waxing service',
-        error: error.message,
-      });
+    res.status(500).json({
+      message: 'Failed to fetch waxing service',
+      error: error.message,
+    });
   }
 };
 
@@ -45,12 +41,10 @@ exports.createWaxingService = async (req, res) => {
     const savedWaxingService = await newWaxingService.save();
     res.status(201).json(savedWaxingService);
   } catch (error) {
-    res
-      .status(500)
-      .json({
-        message: 'Failed to create waxing service',
-        error: error.message,
-      });
+    res.status(500).json({
+      message: 'Failed to create waxing service',
+      error: error.message,
+    });
   }
 };
 
@@ -69,12 +63,10 @@ exports.updateWaxingService = async (req, res) => {
 
     res.status(200).json(updatedWaxingService);
   } catch (error) {
-    res
-      .status(500)
-      .json({
-        message: 'Failed to update waxing service',
-        error: error.message,
-      });
+    res.status(500).json({
+      message: 'Failed to update waxing service',
+      error: error.message,
+    });
   }
 };
 
@@ -85,17 +77,15 @@ exports.deleteWaxingService = async (req, res) => {
     const deletedWaxingService = await Waxing.findByIdAndDelete(id);
 
     if (!deletedWaxingService) {
-      res.status(404).json({ message: 'Waxing service not found' });
+      res.status(404).json({ message: 'Waxing service not foun' });
       return;
     }
 
     res.status(200).json({ message: 'Waxing service deleted successfully' });
   } catch (error) {
-    res
-      .status(500)
-      .json({
-        message: 'Failed to delete waxing service',
-        error: error.message,
-      });
+    res.status(500).json({
+      message: 'Failed to delete waxing service',
+      error: error.message,
+    });
   }
 };
